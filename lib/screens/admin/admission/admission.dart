@@ -53,7 +53,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PLMATScreen(),
+                      builder: (context) => const PLMATScreen(),
                     ),
                   );
                 },
@@ -65,7 +65,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CLATScreen()
+                      builder: (context) => const CLATScreen()
                     ),
                   );
                 },
@@ -77,7 +77,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => MCATScreen()
+                      builder: (context) => const MCATScreen()
                     ),
                   );
                 },

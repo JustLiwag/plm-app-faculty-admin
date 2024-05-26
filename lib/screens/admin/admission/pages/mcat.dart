@@ -4,7 +4,7 @@ import 'package:mysample/utils/app_styles.dart';
 import '../../../../widgets/admin/result_item.dart';
 
 class MCATScreen extends StatelessWidget {
-  MCATScreen({Key? key}) : super(key: key);
+  const MCATScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
