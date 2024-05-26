@@ -93,7 +93,7 @@ class Announcemnent extends StatelessWidget {
                 },
               ),
               ButtonText(
-                text: const Text('Special Report'),
+                text: const Text('Special Reports'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
