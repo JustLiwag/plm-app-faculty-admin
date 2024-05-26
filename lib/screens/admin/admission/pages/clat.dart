@@ -8,11 +8,12 @@ class CLATScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        // Convert List<Applicant> to List<Map<String, String>>
-    final passers = applicants.map((applicant) => {
-      'Applicant Number': applicant.applicantNumber,
-      'Name': applicant.name,
-    }).toList();
+    final passers = clatApplicants
+        .map((applicant) => {
+              'Applicant Number': applicant.applicantNumber,
+              'Name': applicant.name,
+            })
+        .toList();
 
     return Scaffold(
       appBar: const CustomAppBar(title: 'Admissions'),
