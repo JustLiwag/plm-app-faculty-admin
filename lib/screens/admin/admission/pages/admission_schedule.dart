@@ -28,19 +28,21 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const SizedBox(height: 15),
-              Text(
-                'Schedule!',
-                style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: AppTheme.baseGold,
-                    ),
-              ),
+            Text(
+              'Schedule!',
+              style: Theme.of(context)
+                  .textTheme
+                  .displaySmall
+                  ?.copyWith(color: AppTheme.baseGold),
+            ),
             const SizedBox(height: 10),
-              Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nEget nunc scelerisque viverra mauris in aliquam sem fringilla. Nunc id cursus metus aliquam. ',
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color: AppTheme.baseBlack,
-                    ),
-              ),
+            Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nEget nunc scelerisque viverra mauris in aliquam sem fringilla. Nunc id cursus metus aliquam. ',
+              style: Theme.of(context)
+                  .textTheme
+                  .labelMedium
+                  ?.copyWith(color: AppTheme.baseBlack),
+            ),
             const SizedBox(height: 20),
             _buildTestSchedule(
               context,
