@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/admin/applicant_data.dart';
 import 'package:mysample/utils/app_styles.dart';
 import '../../../../widgets/admin/result_item.dart';
 
 class CLATScreen extends StatelessWidget {
-  CLATScreen({Key? key}) : super(key: key);
-
-  final List<Map<String, String>> passers = [
-    {"Applicant Number": "A0001", "Name": "GATES, Bill W."},
-    {"Applicant Number": "A0002", "Name": "CHOPRA, Priyanka C."},
-    {"Applicant Number": "A0003", "Name": "HEMINGWAY, Ernest M."},
-    {"Applicant Number": "A0004", "Name": "JOLIE, Angelina J."},
-    {"Applicant Number": "A0005", "Name": "MUSK, Elon R."},
-    {"Applicant Number": "A0006", "Name": "DICAPRIO, Leonardo W."},
-    {"Applicant Number": "A0007", "Name": "FRANKLIN, Aretha L."},
-    {"Applicant Number": "A0008", "Name": "SHAKUR, Tupac A."},
-    {"Applicant Number": "A0009", "Name": "DA VINCI, Leonardo G."},
-    {"Applicant Number": "A0010", "Name": "CHOPIN, Frédéric F."},
-  ];
+  const CLATScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+        // Convert List<Applicant> to List<Map<String, String>>
+    final passers = applicants.map((applicant) => {
+      'Applicant Number': applicant.applicantNumber,
+      'Name': applicant.name,
+    }).toList();
+
     return Scaffold(
       appBar: const CustomAppBar(title: 'Admissions'),
       body: Padding(
