@@ -43,9 +43,9 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                0)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 0),
+                    ), // Replace 0 with the index of the 'View Schedule' tab
                   );
                 },
               ),
@@ -56,9 +56,9 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                1)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 1),
+                    ), // Replace 0 with the index of the 'View Schedule' tab
                   );
                 },
               ),
@@ -69,9 +69,9 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                2)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 2),
+                    ), // Replace 0 with the index of the 'View Schedule' tab
                   );
                 },
               ),
@@ -82,9 +82,9 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                3)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 3),
+                    ), // Replace 0 with the index of the 'View Schedule' tab
                   );
                 },
               ),

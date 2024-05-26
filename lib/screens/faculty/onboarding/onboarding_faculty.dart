@@ -43,9 +43,9 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                0)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 0),
+                    ),
                   );
                 },
               ),
@@ -56,9 +56,9 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                1)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 1),
+                    ),
                   );
                 },
               ),
@@ -69,9 +69,9 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                2)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 2),
+                    ),
                   );
                 },
               ),
@@ -82,9 +82,9 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                3)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 3),
+                    ),
                   );
                 },
               ),
@@ -95,21 +95,11 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                4)), // Replace 0 with the index of the 'View Schedule' tab
+                      builder: (context) =>
+                          const BaseLayoutPage(initialIndex: 4),
+                    ),
                   );
                 },
-              ),
-              ButtonText(
-                text: const Text('Test btn'),
-                icon: Icons.arrow_forward_ios,
-                onPressed: () {},
-              ),
-              ButtonText(
-                text: const Text('Test btn'),
-                icon: Icons.arrow_forward_ios,
-                onPressed: () {},
               ),
             ],
           ),
