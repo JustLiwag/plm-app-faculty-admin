@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/widgets/button.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'package:mysample/widgets/base_layout.dart';
+import 'package:mysample/widgets/admin/base_layout.dart';
 
-class OnBoardingFaculty extends StatefulWidget {
-  const OnBoardingFaculty({super.key});
+class OnBoardingAdmin extends StatefulWidget {
+  const OnBoardingAdmin({super.key});
 
   @override
-  State<OnBoardingFaculty> createState() => _OnBoardingFacultyState();
+  State<OnBoardingAdmin> createState() => _OnBoardingAdminState();
 }
 
-class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
+class _OnBoardingAdminState extends State<OnBoardingAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
               ),
               const SizedBox(height: 23),
               ButtonText(
-                text: const Text('Student Faculty Evaluation'),
+                text: const Text('Admission'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -50,7 +50,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('Enrollment'),
+                text: const Text('Announcement'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -63,7 +63,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('Admission'),
+                text: const Text('Enrollment'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -76,7 +76,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('Announcement'),
+                text: const Text('Student Faculty Evaluation'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/widgets/button.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'package:mysample/widgets/base_layout.dart';
+import 'package:mysample/widgets/faculty/base_layout.dart';
 
 class OnBoardingFaculty extends StatefulWidget {
   const OnBoardingFaculty({super.key});

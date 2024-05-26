@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import '../screens/faculty/change_grades/change_grades.dart';
-import '../screens/faculty/classlist_report_of_grades/classlist_report_of_grades.dart';
-import '../screens/faculty/sfe_results/sfe_results.dart';
-import '../screens/faculty/schedule/schedule.dart';
-import '../screens/faculty/teaching_assignments/teaching_assignment.dart';
-// import 'package:mysample/utils/app_styles.dart';
-import '../bottom_navigation.dart';
+import '../../screens/admin/admission/admission.dart';
+import '../../screens/admin/enrollment/enrollment.dart';
+import '../../screens/admin/announcement/announcement.dart';
+import '../../screens/admin/sfe/sfe.dart';
+import 'bottom_navigation.dart';
 
 class BaseLayoutPage extends StatefulWidget {
   final int initialIndex;
@@ -18,11 +16,10 @@ class BaseLayoutPage extends StatefulWidget {
 class _BaseLayoutPageState extends State<BaseLayoutPage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    const Schedule(),
-    const TeachingAssignment(),
-    const Classlist(),
-    const ChangeGrades(),
-    const SFEResults(),
+    const Admission(),
+    const Enrollment(),
+    const Announcemnent(),
+    const SFE(),
   ];
 
   @override
