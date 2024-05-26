@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/screens/admin/admission/pages/admission_schedule.dart';
-import 'package:mysample/screens/admin/admission/pages/clat.dart';
-import 'package:mysample/screens/admin/admission/pages/mcat.dart';
-import 'package:mysample/screens/admin/admission/pages/plmat.dart';
+import 'package:mysample/screens/admin/announcement/pages/announcements.dart';
+import 'package:mysample/screens/admin/announcement/pages/gallery.dart';
+import 'package:mysample/screens/admin/announcement/pages/newsletter.dart';
+import 'package:mysample/screens/admin/announcement/pages/press_release.dart';
+import 'package:mysample/screens/admin/announcement/pages/special_report.dart';
+import 'package:mysample/screens/admin/announcement/pages/university_message.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/widgets/button.dart';
 
@@ -41,8 +43,7 @@ class Announcemnent extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const AdmissionScheduleScreen(),
-                    ),
+                        builder: (context) => const AnnouncementsScreen()),
                   );
                 },
               ),
@@ -53,8 +54,7 @@ class Announcemnent extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PLMATScreen(),
-                    ),
+                        builder: (context) => const GalleryScreen()),
                   );
                 },
               ),
@@ -67,7 +67,8 @@ class Announcemnent extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CLATScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const UniversityMessageScreen()),
                   );
                 },
               ),
@@ -77,7 +78,7 @@ class Announcemnent extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MCATScreen()),
+                    MaterialPageRoute(builder: (context) => const NewsLetterScreen()),
                   );
                 },
               ),
@@ -87,7 +88,7 @@ class Announcemnent extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MCATScreen()),
+                    MaterialPageRoute(builder: (context) => const PressReleaseScreen()),
                   );
                 },
               ),
@@ -97,7 +98,7 @@ class Announcemnent extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MCATScreen()),
+                    MaterialPageRoute(builder: (context) => const SpeciaReportScreen()),
                   );
                 },
               ),
