@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/screens/admin/admission/pages/admission_schedule.dart';
+import 'package:mysample/screens/admin/admission/pages/clat.dart';
+import 'package:mysample/screens/admin/admission/pages/mcat.dart';
 import 'package:mysample/screens/admin/admission/pages/plmat.dart';
 import 'package:mysample/widgets/button.dart';
 import 'package:mysample/widgets/admin/base_layout.dart';
@@ -64,8 +66,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          const BaseLayoutPage(initialIndex: 0),
+                      builder: (context) => CLATScreen()
                     ),
                   );
                 },
@@ -77,8 +78,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          const BaseLayoutPage(initialIndex: 0),
+                      builder: (context) => MCATScreen()
                     ),
                   );
                 },
