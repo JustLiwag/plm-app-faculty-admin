@@ -25,23 +25,33 @@ const background = Colors.white;
 // surface: Colors.white,
 // onSurface: Colors.grey.shade800
 
-class CustomTitleHead extends StatelessWidget {
-  final String text;
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
 
-  CustomTitleHead({required this.text});
+  CustomAppBar({required this.title});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-        fontFamily: 'Lato',
-        fontSize: 20,
-        fontWeight: FontWeight.w700,
-        color: AppTheme.basewhite,
+    return AppBar(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'Lato',
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: AppTheme.basewhite,
+        ),
       ),
+      centerTitle: true,
+      elevation: 0, // Removes the shadow under the AppBar
+      iconTheme: IconThemeData(color: AppTheme.basewhite),
+      backgroundColor: AppTheme.baseBlue, // Makes the AppBar transparent
     );
   }
+
+  @override
+  Size get preferredSize => Size.fromHeight(
+      kToolbarHeight); // Sets the height of the AppBar to the standard height
 }
 
 class CustomSubText extends StatelessWidget {
