@@ -3,6 +3,8 @@ import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/widgets/admin/box_with_header_image.dart';
 import 'package:mysample/widgets/admin/box_without_header_image.dart';
 import 'package:mysample/widgets/admin/edit_article_dialog.dart';
+import 'package:mysample/data/admin/article_data.dart';
+
 
 class PressReleaseScreen extends StatelessWidget {
   const PressReleaseScreen({Key? key}) : super(key: key);
@@ -31,20 +33,27 @@ class PressReleaseScreen extends StatelessWidget {
                 ?.copyWith(color: AppTheme.baseBlack),
           ),
           const SizedBox(height: 20),
-          const BoxWithHeaderImage(
-              title: 'Statement on red-tagging of PLM',
-              description:
-                  'The Pamantasan ng Lungsod ng Maynila (PLM) was once again the unscrupulous allegations made by a high official of the military...'),
-          const SizedBox(height: 20),
-          const BoxWithoutHeaderImage(
-              title: '2021 New Year Message from the University President',
-              description:
-                  'No one had a 2020 vision of what this year that is about to end would bring. Our experiences have been difficult but we have a lot...'),
-          const SizedBox(height: 20),
-          const BoxWithoutHeaderImage(
-              title: 'Preparations against COVID-19 Pandemic',
-              description:
-                  'Dear PLM Community, The COVID-19 pandemic has brought difficult times for everybody...'),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: pressRelease.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  index == 0
+                      ? BoxWithHeaderImage(
+                          title: pressRelease[index].title,
+                          description: pressRelease[index].description,
+                        )
+                      : BoxWithoutHeaderImage(
+                          title: pressRelease[index].title,
+                          description: pressRelease[index].description,
+                        ),
+                  const SizedBox(height: 20),
+                ],
+              );
+            },
+          ),
           const SizedBox(height: 200),
         ],
       ),
