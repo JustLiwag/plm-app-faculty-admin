@@ -17,8 +17,8 @@ class _BaseLayoutPageState extends State<BaseLayoutPage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
     const Admission(),
-    const Enrollment(),
     const Announcemnent(),
+    const Enrollment(),
     const SFE(),
   ];
 

@@ -50,7 +50,7 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
                 },
               ),
               ButtonText(
-                text: const Text('Announcement'),
+                text: const Text('Announcements'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
