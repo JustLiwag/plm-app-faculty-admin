@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/screens/admin/admission/pages/admission_schedule.dart';
+import 'package:mysample/screens/admin/admission/pages/plmat.dart';
 import 'package:mysample/widgets/button.dart';
 import 'package:mysample/widgets/admin/base_layout.dart';
 import 'package:mysample/utils/app_styles.dart';
@@ -10,7 +11,7 @@ class Admission extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Administrator'),
+      appBar: const CustomAppBar(title: 'Admissions'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 30),
@@ -51,8 +52,7 @@ class Admission extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          const BaseLayoutPage(initialIndex: 0),
+                      builder: (context) => PLMATScreen(),
                     ),
                   );
                 },
