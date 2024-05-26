@@ -91,14 +91,6 @@ class ButtonIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        Container(
-            height: 40, width: 40, child: Center(child: Icon(icon, size: 26))),
-        SizedBox(height: 3.0),
-        Text(buttonName,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 10, color: AppTheme.baseGold)),
-      ]),
       style: ElevatedButton.styleFrom(
         fixedSize: Size(80, 85),
         shape: CircleBorder(),
@@ -107,6 +99,14 @@ class ButtonIcon extends StatelessWidget {
         // backgroundColor: Theme.of(context).colorScheme.secondary, // <-- Button color
         foregroundColor: Color(0xFFEEBB05), // <-- Splash color
       ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        SizedBox(
+            height: 40, width: 40, child: Center(child: Icon(icon, size: 26))),
+        SizedBox(height: 3.0),
+        Text(buttonName,
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 10, color: AppTheme.baseGold)),
+      ]),
     );
   }
 }

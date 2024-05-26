@@ -4,8 +4,7 @@ import '../screens/faculty/classlist_report_of_grades/classlist_report_of_grades
 import '../screens/faculty/sfe_results/sfe_results.dart';
 import '../screens/faculty/schedule/schedule.dart';
 import '../screens/faculty/teaching_assignments/teaching_assignment.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:mysample/utils/app_styles.dart';
+// import 'package:mysample/utils/app_styles.dart';
 import '../bottom_navigation.dart';
 
 class BaseLayoutPage extends StatefulWidget {
@@ -19,11 +18,11 @@ class BaseLayoutPage extends StatefulWidget {
 class _BaseLayoutPageState extends State<BaseLayoutPage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    Schedule(),
-    TeachingAssignment(),
-    Classlist(),
-    ChangeGrades(),
-    SFEResults(),
+    const Schedule(),
+    const TeachingAssignment(),
+    const Classlist(),
+    const ChangeGrades(),
+    const SFEResults(),
   ];
 
   @override

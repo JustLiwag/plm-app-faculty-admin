@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 
 class Classlist extends StatelessWidget {
+  const Classlist({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: CustomAppBar(title: 'Classlist Report of Grades'),
       body: Center(
         child: Text(

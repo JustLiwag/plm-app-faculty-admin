@@ -28,14 +28,14 @@ const background = Colors.white;
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
 
-  CustomAppBar({required this.title});
+  const CustomAppBar({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       title: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontFamily: 'Lato',
           fontSize: 20,
           fontWeight: FontWeight.w700,
@@ -44,26 +44,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       elevation: 0, // Removes the shadow under the AppBar
-      iconTheme: IconThemeData(color: AppTheme.basewhite),
+      iconTheme: const IconThemeData(color: AppTheme.basewhite),
       backgroundColor: AppTheme.baseBlue, // Makes the AppBar transparent
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(
+  Size get preferredSize => const Size.fromHeight(
       kToolbarHeight); // Sets the height of the AppBar to the standard height
 }
 
 class CustomSubText extends StatelessWidget {
   final String text;
 
-  CustomSubText({required this.text});
+  const CustomSubText({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontFamily: 'Lato',
         fontWeight: FontWeight.w700,
         color: AppTheme.baseBlack,

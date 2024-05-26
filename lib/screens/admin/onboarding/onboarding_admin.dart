@@ -14,7 +14,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Faculty'),
+      appBar: const CustomAppBar(title: 'Administrator'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 30),
@@ -37,7 +37,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
               ),
               const SizedBox(height: 23),
               ButtonText(
-                text: const Text('View Schedule'),
+                text: const Text('Student Faculty Evaluation'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -50,7 +50,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('View Teaching Assignments'),
+                text: const Text('Enrollment'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -63,7 +63,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('View Class List & Report of Grades'),
+                text: const Text('Admission'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -76,7 +76,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('Change Grades'),
+                text: const Text('Announcement'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -87,29 +87,6 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                                 3)), // Replace 0 with the index of the 'View Schedule' tab
                   );
                 },
-              ),
-              ButtonText(
-                text: const Text('View SFE Results'),
-                icon: Icons.arrow_forward_ios,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const BaseLayoutPage(
-                            initialIndex:
-                                4)), // Replace 0 with the index of the 'View Schedule' tab
-                  );
-                },
-              ),
-              ButtonText(
-                text: const Text('Test btn'),
-                icon: Icons.arrow_forward_ios,
-                onPressed: () {},
-              ),
-              ButtonText(
-                text: const Text('Test btn'),
-                icon: Icons.arrow_forward_ios,
-                onPressed: () {},
               ),
             ],
           ),

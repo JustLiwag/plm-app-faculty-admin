@@ -5,13 +5,13 @@ class CommonMethod {
     primarySwatch: Colors.blue,
     colorScheme: ColorScheme(
         brightness: Brightness.light,
-        primary: Color(0xFF006699),
-        primaryContainer: Color.fromARGB(255, 202, 230, 245),
-        onPrimary: Color(0xFFFFFFFF),
-        secondary: Color(0xFFFFF5D1),
-        onSecondary: Color(0xFFFFC909),
-        error: Color(0xFFA31920),
-        onError: Color(0xFFA31920),
+        primary: const Color(0xFF006699),
+        primaryContainer: const Color.fromARGB(255, 202, 230, 245),
+        onPrimary: const Color(0xFFFFFFFF),
+        secondary: const Color(0xFFFFF5D1),
+        onSecondary: const Color(0xFFFFC909),
+        error: const Color(0xFFA31920),
+        onError: const Color(0xFFA31920),
         background: Colors.white,
         onBackground: Colors.grey.shade700,
         surface: Colors.white,
@@ -53,7 +53,7 @@ class CommonMethod {
       bodySmall:
           TextStyle(fontSize: 12.0, fontFamily: 'Lato', color: Colors.white),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xFF006699),
       foregroundColor: Colors.white,
       titleTextStyle: TextStyle(

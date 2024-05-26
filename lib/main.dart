@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/screens/faculty/onboarding/onboarding_faculty.dart';
-import 'bottom_navigation.dart';
+// import 'bottom_navigation.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'package:mysample/widgets/base_layout.dart';
+// import 'package:mysample/widgets/base_layout.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         canvasColor: AppTheme.baseBlue,
       ),
-      home: OnBoardingFaculty(),
+      home: const OnBoardingFaculty(),
     );
   }
 }
