@@ -1,44 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/faculty/courses_data.dart';
+import 'package:mysample/models/faculty/classlist_model.dart';
 import 'package:mysample/utils/app_styles.dart';
-
-class Course {
-  final String code;
-  final String title;
-  final String schedule;
-
-  const Course({
-    required this.code,
-    required this.title,
-    required this.schedule,
-  });
-}
 
 class Classlist extends StatelessWidget {
   const Classlist({super.key});
-
-    final List<Course> courses = const [
-    Course(
-      code: 'ICC 0106-1',
-      title: 'Application Development and Emerging Technologies (Lecture)',
-      schedule: 'M 9:30a-12:30p F2F GC 201',
-    ),
-    Course(
-      code: 'ICC 0106-2',
-      title: 'Application Development and Emerging Technologies (Lecture)',
-      schedule: 'T 10:00a-12:00p F2F GC 202',
-    ),
-    Course(
-      code: 'ICC 0106-3',
-      title: 'Application Development and Emerging Technologies (Lecture)',
-      schedule: 'W 10:00a-12:00p F2F GC 203',
-    ),
-    Course(
-      code: 'ICC 0106-4',
-      title: 'Application Development and Emerging Technologies (Lecture)',
-      schedule: 'Th 10:00a-12:00p F2F GC 204',
-    ),
-    // Add more courses as needed
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -170,7 +136,7 @@ class CourseContainer extends StatelessWidget {
               Positioned(
                 top: 12,
                 left: 16,
-                right: 44, // Adjust this value if needed
+                right: 44,
                 bottom: 4,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
