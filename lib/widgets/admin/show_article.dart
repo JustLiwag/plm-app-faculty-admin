@@ -64,7 +64,7 @@ class ShowArticleScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          showEditArticleDialog(context);
+          showEditArticleDialog(context, article);
         },
         label: const Row(
           children: [

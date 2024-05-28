@@ -1,11 +1,11 @@
 class Article {
-  final String title;
-  final String? imagePath;
-  final String statement;
-  final String description;
-  final String presidentName;
-  final String presidentTitle;
-  final String date;
+  String title;
+  String? imagePath;
+  String statement;
+  String description;
+  String presidentName;
+  String presidentTitle;
+  String date;
 
   Article({
     required this.title,
