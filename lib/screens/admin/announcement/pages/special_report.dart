@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/widgets/admin/box_with_header_image.dart';
 import 'package:mysample/widgets/admin/box_without_header_image.dart';
-import 'package:mysample/widgets/admin/edit_article_dialog.dart';
+import 'package:mysample/widgets/admin/new_article_dialog.dart';
 import 'package:mysample/data/admin/article_data.dart';
 
 class SpeciaReportScreen extends StatelessWidget {
@@ -58,7 +58,7 @@ class SpeciaReportScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          showEditArticleDialog(context);
+          showNewArticleDialog(context);
         },
         label: const Row(
           children: [

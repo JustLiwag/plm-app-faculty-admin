@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/widgets/admin/box_with_header_image.dart';
 import 'package:mysample/widgets/admin/box_without_header_image.dart';
-import 'package:mysample/widgets/admin/edit_article_dialog.dart';
+import 'package:mysample/widgets/admin/new_article_dialog.dart';
 import 'package:mysample/data/admin/article_data.dart';
+import 'package:mysample/widgets/admin/show_article.dart';
 
 class AnnouncementsScreen extends StatelessWidget {
   const AnnouncementsScreen({Key? key}) : super(key: key);
@@ -37,19 +38,30 @@ class AnnouncementsScreen extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: announcements.length,
             itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  index == 0
-                      ? BoxWithHeaderImage(
-                          title: announcements[index].title,
-                          description: announcements[index].description,
-                        )
-                      : BoxWithoutHeaderImage(
-                          title: announcements[index].title,
-                          description: announcements[index].description,
-                        ),
-                  const SizedBox(height: 20),
-                ],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ShowArticleScreen(
+                          article: announcements[index]),
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    index == 0
+                        ? BoxWithHeaderImage(
+                            title: announcements[index].title,
+                            description: announcements[index].description,
+                          )
+                        : BoxWithoutHeaderImage(
+                            title: announcements[index].title,
+                            description: announcements[index].description,
+                          ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
               );
             },
           ),
@@ -58,7 +70,7 @@ class AnnouncementsScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          showEditArticleDialog(context);
+          showNewArticleDialog(context);
         },
         label: const Row(
           children: [
