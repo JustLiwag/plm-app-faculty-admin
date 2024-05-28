@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 
-class ChangeGrades extends StatelessWidget {
-  const ChangeGrades({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ChangeGradesPage(),
-    );
-  }
-}
-
 class ChangeGradesPage extends StatefulWidget {
   const ChangeGradesPage({Key? key}) : super(key: key);
 
@@ -81,7 +70,7 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'Change Grades'),
+        appBar: const CustomAppBar(title: 'Report of Grades'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),

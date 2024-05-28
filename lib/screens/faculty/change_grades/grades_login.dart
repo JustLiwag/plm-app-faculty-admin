@@ -2,18 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'subject_class.dart';
 
-class GradesLogin extends StatelessWidget {
-  const GradesLogin({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: GradesLoginPage(),
-    );
-  }
-}
-
-
 class GradesLoginPage extends StatelessWidget {
   const GradesLoginPage({Key? key}) : super(key: key);
 
@@ -103,7 +91,7 @@ class GradesLoginPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(
-                      builder: (context) => const SubjectClass()));
+                      builder: (context) => const SubjectClassPage()));
                 },
                 child: Container(
                   width: 240,

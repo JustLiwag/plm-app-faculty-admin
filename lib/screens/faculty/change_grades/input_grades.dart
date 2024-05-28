@@ -2,16 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
 
-class InputGrades extends StatelessWidget {
-  const InputGrades({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: InputGradesPage(),
-    );
-  }
-}
 
 class InputGradesPage extends StatefulWidget {
   const InputGradesPage({Key? key}) : super(key: key);
@@ -82,7 +72,7 @@ class InputGradesPageState extends State<InputGradesPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'Input Grades'),
+        appBar: const CustomAppBar(title: 'Report of Grades'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),

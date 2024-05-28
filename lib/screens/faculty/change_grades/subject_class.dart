@@ -36,16 +36,6 @@ List<SubjectData> subjectList = [
   ),
 ];
 
-class SubjectClass extends StatelessWidget {
-  const SubjectClass({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SubjectClassPage(),
-    );
-  }
-}
 
 class SubjectClassPage extends StatelessWidget {
   const SubjectClassPage({Key? key}) : super(key: key);
@@ -85,7 +75,7 @@ class SubjectClassPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'Subject Class'),
+        appBar: const CustomAppBar(title: 'Report of Grades'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),
@@ -118,12 +108,12 @@ class SubjectClassPage extends StatelessWidget {
                   itemCount: studentDataList.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16), // Reduced bottom padding
+                      padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16), 
                       child: Stack(
-                        alignment: Alignment.center, // Center the children vertically and horizontally
+                        alignment: Alignment.center,
                         children: [
                           Container(
-                              width: 350, // Adjusted width
+                              width: 350,
                               height: 70,
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -193,7 +183,7 @@ class SubjectClassPage extends StatelessWidget {
                                     onTap: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => const Student()),
+                                        MaterialPageRoute(builder: (context) => const StudentPage()),
                                       );
                                     },
                                     child: Container(

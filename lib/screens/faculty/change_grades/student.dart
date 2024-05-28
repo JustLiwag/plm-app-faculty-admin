@@ -45,18 +45,6 @@ List<StudentData> studentDataList = [
   ),
 ];
 
-
-class Student extends StatelessWidget {
-  const Student({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: StudentPage(),
-    );
-  }
-}
-
 class StudentPage extends StatelessWidget {
   const StudentPage({Key? key}) : super(key: key);
 
@@ -95,7 +83,7 @@ class StudentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'Student'),
+        appBar: const CustomAppBar(title: 'Report of Grades'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),
@@ -212,13 +200,13 @@ class StudentPage extends StatelessWidget {
                                 ),
                                 Positioned(
                                   right: 14,
-                                  bottom: 10, // Adjusted position
+                                  bottom: 10,
                                   child: GestureDetector(
                                     onTap: () {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => const InputGrades(),
+                                          builder: (context) => const InputGradesPage(),
                                         ),
                                       );
                                     },
@@ -289,7 +277,7 @@ class StudentPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ChangeGrades(),
+                            builder: (context) => const ChangeGradesPage(),
                           ),
                         );
                         // Insert your logic here for when the button is pressed
