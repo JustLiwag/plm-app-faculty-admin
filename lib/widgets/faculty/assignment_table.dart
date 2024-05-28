@@ -5,7 +5,9 @@ class AssignmentTable extends StatelessWidget {
   final List<Assignment> assignments;
   final String semesterTitle;
 
-  const AssignmentTable({Key? key, required this.assignments, required this.semesterTitle}) : super(key: key);
+  const AssignmentTable(
+      {Key? key, required this.assignments, required this.semesterTitle})
+      : super(key: key);
 
   int _calculateTotalCredits() {
     int totalCredits = 0;
@@ -53,9 +55,6 @@ class AssignmentTable extends StatelessWidget {
               ),
               for (var assignment in assignments)
                 TableRow(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                  ),
                   children: [
                     _buildTableCell(assignment.classCode),
                     _buildTableCell(assignment.courseCodeSection),
