@@ -38,11 +38,11 @@ class EnrollmentPageState extends State<EnrollmentPage> {
               ),
               SizedBox(height: 65.v),
               Dropdown(
-                onCollegeSelected: (String? college) {
+                onSelected: (String? college) {
                   isCollegeSelected = college != null;
                   dropdownValue = college;
                 },
-                colleges: const [
+                values: const [
                   'College of Architecture and Urban Planning',
                   'College of Education',
                   'College of Engineering and Technology',

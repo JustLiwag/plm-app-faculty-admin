@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Dropdown extends StatefulWidget {
-  final Function(String?) onCollegeSelected;
-  final List<String> colleges;
+  final Function(String?) onSelected;
+  final List<String> values;
   final String title;
 
   const Dropdown(
       {super.key,
-      required this.onCollegeSelected,
-      required this.colleges,
+      required this.onSelected,
+      required this.values,
       required this.title});
 
   @override
@@ -39,16 +39,16 @@ class CollegeDropdownState extends State<Dropdown> {
             dropdownColor: Colors.white,
             isExpanded: true,
             value: dropdownValue,
-            hint: const Center(child: Text("Select College")),
+            hint: Center(child: Text(widget.title)),
             onChanged: (String? newValue) {
               setState(() {
                 dropdownValue = newValue;
               });
-              widget.onCollegeSelected(newValue);
+              widget.onSelected(newValue);
             },
             underline: Container(),
             items:
-                widget.colleges.map<DropdownMenuItem<String>>((String value) {
+                widget.values.map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Padding(

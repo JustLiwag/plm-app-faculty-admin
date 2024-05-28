@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/admin/enrollment/dropdown.dart';
 import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
 import '../../../core/app_export.dart';
 import '../../../widgets/admin/enrollment/custom_elevated_button.dart';
@@ -17,6 +18,7 @@ class EnrollmentOneScreen extends StatefulWidget {
 
 class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
   String? dropdownValue;
+  bool isYearLevelSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,20 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                 ),
               ),
               SizedBox(height: 50.v),
-              _buildColumnyearlevel(context),
+              Dropdown(
+                  onSelected: (String? college) {
+                    isYearLevelSelected = college != null;
+                    dropdownValue = college;
+                  },
+                  values: const [
+                    '1st Year',
+                    '2nd Year',
+                    '3rd Year',
+                    '4th Year',
+                    '5th Year',
+                    '6th Year'
+                  ],
+                  title: 'YEAR LEVEL'),
               SizedBox(height: 52.v),
               CustomElevatedButton(
                 text: "SUBMIT",
@@ -63,7 +78,8 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                 ),
                 onPressed: () {
                   if (dropdownValue == null) {
-                  showWarningDialog(context, "Please select a year level before submitting.");
+                    showWarningDialog(context,
+                        "Please select a year level before submitting.");
                   } else {
                     Navigator.push(
                       context,
