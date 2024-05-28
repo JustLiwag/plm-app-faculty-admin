@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/screens/faculty/schedule/previous_class_assignment.dart';
 import 'package:mysample/utils/app_styles.dart';
 import '../../../data/faculty/assignment_data.dart';
 
@@ -124,12 +125,12 @@ class Schedule extends StatelessWidget {
             child: FloatingActionButton(
               backgroundColor: const Color(0xFF006699),
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => PreviousClassAssignmentPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PreviousClassAssignmentPage(),
+                  ),
+                );
               },
               child: const Icon(Icons.history, color: Colors.white),
             ),
