@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class PreviousClassAssignmentPage extends StatefulWidget {
+  const PreviousClassAssignmentPage({super.key});
+
   @override
-  _PreviousClassAssignmentPageState createState() =>
-      _PreviousClassAssignmentPageState();
+  PreviousClassAssignmentPageState createState() =>
+      PreviousClassAssignmentPageState();
 }
 
-class _PreviousClassAssignmentPageState
+class PreviousClassAssignmentPageState
     extends State<PreviousClassAssignmentPage> {
   String? _selectedSemester;
   List<Map<String, String>> _filteredAssignments = [];
@@ -119,7 +121,7 @@ class _PreviousClassAssignmentPageState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFF006699),
+        backgroundColor: const Color(0xFF006699),
         title: const Text(
           'Schedule',
           style: TextStyle(
@@ -131,8 +133,8 @@ class _PreviousClassAssignmentPageState
         centerTitle: true,
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        SizedBox(height: 40),
-        Text(
+        const SizedBox(height: 40),
+        const Text(
           'PREVIOUS CLASS ASSIGNMENT',
           style: TextStyle(
             fontFamily: 'Lato',
@@ -140,10 +142,10 @@ class _PreviousClassAssignmentPageState
             fontSize: 20,
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Row(
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 18),
               child: Text(
                 'AySem: ',
@@ -161,7 +163,7 @@ class _PreviousClassAssignmentPageState
               ),
               child: DropdownButton<String>(
                 value: _selectedSemester,
-                items: [
+                items: const [
                   DropdownMenuItem(
                     value: '1st SEMESTER SY 2010-2011',
                     child: Text('1st SEMESTER SY 2010-2011',
@@ -183,21 +185,21 @@ class _PreviousClassAssignmentPageState
                     _selectedSemester = value;
                   });
                 },
-                hint: Padding(
+                hint: const Padding(
                   padding: EdgeInsets.zero,
                 ),
               ),
             ),
-            SizedBox(width: 10),
-            Container(
+            const SizedBox(width: 10),
+            SizedBox(
               height: 30,
               width: 80,
               child: ElevatedButton(
                 onPressed: _search,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFA31920),
+                  backgroundColor: const Color(0xFFA31920),
                 ),
-                child: Text(
+                child: const Text(
                   'Search',
                   style: TextStyle(color: Colors.white, fontSize: 10),
                 ),
@@ -211,11 +213,11 @@ class _PreviousClassAssignmentPageState
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
-                color: Color.fromARGB(179, 240, 231, 231),
-                padding: EdgeInsets.symmetric(vertical: 8),
+                color: const Color.fromARGB(179, 240, 231, 231),
+                padding: const EdgeInsets.symmetric(vertical: 8),
                 child: Text(
                   _selectedSemester ?? 'No semester selected',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 12,
                   ),
@@ -223,7 +225,7 @@ class _PreviousClassAssignmentPageState
                 ),
               ),
               Table(
-                columnWidths: {
+                columnWidths: const {
                   0: FlexColumnWidth(),
                   1: FlexColumnWidth(),
                   2: FlexColumnWidth(),
@@ -232,14 +234,14 @@ class _PreviousClassAssignmentPageState
                 },
                 children: [
                   TableRow(
-                    decoration: BoxDecoration(color: Color(0xFFFFC909)),
+                    decoration: const BoxDecoration(color: Color(0xFFFFC909)),
                     children: [
                       TableCell(
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Class Code',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -253,8 +255,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Course Code & Section',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -269,8 +271,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Course Title',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -285,8 +287,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Class Schedule',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -301,8 +303,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Credits',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -316,17 +318,17 @@ class _PreviousClassAssignmentPageState
                   ),
                   for (var assignment in _filteredAssignments)
                     TableRow(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(179, 240, 231, 231)),
                       children: [
                         TableCell(
                           child: Container(
                             height: 60,
                             alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
                               assignment['classCode'] ?? '',
-                              style: TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -335,10 +337,10 @@ class _PreviousClassAssignmentPageState
                           child: Container(
                             height: 60,
                             alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
                               assignment['courseCodeSection'] ?? '',
-                              style: TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -347,10 +349,10 @@ class _PreviousClassAssignmentPageState
                           child: Container(
                             height: 60,
                             alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
                               assignment['courseTitle'] ?? '',
-                              style: TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -359,10 +361,10 @@ class _PreviousClassAssignmentPageState
                           child: Container(
                             height: 60,
                             alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 6),
+                            padding: const EdgeInsets.symmetric(vertical: 6),
                             child: Text(
                               assignment['classSchedule'] ?? '',
-                              style: TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -371,10 +373,10 @@ class _PreviousClassAssignmentPageState
                           child: Container(
                             height: 60,
                             alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
                               assignment['credits'] ?? '',
-                              style: TextStyle(fontSize: 12),
+                              style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -382,7 +384,7 @@ class _PreviousClassAssignmentPageState
                       ],
                     ),
                   TableRow(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFFFC909),
                     ),
                     children: [
@@ -390,8 +392,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             '',
                             style: TextStyle(fontSize: 12),
                             textAlign: TextAlign.center,
@@ -402,8 +404,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             '',
                             style: TextStyle(fontSize: 12),
                             textAlign: TextAlign.center,
@@ -414,8 +416,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             '',
                             style: TextStyle(fontSize: 12),
                             textAlign: TextAlign.center,
@@ -426,8 +428,8 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          child: Text(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: const Text(
                             'Total Credits',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -442,10 +444,10 @@ class _PreviousClassAssignmentPageState
                         child: Container(
                           height: 60,
                           alignment: Alignment.center,
-                          padding: EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Text(
                             _calculateTotalCredits().toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 12,
                               color: Colors.black,

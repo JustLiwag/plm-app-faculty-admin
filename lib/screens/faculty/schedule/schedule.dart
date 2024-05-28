@@ -128,7 +128,7 @@ class Schedule extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PreviousClassAssignmentPage(),
+                    builder: (context) => const PreviousClassAssignmentPage(),
                   ),
                 );
               },
