@@ -59,7 +59,7 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                     ).then((_) {});
                   } else {
                     showWarningDialog(
-                        context, "Please select a college before submitting.")
+                        context, "Please select a college before submitting.");
                   }
                 },
               ),
