@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'student.dart';
 
 void main() {
   runApp(const ChangeGrades());
@@ -21,10 +20,10 @@ class ChangeGradesPage extends StatefulWidget {
   const ChangeGradesPage({Key? key}) : super(key: key);
 
   @override
-  _ChangeGradesPageState createState() => _ChangeGradesPageState();
+  ChangeGradesPageState createState() => ChangeGradesPageState();
 }
 
-class _ChangeGradesPageState extends State<ChangeGradesPage>{
+class ChangeGradesPageState extends State<ChangeGradesPage>{
   double? _changeselectedGrade = 1.00;
   String _changeremark = 'PASSED';
 
@@ -41,11 +40,11 @@ class _ChangeGradesPageState extends State<ChangeGradesPage>{
   Color _changeRemarkColor(String changeremark) {
     switch (changeremark) {
       case 'PASSED':
-        return Color(0xFF28A745);
+        return const Color(0xFF28A745);
       case 'FAILED':
-        return Color(0xFFA31920);
+        return const Color(0xFFA31920);
       case 'INC':
-        return Color(0xFFE9B700);
+        return const Color(0xFFE9B700);
       default:
         return Colors.white;
     }
@@ -58,7 +57,7 @@ class _ChangeGradesPageState extends State<ChangeGradesPage>{
         children: [
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
               fontFamily: 'Manrope',
@@ -67,10 +66,10 @@ class _ChangeGradesPageState extends State<ChangeGradesPage>{
               letterSpacing: 0.25,
             ),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Text(
             content,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
               fontFamily: 'Manrope',

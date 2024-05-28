@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'classlist_report_of_grades.dart';
 import 'subject_class.dart';
 
 void main() {
@@ -111,7 +110,7 @@ class GradesLoginPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context,
                       MaterialPageRoute(
-                      builder: (context) => SubjectClass()));
+                      builder: (context) => const SubjectClass()));
                   // Handle login button press
                 },
                 child: Container(
@@ -119,7 +118,7 @@ class GradesLoginPage extends StatelessWidget {
                   height: 42.75,
                   padding: const EdgeInsets.symmetric(horizontal: 26.75, vertical: 13.38),
                   decoration: ShapeDecoration(
-                    color: Color(0xFF006699),
+                    color: const Color(0xFF006699),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(13.38),
                     ),

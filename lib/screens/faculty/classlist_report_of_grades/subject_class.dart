@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'classlist_report_of_grades.dart';
 import 'student.dart';
 class SubjectData {
   final String courseCode;
@@ -121,7 +120,7 @@ class SubjectClassPage extends StatelessWidget {
                 const SizedBox(height: 40),
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: studentDataList.length,
                   itemBuilder: (context, index) {
                     return Padding(

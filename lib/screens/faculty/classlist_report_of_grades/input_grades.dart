@@ -21,10 +21,10 @@ class InputGradesPage extends StatefulWidget {
   const InputGradesPage({Key? key}) : super(key: key);
 
   @override
-  _InputGradesPageState createState() => _InputGradesPageState();
+  InputGradesPageState createState() => InputGradesPageState();
 }
 
-class _InputGradesPageState extends State<InputGradesPage> {
+class InputGradesPageState extends State<InputGradesPage> {
   double? _selectedGrade = 1.00;
   String _remark = 'PASSED';
 
@@ -41,11 +41,11 @@ class _InputGradesPageState extends State<InputGradesPage> {
   Color _getRemarkColor(String remark) {
     switch (remark) {
       case 'PASSED':
-        return Color(0xFF28A745);
+        return const Color(0xFF28A745);
       case 'FAILED':
-        return Color(0xFFA31920);
+        return const Color(0xFFA31920);
       case 'INC':
-        return Color(0xFFE9B700);
+        return const Color(0xFFE9B700);
       default:
         return Colors.white;
     }
@@ -301,7 +301,7 @@ class _InputGradesPageState extends State<InputGradesPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => StudentPage(),
+                            builder: (context) => const StudentPage(),
                           ),
                         );
                         // Insert your logic here for when the button is pressed

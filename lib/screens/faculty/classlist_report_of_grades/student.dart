@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'input_grades.dart';
-import 'subject_class.dart';
 import 'change_grades.dart';
 
 class StudentData {
@@ -131,7 +130,7 @@ class StudentPage extends StatelessWidget {
                 // Use ListView.builder to generate containers for each student data
                 ListView.builder(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: studentDataList.length,
                   itemBuilder: (context, index) {
                     return Padding(
@@ -174,7 +173,7 @@ class StudentPage extends StatelessWidget {
                                         width: double.infinity,
                                         child: Text(
                                           '${studentDataList[index].studentNumber} ${studentDataList[index].grade}',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Color(0xFF006699),
                                             fontSize: 12,
                                             fontFamily: 'Lato',
@@ -184,12 +183,12 @@ class StudentPage extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 4),
+                                      const SizedBox(height: 4),
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
                                           studentDataList[index].studentName,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 8,
                                             fontFamily: 'Inter',
@@ -203,7 +202,7 @@ class StudentPage extends StatelessWidget {
                                         width: double.infinity,
                                         child: Text(
                                           studentDataList[index].college,
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 7,
                                             fontFamily: 'Inter',
@@ -224,7 +223,7 @@ class StudentPage extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => InputGrades(),
+                                          builder: (context) => const InputGrades(),
                                         ),
                                       );
                                     },
@@ -295,7 +294,7 @@ class StudentPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ChangeGrades(),
+                            builder: (context) => const ChangeGrades(),
                           ),
                         );
                         // Insert your logic here for when the button is pressed
