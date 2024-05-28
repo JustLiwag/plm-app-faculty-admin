@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:mysample/data/admin/student_data.dart';
+import 'package:mysample/models/admin/student_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 import '../../../core/app_export.dart';
 import 'package:pdf/pdf.dart';
@@ -53,28 +55,15 @@ class StudentDataSource extends DataTableSource {
   int get selectedRowCount => 0;
 }
 
-class StepDetail {
-  final String step;
-  final String description;
-  final String status;
-
-  StepDetail({required this.step, required this.description, required this.status});
-}
-
-class Student {
-  final String number;
-  final String name;
-  final String status;
-  final List<StepDetail> steps;
-
-  Student({required this.number, required this.name, required this.status, required this.steps});
-}
-
 class EnrollmentTwoScreen extends StatefulWidget {
   final String selectedYearLevel;
   final String selectedCollege;
 
-  const EnrollmentTwoScreen({Key? key, required this.selectedYearLevel, required this.selectedCollege}) : super(key: key);
+  const EnrollmentTwoScreen(
+      {Key? key,
+      required this.selectedYearLevel,
+      required this.selectedCollege})
+      : super(key: key);
 
   @override
   EnrollmentTwoScreenState createState() => EnrollmentTwoScreenState();
@@ -83,6 +72,7 @@ class EnrollmentTwoScreen extends StatefulWidget {
 class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
   String searchQuery = "";
   String selectedFilter = "All";
+  StudentData studentData = StudentData();
   List<Student> students = [];
   List<Student> filteredStudents = [];
   final Random random = Random();
@@ -91,92 +81,23 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
   @override
   void initState() {
     super.initState();
-    students = _generateStudents();
+    students = studentData.generateStudents();
     filteredStudents = students;
-  }
-
-  List<Student> _generateStudents() {
-    List<String> names = [
-      "Dela Cruz, Juan M.",
-      "Dela Cruz, Juan Coco Martin M.",
-      "Dela Cruz, Juan Karlos M.",
-      "Estepan, Estavia Jorge G.",
-      "Erwan, Heussaf M.",
-      "Egg, Dog H.",
-      "Smith, John A.",
-      "Doe, Jane B.",
-      "Johnson, Michael C.",
-      "Williams, Sarah D.",
-      "Brown, Chris E.",
-      "Jones, Pat F.",
-      "Garcia, Maria G.",
-      "Martinez, Luis H.",
-      "Rodriguez, Ana I.",
-      "Hernandez, Miguel J.",
-      "Lopez, Laura K.",
-      "Gonzalez, Carlos L.",
-      "Wilson, Emily M.",
-      "Anderson, James N.",
-      "Thomas, Robert O.",
-      "Taylor, Linda P.",
-      "Moore, David Q.",
-      "Jackson, Barbara R.",
-      "Martin, Richard S.",
-      "Lee, Susan T."
-    ];
-
-    return List<Student>.generate(names.length, (index) {
-      List<StepDetail> steps = [];
-      bool allStepsDone = true;
-      bool previousStepDone = true;
-
-      for (int stepIndex = 0; stepIndex < 4; stepIndex++) {
-        bool isDone = previousStepDone ? random.nextBool() : false;
-        if (!isDone) {
-          allStepsDone = false;
-        }
-        steps.add(StepDetail(
-          step: "Step ${stepIndex + 1}",
-          description: _getStepDescription(stepIndex + 1),
-          status: isDone ? "DONE" : "PENDING",
-        ));
-        previousStepDone = isDone;
-      }
-
-      return Student(
-        number: "2021-${random.nextInt(90000) + 10000}",
-        name: names[index],
-        status: allStepsDone ? "Enrolled" : "Not Enrolled",
-        steps: steps,
-      );
-    });
-  }
-
-
-  String _getStepDescription(int step) {
-    switch (step) {
-      case 1:
-        return "View / Enlistment Schedule";
-      case 2:
-        return "View Assessment";
-      case 3:
-        return "Register";
-      case 4:
-        return "View Registration Form";
-      default:
-        return "";
-    }
   }
 
   void _filterStudents(String query) {
     String sanitizedQuery = query.replaceAll('-', '');
     List<Student> filteredList = students.where((student) {
       String sanitizedNumber = student.number.replaceAll('-', '');
-      return sanitizedNumber.toLowerCase().contains(sanitizedQuery.toLowerCase());
+      return sanitizedNumber
+          .toLowerCase()
+          .contains(sanitizedQuery.toLowerCase());
     }).toList();
 
     if (selectedFilter != "All") {
-      filteredList = filteredList.where((student) => student.status == selectedFilter).toList();
+      filteredList = filteredList
+          .where((student) => student.status == selectedFilter)
+          .toList();
     }
 
     setState(() {
@@ -207,11 +128,17 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("STUDENT ID: ${student.number}", style: const TextStyle(fontWeight: FontWeight.bold)),
-              Text("STUDENT NAME: ${student.name}", style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text("STUDENT ID: ${student.number}",
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text("STUDENT NAME: ${student.name}",
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
               const Divider(color: Colors.black),
-              ...student.steps.map((step) => _buildStepDetail(step.step, step.description, step.status)).toList(),
-              _buildStepDetail("Status", "Enrolled?", student.status == "Enrolled" ? "ENROLLED" : "NOT ENROLLED"),
+              ...student.steps
+                  .map((step) => _buildStepDetail(
+                      step.step, step.description, step.status))
+                  .toList(),
+              _buildStepDetail("Status", "Enrolled?",
+                  student.status == "Enrolled" ? "ENROLLED" : "NOT ENROLLED"),
             ],
           ),
           actions: [
@@ -233,9 +160,13 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(step, style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+          Text(step,
+              style: const TextStyle(
+                  color: Colors.blue, fontWeight: FontWeight.bold)),
           Text(description, style: const TextStyle(color: Colors.black)),
-          Text(status, style: TextStyle(color: status == "DONE" ? Colors.green : Colors.redAccent)),
+          Text(status,
+              style: TextStyle(
+                  color: status == "DONE" ? Colors.green : Colors.redAccent)),
         ],
       ),
     );
@@ -249,9 +180,11 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
     rows.add(
       pw.TableRow(
         children: [
-          pw.Text(' Number', style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+          pw.Text(' Number',
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
           pw.Text(' Name', style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
-          pw.Text(' Status', style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+          pw.Text(' Status',
+              style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
         ],
       ),
     );
@@ -260,7 +193,7 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       rows.add(
         pw.TableRow(
           children: [
-            pw.Text( " ${student.number}"),
+            pw.Text(" ${student.number}"),
             pw.Text(" ${student.name}"),
             pw.Text(" ${student.status}"),
           ],
@@ -287,12 +220,12 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       ),
     );
 
-    await Printing.layoutPdf(onLayout: (PdfPageFormat format) async => pdf.save());
+    await Printing.layoutPdf(
+        onLayout: (PdfPageFormat format) async => pdf.save());
   }
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         appBar: const CustomAppBar(title: 'Enrollment'),
@@ -303,22 +236,28 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
             vertical: 10.v,
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center, // Center the Column horizontally
+            crossAxisAlignment:
+                CrossAxisAlignment.center, // Center the Column horizontally
             children: [
               Container(
-                padding: const EdgeInsets.only(top: 10), // Add padding on top and bottom
-                alignment: Alignment.center, // This centers the Text widget within the Container
+                padding: const EdgeInsets.only(
+                    top: 10), // Add padding on top and bottom
+                alignment: Alignment
+                    .center, // This centers the Text widget within the Container
                 child: Text(
                   "LIST OF ${widget.selectedYearLevel} STUDENTS".toUpperCase(),
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0XFF006699),
-                  ),
+                        fontWeight: FontWeight.bold,
+                        color: const Color(0XFF006699),
+                      ),
                 ),
               ),
-              SizedBox(height: 20.v), // Add some space between the title and the search bar
+              SizedBox(
+                  height: 20
+                      .v), // Add some space between the title and the search bar
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0), // Add padding on the sides
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 30.0), // Add padding on the sides
                 child: Row(
                   children: [
                     Text(
@@ -332,7 +271,8 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                          contentPadding: const EdgeInsets.symmetric(
+                              vertical: 5.0, horizontal: 10.0),
                           isDense: true,
                         ),
                         keyboardType: TextInputType.number,
@@ -342,7 +282,9 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 20.v), // Add some space between the search bar and the list
+              SizedBox(
+                  height: 20
+                      .v), // Add some space between the search bar and the list
               Expanded(
                 child: SingleChildScrollView(
                   controller: _scrollController,
@@ -409,7 +351,8 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                                 width: 150.0,
                                 child: Text(
                                   student.name,
-                                  style: const TextStyle(fontSize: 14, height: 1.2),
+                                  style: const TextStyle(
+                                      fontSize: 14, height: 1.2),
                                   softWrap: true,
                                   overflow: TextOverflow.visible,
                                   maxLines: 3,
@@ -439,12 +382,12 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
         ),
         floatingActionButton: SpeedDial(
           animatedIcon: AnimatedIcons.menu_close,
+          foregroundColor: Colors.white,
           backgroundColor: const Color(0XFF006699),
           overlayOpacity: 0,
           children: [
             SpeedDialChild(
               child: const Icon(Icons.arrow_upward),
-              //label: 'Go Up',
               labelBackgroundColor: const Color(0XFF006699),
               labelStyle: const TextStyle(color: Colors.white),
               onTap: () {
