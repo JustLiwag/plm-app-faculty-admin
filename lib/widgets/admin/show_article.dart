@@ -34,7 +34,7 @@ class ShowArticleScreen extends StatelessWidget {
                               width: double.infinity,
                               height: 200,
                             )
-                          : SizedBox(height: 200, child: Placeholder()),
+                          : const SizedBox(height: 200, child: Placeholder()),
                       ),
                       const SizedBox(height: 16),
                       Text(
