@@ -20,10 +20,11 @@ void showEditArticleDialog(BuildContext context, Article article) {
             ),
           ),
         ),
-        content: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.6,
-          width: MediaQuery.of(context).size.width * 0.8,
-          child: SingleChildScrollView(
+        content: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: MediaQuery.of(context).size.height * 0.8,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -101,7 +102,7 @@ void showEditArticleDialog(BuildContext context, Article article) {
                 ),
                 const SizedBox(height: 10),
                 SizedBox(
-                  height: 270,
+                  height: 200,
                   child: TextFormField(
                     controller: descriptionController,
                     decoration: InputDecoration(
@@ -112,7 +113,7 @@ void showEditArticleDialog(BuildContext context, Article article) {
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
-                    maxLines: 40,
+                    maxLines: 10,
                   ),
                 ),
                 const SizedBox(height: 20),
