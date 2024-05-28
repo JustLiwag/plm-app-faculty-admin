@@ -21,7 +21,7 @@ class GradesLoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: const CustomAppBar(title: 'Grades Login'),
+      appBar: const CustomAppBar(title: 'Report of Grades'),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -34,7 +34,7 @@ class GradesLoginPage extends StatelessWidget {
                   height: 242.52,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/plm_logo.png"),
+                      image: AssetImage("assets/images/plm_logo.png"),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -73,14 +73,14 @@ class GradesLoginPage extends StatelessWidget {
                   ),
                 ),
                 child: TextField(
-                  obscureText: true, // Make text input hidden, suitable for passcode
+                  obscureText: true, 
                   style: const TextStyle(
                       fontSize: 14,
                       fontFamily: 'Manrope',
                       color: Colors.black
                   ),
                   decoration: InputDecoration(
-                    border: InputBorder.none, // Hides the underline of the input field
+                    border: InputBorder.none, 
                     hintText: 'Enter Passcode',
                     hintStyle: const TextStyle(
                       color: Color(0xFFA5A5A5),
@@ -107,7 +107,6 @@ class GradesLoginPage extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(
                       builder: (context) => const SubjectClass()));
-                  // Handle login button press
                 },
                 child: Container(
                   width: 240,

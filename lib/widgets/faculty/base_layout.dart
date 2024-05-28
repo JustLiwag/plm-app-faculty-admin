@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../screens/faculty/change_grades/change_grades.dart';
-import '../../screens/faculty/classlist_report_of_grades/classlist_report_of_grades.dart';
+import 'package:mysample/screens/faculty/change_grades/grades_login.dart';
+import '../../screens/faculty/classlist/classlist_report_of_grades.dart';
 import '../../screens/faculty/sfe_results/sfe_results.dart';
 import '../../screens/faculty/schedule/schedule.dart';
 import '../../screens/faculty/teaching_assignments/teaching_assignment.dart';
@@ -21,7 +21,7 @@ class _BaseLayoutPageState extends State<BaseLayoutPage> {
     const Schedule(),
     const TeachingAssignmentsPage(),
     const Classlist(),
-    const ChangeGrades(),
+    const GradesLoginPage(),
     const SFEResults(),
   ];
 

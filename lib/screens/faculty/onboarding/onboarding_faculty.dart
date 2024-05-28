@@ -63,7 +63,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('View Class List & Report of Grades'),
+                text: const Text('View Class List'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(
@@ -76,7 +76,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 },
               ),
               ButtonText(
-                text: const Text('Change Grades'),
+                text: const Text('View Report of Grades'),
                 icon: Icons.arrow_forward_ios,
                 onPressed: () {
                   Navigator.push(

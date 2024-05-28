@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mysample/data/faculty/courses_data.dart';
 import 'package:mysample/models/faculty/classlist_model.dart';
 import 'package:mysample/utils/app_styles.dart';
-import 'grades_login.dart';
+import '../change_grades/grades_login.dart';
 
 class Classlist extends StatelessWidget {
   const Classlist({super.key});

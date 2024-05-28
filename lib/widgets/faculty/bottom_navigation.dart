@@ -40,7 +40,7 @@ class BottomNavigation extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.edit),
-            label: 'Change Grades',
+            label: 'Grades',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assessment),

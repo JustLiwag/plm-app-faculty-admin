@@ -148,7 +148,7 @@ class SubjectClassPage extends StatelessWidget {
                               child: Row(
                                 children: [
                                   SizedBox(
-                                    width: 270, // Adjusted width
+                                    width: 270,
                                     child: Padding(
                                       padding: const EdgeInsets.only(left: 16, right: 8),
                                       child: Column(
