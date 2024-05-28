@@ -74,11 +74,13 @@ class TeachingAssignmentsPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const Text(
-                    '\n\nThe College has considered you to teach the following subject(s) for the stipulated term.',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 9,
+                  const Center(
+                    child: Text(
+                      '\n\nThe College has considered you to teach the following subject(s) for the stipulated term.',
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 8,
+                      ),
                     ),
                   ),
                   SingleChildScrollView(
@@ -89,7 +91,6 @@ class TeachingAssignmentsPage extends StatelessWidget {
                         defaultColumnWidth: const IntrinsicColumnWidth(),
                         children: [
                           TableRow(
-                            decoration: const BoxDecoration(color: Color(0xFFFFC909)),
                             children: [
                               buildHeaderTableCell('Subject Code & Section'),
                               buildHeaderTableCell('Subject Title'),
@@ -103,10 +104,11 @@ class TeachingAssignmentsPage extends StatelessWidget {
                           ),
                           for (var assignment in teachingAssignments)
                             TableRow(
-                              decoration: const BoxDecoration(
-                                  color: Color.fromARGB(179, 240, 231, 231)),
+                              decoration:
+                                  const BoxDecoration(color: Colors.white),
                               children: [
-                                buildTableCell(assignment.subjectCodeAndSection),
+                                buildTableCell(
+                                    assignment.subjectCodeAndSection),
                                 buildTableCell(assignment.subjectTitle),
                                 buildTableCell(assignment.units),
                                 buildTableCell(assignment.schedule),
@@ -138,8 +140,8 @@ class TeachingAssignmentsPage extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(const Color(0xFFFFC909)),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          const Color(0xFFFFC909)),
                     ),
                     child: const Text('Print',
                         style: TextStyle(color: Colors.white)),
@@ -161,7 +163,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
           child: Text(
             text,
             style: const TextStyle(
-                fontSize: 12, color: Colors.black, fontWeight: FontWeight.bold),
+                fontSize: 11, color: Colors.blue, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ),
@@ -176,7 +178,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 12),
+            style: const TextStyle(fontSize: 10),
             textAlign: TextAlign.center,
           ),
         ),
@@ -242,7 +244,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
               pw.SizedBox(height: 10),
             ],
           ),
-          pw.Table.fromTextArray(
+          pw.TableHelper.fromTextArray(
             headerAlignment: pw.Alignment.centerLeft,
             data: [
               [
