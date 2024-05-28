@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../../data/faculty/assignment_data.dart';
+import '../../../models/faculty/assignment_model.dart';
 
 class PreviousClassAssignmentPage extends StatefulWidget {
   const PreviousClassAssignmentPage({super.key});
@@ -11,99 +13,25 @@ class PreviousClassAssignmentPage extends StatefulWidget {
 class PreviousClassAssignmentPageState
     extends State<PreviousClassAssignmentPage> {
   String? _selectedSemester;
-  List<Map<String, String>> _filteredAssignments = [];
+  List<Assignment> _filteredAssignments = [];
 
-  final List<Map<String, String>> previousAssignments = [
-    //1st
-    {
-      'classCode': '10001',
-      'courseCodeSection': 'CFS 0001',
-      'courseTitle': 'Elective 1 (LEC)',
-      'classSchedule': 'M 9:30a-12:30p F2F GC 201',
-      'credits': '2',
-      'semester': '1st SEMESTER SY 2010-2011',
-    },
-    {
-      'classCode': '10002',
-      'courseCodeSection': 'CFS 0002',
-      'courseTitle': 'Elective 1 (LAB)',
-      'classSchedule': 'T 9:30a-12:30p F2F GC 201',
-      'credits': '1',
-      'semester': '1st SEMESTER SY 2010-2011',
-    },
-    //2nd
-    {
-      'classCode': '10001',
-      'courseCodeSection': 'CFS 0001',
-      'courseTitle': 'Elective 1 (LAB)',
-      'classSchedule': 'M 1:30p-4:30p F2F GC 202',
-      'credits': '1',
-      'semester': '2nd SEMESTER SY 2010-2011',
-    },
-    {
-      'classCode': '10002',
-      'courseCodeSection': 'CFS 0002',
-      'courseTitle': 'Elective 1 (LEC)',
-      'classSchedule': 'T 9:30a-12:30p F2F GC 203',
-      'credits': '2',
-      'semester': '2nd SEMESTER SY 2010-2011',
-    },
-    {
-      'classCode': '10003',
-      'courseCodeSection': 'CFS 0003',
-      'courseTitle': 'OOP (LAB)',
-      'classSchedule': 'W 9:30a-12:30p F2F GC 203',
-      'credits': '1',
-      'semester': '2nd SEMESTER SY 2010-2011',
-    },
-    {
-      'classCode': '10004',
-      'courseCodeSection': 'CFS 0003',
-      'courseTitle': 'OOP (LEC)',
-      'classSchedule': 'TH 9:30a-12:30p F2F GC 203',
-      'credits': '2',
-      'semester': '2nd SEMESTER SY 2010-2011',
-    },
-    //1st
-    {
-      'classCode': '10001',
-      'courseCodeSection': 'CFS 0001',
-      'courseTitle': 'SE 1 (LAB)',
-      'classSchedule': 'T 1:30p-4:30p F2F GC 202',
-      'credits': '1',
-      'semester': '1st SEMESTER SY 2011-2012',
-    },
-    {
-      'classCode': '10002',
-      'courseCodeSection': 'CFS 0002',
-      'courseTitle': 'SE 1 (LEC)',
-      'classSchedule': 'T 9:30a-12:30p F2F GC 203',
-      'credits': '2',
-      'semester': '1st SEMESTER SY 2011-2012',
-    },
-    {
-      'classCode': '10003',
-      'courseCodeSection': 'CFS 0003',
-      'courseTitle': 'Automata (LAB)',
-      'classSchedule': 'W 9:30a-12:30p F2F GC 203',
-      'credits': '1',
-      'semester': '1st SEMESTER SY 2011-2012',
-    },
-    {
-      'classCode': '10004',
-      'courseCodeSection': 'CFS 0003',
-      'courseTitle': 'Automata (LEC)',
-      'classSchedule': 'W 9:30a-12:30p F2F GC 203',
-      'credits': '2',
-      'semester': '1st SEMESTER SY 2011-2012',
-    },
-  ];
+  @override
+  void initState() {
+    super.initState();
+    _filteredAssignments = previousAssignments;
+  }
+
+  List<String> _getUniqueSemesters() {
+    final semesters = previousAssignments.map((e) => e.semester).toSet().toList();
+    semesters.sort(); // Sort semesters if necessary
+    return semesters;
+  }
 
   void _search() {
     if (_selectedSemester != null) {
       setState(() {
         _filteredAssignments = previousAssignments
-            .where((assignment) => assignment['semester'] == _selectedSemester)
+            .where((assignment) => assignment.semester == _selectedSemester)
             .toList();
       });
     }
@@ -112,13 +40,15 @@ class PreviousClassAssignmentPageState
   int _calculateTotalCredits() {
     int totalCredits = 0;
     for (var assignment in _filteredAssignments) {
-      totalCredits += int.parse(assignment['credits'] ?? '0');
+      totalCredits += int.parse(assignment.credits);
     }
     return totalCredits;
   }
 
   @override
   Widget build(BuildContext context) {
+    final uniqueSemesters = _getUniqueSemesters();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF006699),
@@ -163,23 +93,12 @@ class PreviousClassAssignmentPageState
               ),
               child: DropdownButton<String>(
                 value: _selectedSemester,
-                items: const [
-                  DropdownMenuItem(
-                    value: '1st SEMESTER SY 2010-2011',
-                    child: Text('1st SEMESTER SY 2010-2011',
-                        style: TextStyle(fontSize: 12)),
-                  ),
-                  DropdownMenuItem(
-                    value: '2nd SEMESTER SY 2010-2011',
-                    child: Text('2nd SEMESTER SY 2010-2011',
-                        style: TextStyle(fontSize: 12)),
-                  ),
-                  DropdownMenuItem(
-                    value: '1st SEMESTER SY 2011-2012',
-                    child: Text('1st SEMESTER SY 2011-2012',
-                        style: TextStyle(fontSize: 12)),
-                  ),
-                ],
+                items: uniqueSemesters
+                    .map((semester) => DropdownMenuItem(
+                          value: semester,
+                          child: Text(semester, style: const TextStyle(fontSize: 12)),
+                        ))
+                    .toList(),
                 onChanged: (String? value) {
                   setState(() {
                     _selectedSemester = value;
@@ -187,6 +106,7 @@ class PreviousClassAssignmentPageState
                 },
                 hint: const Padding(
                   padding: EdgeInsets.zero,
+                  child: Text('Select Semester', style: TextStyle(fontSize: 12)),
                 ),
               ),
             ),
@@ -229,7 +149,7 @@ class PreviousClassAssignmentPageState
                   0: FlexColumnWidth(),
                   1: FlexColumnWidth(),
                   2: FlexColumnWidth(),
-                  3: FlexColumnWidth(),
+                  3: FixedColumnWidth(150.0),
                   4: FlexColumnWidth(),
                 },
                 children: [
@@ -327,7 +247,7 @@ class PreviousClassAssignmentPageState
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                              assignment['classCode'] ?? '',
+                              assignment.classCode,
                               style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
@@ -339,7 +259,7 @@ class PreviousClassAssignmentPageState
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                              assignment['courseCodeSection'] ?? '',
+                              assignment.courseCodeSection,
                               style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
@@ -351,7 +271,7 @@ class PreviousClassAssignmentPageState
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                              assignment['courseTitle'] ?? '',
+                              assignment.courseTitle,
                               style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
@@ -362,10 +282,17 @@ class PreviousClassAssignmentPageState
                             height: 60,
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(vertical: 6),
-                            child: Text(
-                              assignment['classSchedule'] ?? '',
-                              style: const TextStyle(fontSize: 12),
-                              textAlign: TextAlign.center,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: _formatClassSchedule(
+                                assignment.classSchedule,
+                              )
+                                  .map((line) => Text(
+                                        line,
+                                        style: const TextStyle(fontSize: 12),
+                                        textAlign: TextAlign.center,
+                                      ))
+                                  .toList(),
                             ),
                           ),
                         ),
@@ -375,7 +302,7 @@ class PreviousClassAssignmentPageState
                             alignment: Alignment.center,
                             padding: const EdgeInsets.symmetric(vertical: 10),
                             child: Text(
-                              assignment['credits'] ?? '',
+                              assignment.credits,
                               style: const TextStyle(fontSize: 12),
                               textAlign: TextAlign.center,
                             ),
@@ -465,5 +392,29 @@ class PreviousClassAssignmentPageState
         ),
       ]),
     );
+  }
+
+  List<String> _formatClassSchedule(String schedule) {
+    List<String> parts = schedule.split(' ');
+    if (parts.length == 4) {
+      return parts;
+    } else {
+      List<String> formatted = [];
+      String currentLine = '';
+      for (String part in parts) {
+        if (currentLine.isEmpty) {
+          currentLine = part;
+        } else if (currentLine.contains(RegExp(r'[a-zA-Z]')) && !part.contains(RegExp(r'[a-zA-Z]'))) {
+          currentLine += ' $part';
+        } else {
+          formatted.add(currentLine);
+          currentLine = part;
+        }
+      }
+      if (currentLine.isNotEmpty) {
+        formatted.add(currentLine);
+      }
+      return formatted;
+    }
   }
 }

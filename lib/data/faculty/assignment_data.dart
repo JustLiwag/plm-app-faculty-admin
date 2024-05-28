@@ -16,7 +16,6 @@ final List<Assignment> assignments = [
     classSchedule: 'T 1:30p-4:30p F2F GC 202',
     credits: '3',
     semester: '2nd SEMESTER SY 2023-2024',
-
   ),
   Assignment(
     classCode: '10003',
@@ -25,7 +24,6 @@ final List<Assignment> assignments = [
     classSchedule: 'W 8:00a-11:00a F2F GC 203',
     credits: '4',
     semester: '2nd SEMESTER SY 2023-2024',
-
   ),
   Assignment(
     classCode: '10004',
@@ -34,7 +32,6 @@ final List<Assignment> assignments = [
     classSchedule: 'Th 10:00a-1:00p F2F GC 204',
     credits: '3',
     semester: '2nd SEMESTER SY 2023-2024',
-
   ),
   Assignment(
     classCode: '10005',
@@ -43,5 +40,91 @@ final List<Assignment> assignments = [
     classSchedule: 'F 2:00p-5:00p F2F GC 205',
     credits: '2',
     semester: '2nd SEMESTER SY 2023-2024',
+  ),
+];
+
+final List<Assignment> previousAssignments = [
+  // 1st Semester SY 2010-2011
+  Assignment(
+    classCode: '10001',
+    courseCodeSection: 'CFS 0001',
+    courseTitle: 'Elective 1 (LEC)',
+    classSchedule: 'M 9:30a-12:30p F2F GC 201',
+    credits: '2',
+    semester: '1st SEMESTER SY 2010-2011',
+  ),
+  Assignment(
+    classCode: '10002',
+    courseCodeSection: 'CFS 0002',
+    courseTitle: 'Elective 1 (LAB)',
+    classSchedule: 'T 9:30a-12:30p F2F GC 201',
+    credits: '1',
+    semester: '1st SEMESTER SY 2010-2011',
+  ),
+  // 2nd Semester SY 2010-2011
+  Assignment(
+    classCode: '10001',
+    courseCodeSection: 'CFS 0001',
+    courseTitle: 'Elective 1 (LAB)',
+    classSchedule: 'M 1:30p-4:30p F2F GC 202',
+    credits: '1',
+    semester: '2nd SEMESTER SY 2010-2011',
+  ),
+  Assignment(
+    classCode: '10002',
+    courseCodeSection: 'CFS 0002',
+    courseTitle: 'Elective 1 (LEC)',
+    classSchedule: 'T 9:30a-12:30p F2F GC 203',
+    credits: '2',
+    semester: '2nd SEMESTER SY 2010-2011',
+  ),
+  Assignment(
+    classCode: '10003',
+    courseCodeSection: 'CFS 0003',
+    courseTitle: 'OOP (LAB)',
+    classSchedule: 'W 9:30a-12:30p F2F GC 203',
+    credits: '1',
+    semester: '2nd SEMESTER SY 2010-2011',
+  ),
+  Assignment(
+    classCode: '10004',
+    courseCodeSection: 'CFS 0003',
+    courseTitle: 'OOP (LEC)',
+    classSchedule: 'TH 9:30a-12:30p F2F GC 203',
+    credits: '2',
+    semester: '2nd SEMESTER SY 2010-2011',
+  ),
+  // 1st Semester SY 2011-2012
+  Assignment(
+    classCode: '10001',
+    courseCodeSection: 'CFS 0001',
+    courseTitle: 'SE 1 (LAB)',
+    classSchedule: 'T 1:30p-4:30p F2F GC 202',
+    credits: '1',
+    semester: '1st SEMESTER SY 2011-2012',
+  ),
+  Assignment(
+    classCode: '10002',
+    courseCodeSection: 'CFS 0002',
+    courseTitle: 'SE 1 (LEC)',
+    classSchedule: 'T 9:30a-12:30p F2F GC 203',
+    credits: '2',
+    semester: '1st SEMESTER SY 2011-2012',
+  ),
+  Assignment(
+    classCode: '10003',
+    courseCodeSection: 'CFS 0003',
+    courseTitle: 'Automata (LAB)',
+    classSchedule: 'W 9:30a-12:30p F2F GC 203',
+    credits: '1',
+    semester: '1st SEMESTER SY 2011-2012',
+  ),
+  Assignment(
+    classCode: '10004',
+    courseCodeSection: 'CFS 0003',
+    courseTitle: 'Automata (LEC)',
+    classSchedule: 'W 9:30a-12:30p F2F GC 203',
+    credits: '2',
+    semester: '1st SEMESTER SY 2011-2012',
   ),
 ];
