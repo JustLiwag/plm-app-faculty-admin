@@ -1,9 +1,9 @@
-class SubjectData {
+class Subject {
   final String courseCode;
   final String courseTitle;
   final String schedule;
 
-  SubjectData({
+  Subject({
     required this.courseCode,
     required this.courseTitle,
     required this.schedule,

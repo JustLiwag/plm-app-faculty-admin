@@ -1,10 +1,10 @@
-class Student {
+class Faculty {
   final String studentNumber;
   final String grade;
   final String studentName;
   final String college;
 
-  Student({
+  Faculty({
     required this.studentNumber,
     required this.grade,
     required this.studentName,

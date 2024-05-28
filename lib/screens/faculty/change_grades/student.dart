@@ -71,7 +71,7 @@ class StudentPage extends StatelessWidget {
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: studentDataList.length,
+                  itemCount: studentList.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(
@@ -114,7 +114,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          '${studentDataList[index].studentNumber} ${studentDataList[index].grade}',
+                                          '${studentList[index].studentNumber} ${studentList[index].grade}',
                                           style: const TextStyle(
                                             color: Color(0xFF006699),
                                             fontSize: 12,
@@ -129,7 +129,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          studentDataList[index].studentName,
+                                          studentList[index].studentName,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 8,
@@ -143,7 +143,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          studentDataList[index].college,
+                                          studentList[index].college,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 7,
