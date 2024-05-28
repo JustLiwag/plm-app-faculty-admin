@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/models/admin/article_model.dart';
+import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/admin/edit_article_dialog.dart';
 
 class ShowArticleScreen extends StatelessWidget {
   final Article article;
@@ -9,9 +11,7 @@ class ShowArticleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(article.title),
-      ),
+      appBar: const CustomAppBar(title: 'Announcements'),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -62,6 +62,28 @@ class ShowArticleScreen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          showEditArticleDialog(context);
+        },
+        label: const Row(
+          children: [
+            Text(
+              'Edit Article',
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
+            ),
+            SizedBox(width: 5, height: 5),
+            Icon(
+              Icons.edit,
+              color: Colors.white,
+            ),
+          ],
+        ),
+        backgroundColor: const Color(0xFFFFC909),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
