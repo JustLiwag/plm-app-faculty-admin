@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
 import '../../../core/app_export.dart';
 import '../../../widgets/admin/enrollment/custom_elevated_button.dart';
-import 'enrollment_two_screen.dart'; 
+import 'enrollment_two_screen.dart';
 
 class EnrollmentOneScreen extends StatefulWidget {
   final String selectedCollege;
@@ -55,13 +56,14 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
               CustomElevatedButton(
                 text: "SUBMIT",
                 margin: EdgeInsets.symmetric(horizontal: 37.h),
-                buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer.copyWith(fontSize: 16.0),
+                buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                    .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0XFF006699),
                 ),
                 onPressed: () {
                   if (dropdownValue == null) {
-                    _showWarningDialog(context);
+                  showWarningDialog(context, "Please select a year level before submitting.");
                   } else {
                     Navigator.push(
                       context,
@@ -97,7 +99,8 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
             width: double.infinity,
             height: 60.0,
             decoration: BoxDecoration(
-              border: Border.all(color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
+              border: Border.all(
+                  color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
               borderRadius: BorderRadius.circular(10),
             ),
             child: DropdownButton<String>(
@@ -137,26 +140,6 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
           const SizedBox(height: 10),
         ],
       ),
-    );
-  }
-
-  void _showWarningDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text("Warning"),
-          content: const Text("Please select a year level before submitting."),
-          actions: <Widget>[
-            TextButton(
-              child: const Text("OK"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
     );
   }
 }

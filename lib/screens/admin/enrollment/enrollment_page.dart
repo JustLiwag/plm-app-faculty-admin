@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
 import '../../../core/app_export.dart';
 import '../../../widgets/admin/enrollment/custom_elevated_button.dart';
 import 'enrollment_one_screen.dart';
@@ -19,7 +20,9 @@ class EnrollmentPageState extends State<EnrollmentPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'Enrollment',),
+        appBar: const CustomAppBar(
+          title: 'Enrollment'
+        ),
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.only(
@@ -40,7 +43,8 @@ class EnrollmentPageState extends State<EnrollmentPage> {
               CustomElevatedButton(
                 text: "SUBMIT",
                 margin: EdgeInsets.symmetric(horizontal: 20.h),
-                buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer.copyWith(fontSize: 16.0),
+                buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                    .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0XFF006699),
                 ),
@@ -52,11 +56,10 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                         builder: (context) => EnrollmentOneScreen(
                             selectedCollege: dropdownValue ?? ''),
                       ),
-                    ).then((_) {
-
-                    });
+                    ).then((_) {});
                   } else {
-                    _showWarningDialog(context);
+                    showWarningDialog(
+                        context, "Please select a college before submitting.")
                   }
                 },
               ),
@@ -67,7 +70,6 @@ class EnrollmentPageState extends State<EnrollmentPage> {
       ),
     );
   }
-
 
   Widget _buildColumnselectcol(BuildContext context) {
     return Column(
@@ -81,7 +83,8 @@ class EnrollmentPageState extends State<EnrollmentPage> {
           width: double.infinity,
           height: 60.0,
           decoration: BoxDecoration(
-            border: Border.all(color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
+            border: Border.all(
+                color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
             borderRadius: BorderRadius.circular(10),
           ),
           child: DropdownButton<String>(
@@ -125,42 +128,6 @@ class EnrollmentPageState extends State<EnrollmentPage> {
         ),
         const SizedBox(height: 10),
       ],
-    );
-  }
-
-  void _showWarningDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          title: const Text(
-            "Warning",
-            style: TextStyle(
-              color: Color(0xFF006699),
-            ),
-          ),
-          content: const Text(
-            "Please select a college before submitting.",
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: const Text(
-                "OK",
-                style: TextStyle(
-                  color: Color(0xFF006699),
-                ),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
     );
   }
 }
