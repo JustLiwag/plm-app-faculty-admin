@@ -43,8 +43,8 @@ class AnnouncementsScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ShowArticleScreen(
-                          article: announcements[index]),
+                      builder: (context) =>
+                          ShowArticleScreen(article: announcements[index]),
                     ),
                   );
                 },
@@ -54,10 +54,28 @@ class AnnouncementsScreen extends StatelessWidget {
                         ? BoxWithHeaderImage(
                             title: announcements[index].title,
                             description: announcements[index].description,
+                            onReadMore: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ShowArticleScreen(
+                                      article: announcements[index]),
+                                ),
+                              );
+                            },
                           )
                         : BoxWithoutHeaderImage(
                             title: announcements[index].title,
                             description: announcements[index].description,
+                            onReadMore: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ShowArticleScreen(
+                                      article: announcements[index]),
+                                ),
+                              );
+                            },
                           ),
                     const SizedBox(height: 20),
                   ],

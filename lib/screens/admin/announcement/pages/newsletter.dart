@@ -4,6 +4,7 @@ import 'package:mysample/widgets/admin/box_with_header_image.dart';
 import 'package:mysample/widgets/admin/box_without_header_image.dart';
 import 'package:mysample/widgets/admin/new_article_dialog.dart';
 import 'package:mysample/data/admin/article_data.dart';
+import 'package:mysample/widgets/admin/show_article.dart';
 
 class NewsLetterScreen extends StatelessWidget {
   const NewsLetterScreen({Key? key}) : super(key: key);
@@ -37,19 +38,48 @@ class NewsLetterScreen extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: newsletter.length,
             itemBuilder: (context, index) {
-              return Column(
-                children: [
-                  index == 0
-                      ? BoxWithHeaderImage(
-                          title: newsletter[index].title,
-                          description: newsletter[index].description,
-                        )
-                      : BoxWithoutHeaderImage(
-                          title: newsletter[index].title,
-                          description: newsletter[index].description,
-                        ),
-                  const SizedBox(height: 20),
-                ],
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          ShowArticleScreen(article: announcements[index]),
+                    ),
+                  );
+                },
+                child: Column(
+                  children: [
+                    index == 0
+                        ? BoxWithHeaderImage(
+                            title: announcements[index].title,
+                            description: announcements[index].description,
+                            onReadMore: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ShowArticleScreen(
+                                      article: announcements[index]),
+                                ),
+                              );
+                            },
+                          )
+                        : BoxWithoutHeaderImage(
+                            title: announcements[index].title,
+                            description: announcements[index].description,
+                            onReadMore: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ShowArticleScreen(
+                                      article: announcements[index]),
+                                ),
+                              );
+                            },
+                          ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
               );
             },
           ),

@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 class BoxWithoutHeaderImage extends StatelessWidget {
   final String title;
   final String description;
+  final VoidCallback onReadMore;
 
-  const BoxWithoutHeaderImage({super.key, required this.title, required this.description});
+  const BoxWithoutHeaderImage({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.onReadMore,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +55,7 @@ class BoxWithoutHeaderImage extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {
-                      // Handle Read More button tap
-                    },
+                    onPressed: onReadMore,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
                           const Color(0xFFFFC909)),
