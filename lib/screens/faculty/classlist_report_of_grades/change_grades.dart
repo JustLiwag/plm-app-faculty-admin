@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 
-void main() {
-  runApp(const ChangeGrades());
-}
-
 class ChangeGrades extends StatelessWidget {
   const ChangeGrades({Key? key}) : super(key: key);
 

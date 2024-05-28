@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'subject_class.dart';
 
-void main() {
-  runApp(const GradesLogin());
-}
-//REPORTS OF GRADE_LOGIN VER
 class GradesLogin extends StatelessWidget {
   const GradesLogin({Key? key}) : super(key: key);
 

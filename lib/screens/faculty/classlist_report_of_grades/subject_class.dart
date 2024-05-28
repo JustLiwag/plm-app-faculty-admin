@@ -36,10 +36,6 @@ List<SubjectData> subjectList = [
   ),
 ];
 
-void main() {
-  runApp(const SubjectClass());
-}
-
 class SubjectClass extends StatelessWidget {
   const SubjectClass({Key? key}) : super(key: key);
 

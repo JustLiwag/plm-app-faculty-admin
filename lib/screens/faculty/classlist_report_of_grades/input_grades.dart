@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
 
-void main() {
-  runApp(const InputGrades());
-}
-
 class InputGrades extends StatelessWidget {
   const InputGrades({Key? key}) : super(key: key);
 

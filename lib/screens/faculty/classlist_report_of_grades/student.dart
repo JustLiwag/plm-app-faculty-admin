@@ -45,9 +45,6 @@ List<StudentData> studentDataList = [
   ),
 ];
 
-void main() {
-  runApp(const Student());
-}
 
 class Student extends StatelessWidget {
   const Student({Key? key}) : super(key: key);
