@@ -18,7 +18,7 @@ class BaseLayoutPage extends StatefulWidget {
 class _BaseLayoutPageState extends State<BaseLayoutPage> {
   int _selectedIndex = 0;
   final List<Widget> _pages = [
-    Schedule(),
+    const Schedule(),
     const TeachingAssignment(),
     const Classlist(),
     const ChangeGrades(),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
-// import '../../../models/faculty/assignment_model.dart';
 import '../../../data/faculty/assignment_data.dart';
 
 class Schedule extends StatelessWidget {
-  Schedule({super.key});
+  const Schedule({super.key});
 
   int _calculateTotalCredits() {
     int totalCredits = 0;
@@ -19,226 +18,105 @@ class Schedule extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: const CustomAppBar(title: 'Schedule'),
-        body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          const SizedBox(height: 40),
-          const Text(
-            'CURRENT CLASS ASSIGNMENT',
-            style: TextStyle(
-              fontFamily: 'Lato',
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: const Text(
-                    '2ND SEMESTER SY 2023-2024',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 40),
+              const Text(
+                'CURRENT CLASS ASSIGNMENT',
+                style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
                 ),
-                Table(
-                  columnWidths: const {
-                    0: FlexColumnWidth(),
-                    1: FlexColumnWidth(),
-                    2: FlexColumnWidth(),
-                    3: FlexColumnWidth(),
-                    4: FlexColumnWidth(),
-                  },
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    TableRow(
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text(
+                        '2ND SEMESTER SY 2023-2024',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Table(
+                      columnWidths: const {
+                        0: FlexColumnWidth(20.0),
+                        1: FlexColumnWidth(30.0),
+                        2: FlexColumnWidth(25.0),
+                        3: FixedColumnWidth(85.0),
+                        4: FlexColumnWidth(15.0),
+                      },
                       children: [
-                        TableCell(
-                          child: Container(
-                            height: 60,
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: const Text(
-                              'Class Code',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ),
+                        TableRow(
+                          children: [
+                            _buildTableHeader('Class Code'),
+                            _buildTableHeader('Course Code & Section'),
+                            _buildTableHeader('Course Title'),
+                            _buildTableHeader('Class Schedule'),
+                            _buildTableHeader('Credits'),
+                          ],
                         ),
-                        TableCell(
-                          child: Container(
-                            height: 60,
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: const Text(
-                              'Course Code & Section',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.blue,
-                              ),
-                              textAlign: TextAlign.center,
+                        for (var assignment in assignments)
+                          TableRow(
+                            decoration: const BoxDecoration(
+                              color: Color.fromARGB(255, 255, 255, 255),
                             ),
-                          ),
-                        ),
-                        TableCell(
-                          child: Container(
-                            height: 60,
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: const Text(
-                              'Course Title',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.blue,
+                            children: [
+                              _buildTableCell(assignment.classCode),
+                              _buildTableCell(assignment.courseCodeSection),
+                              _buildTableCell(assignment.courseTitle),
+                              _buildTableCellWithLines(
+                                _formatClassSchedule(assignment.classSchedule),
                               ),
-                              textAlign: TextAlign.center,
-                            ),
+                              _buildTableCell(assignment.credits),
+                            ],
                           ),
-                        ),
-                        TableCell(
-                          child: Container(
-                            height: 60,
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: const Text(
-                              'Class Schedule',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.blue,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                        TableCell(
-                          child: Container(
-                            height: 60,
-                            alignment: Alignment.center,
-                            padding: const EdgeInsets.symmetric(vertical: 10),
-                            child: const Text(
-                              'Credits',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.blue,
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
-                    for (var assignment in assignments)
-                      TableRow(
-                        decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 255, 255, 255),
+                    Container(
+                      alignment: Alignment.center,
+                      child: const Center(
+                        child: Text(
+                          '-------------------NO ENTRY FOLLOWS-------------------',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.red,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        children: [
-                          TableCell(
-                            child: Container(
-                              height: 60,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Text(
-                                assignment.classCode,
-                                style: const TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                          TableCell(
-                            child: Container(
-                              height: 60,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Text(
-                                assignment.courseCodeSection,
-                                style: const TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                          TableCell(
-                            child: Container(
-                              height: 60,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Text(
-                                assignment.courseTitle,
-                                style: const TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                          TableCell(
-                            child: Container(
-                              height: 60,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(vertical: 6),
-                              child: Text(
-                                assignment.classSchedule,
-                                style: const TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                          TableCell(
-                            child: Container(
-                              height: 60,
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: Text(
-                                assignment.credits,
-                                style: const TextStyle(fontSize: 12),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ],
                       ),
+                    ),
+                    Container(
+                      height: 60,
+                      alignment: Alignment.center,
+                      child: Center(
+                        child: Text(
+                          'Total Credits: ${_calculateTotalCredits()}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12,
+                            color: Colors.black,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Center(
-                    child: Text(
-                      '-------------------NO ENTRY FOLLOWS-------------------',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        color: Colors.red,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 60,
-                  alignment: Alignment.center,
-                  child: Center(
-                    child: Text(
-                      'Total Credits: ${_calculateTotalCredits()}',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
-                        color: Colors.black,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ]),
+        ),
         floatingActionButton: Align(
           alignment: Alignment.bottomRight,
           child: Container(
@@ -259,5 +137,82 @@ class Schedule extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _buildTableHeader(String text) {
+    return TableCell(
+      child: Container(
+        height: 60,
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        child: Text(
+          text,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 12,
+            color: Colors.blue,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTableCell(String text) {
+    return TableCell(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        alignment: Alignment.center,
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 12),
+          textAlign: TextAlign.center,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTableCellWithLines(List<String> lines) {
+    return TableCell(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: lines
+              .map((line) => Text(
+                    line,
+                    style: const TextStyle(fontSize: 12),
+                    textAlign: TextAlign.center,
+                  ))
+              .toList(),
+        ),
+      ),
+    );
+  }
+
+  List<String> _formatClassSchedule(String schedule) {
+    List<String> parts = schedule.split(' ');
+    if (parts.length == 4) {
+      return parts;
+    } else {
+      List<String> formatted = [];
+      String currentLine = '';
+      for (String part in parts) {
+        if (currentLine.isEmpty) {
+          currentLine = part;
+        } else if (currentLine.contains(RegExp(r'[a-zA-Z]')) &&
+            !part.contains(RegExp(r'[a-zA-Z]'))) {
+          currentLine += ' $part';
+        } else {
+          formatted.add(currentLine);
+          currentLine = part;
+        }
+      }
+      if (currentLine.isNotEmpty) {
+        formatted.add(currentLine);
+      }
+      return formatted;
+    }
   }
 }
