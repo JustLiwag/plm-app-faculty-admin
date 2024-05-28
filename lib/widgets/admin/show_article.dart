@@ -28,7 +28,7 @@ class ShowArticleScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              article.statement,
+              article.title,
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

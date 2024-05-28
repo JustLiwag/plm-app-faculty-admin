@@ -35,11 +35,14 @@ void showEditArticleDialog(BuildContext context, Article article) {
                     color: Colors.grey,
                   ),
                 ),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 40,
                   child: TextFormField(
                     controller: titleController,
+                    maxLines: 1,
                     decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                       hintText: 'Article Title',
                       hintStyle: const TextStyle(fontSize: 14),
                       border: OutlineInputBorder(
@@ -96,11 +99,13 @@ void showEditArticleDialog(BuildContext context, Article article) {
                     color: Colors.grey,
                   ),
                 ),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 270,
                   child: TextFormField(
                     controller: descriptionController,
                     decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                       hintText: 'Enter Article Content',
                       hintStyle: const TextStyle(fontSize: 14),
                       border: OutlineInputBorder(
@@ -119,11 +124,14 @@ void showEditArticleDialog(BuildContext context, Article article) {
                     color: Colors.grey,
                   ),
                 ),
+                const SizedBox(height: 10),
                 SizedBox(
                   height: 40,
                   child: TextFormField(
                     controller: statementController,
+                    maxLines: 1,
                     decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
                       hintText: 'Article Statement',
                       hintStyle: const TextStyle(fontSize: 14),
                       border: OutlineInputBorder(
