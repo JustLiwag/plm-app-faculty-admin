@@ -60,7 +60,6 @@ class SubjectClassPage extends StatelessWidget {
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
               height: 0.09,
               letterSpacing: 0.25,
@@ -72,7 +71,6 @@ class SubjectClassPage extends StatelessWidget {
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w400,
               height: 0.09,
               letterSpacing: 0.25,
@@ -160,7 +158,6 @@ class SubjectClassPage extends StatelessWidget {
                                             style: const TextStyle(
                                               color: Color(0xFF006699),
                                               fontSize: 12,
-                                              fontFamily: 'Manrope',
                                               fontWeight: FontWeight.w800,
                                               height: 1.0,
                                               letterSpacing: 0.10,
@@ -172,7 +169,6 @@ class SubjectClassPage extends StatelessWidget {
                                             style: const TextStyle(
                                               color: Color(0xFF393939),
                                               fontSize: 8,
-                                              fontFamily: 'Manrope',
                                               fontWeight: FontWeight.w400,
                                               height: 2,
                                               letterSpacing: 0.25,
@@ -184,7 +180,6 @@ class SubjectClassPage extends StatelessWidget {
                                             style: const TextStyle(
                                               color: Color(0xFF393939),
                                               fontSize: 8,
-                                              fontFamily: 'Manrope',
                                               fontWeight: FontWeight.w400,
                                               height: 1.4,
                                               letterSpacing: 0.25,

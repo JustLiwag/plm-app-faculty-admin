@@ -56,7 +56,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w600,
               height: 0.09,
               letterSpacing: 0.25,
@@ -68,7 +67,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 14,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w400,
               height: 0.09,
               letterSpacing: 0.25,
@@ -178,7 +176,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                             style: TextStyle(
                               color: Color(0xFF006699),
                               fontSize: 16,
-                              fontFamily: 'Manrope',
                               fontWeight: FontWeight.w700,
                               height: 0.09,
                               letterSpacing: 0.25,
@@ -212,7 +209,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                             style: TextStyle(
                               color: Color(0xFF006699),
                               fontSize: 16,
-                              fontFamily: 'Manrope',
                               fontWeight: FontWeight.w700,
                               height: 0.09,
                               letterSpacing: 0.25,
@@ -270,7 +266,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                             style: TextStyle(
                               color: Color(0xFF006699),
                               fontSize: 16,
-                              fontFamily: 'Manrope',
                               fontWeight: FontWeight.w700,
                               height: 0.09,
                               letterSpacing: 0.25,
@@ -300,7 +295,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                                    style: const TextStyle(
                                      color: Colors.black,
                                      fontSize: 12,
-                                     fontFamily: 'Manrope',
                                      fontWeight: FontWeight.w500,
                                      letterSpacing: 0.25,
                                    ),
@@ -339,7 +333,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                             style: TextStyle(
                               color: Color(0xFF006699),
                               fontSize: 16,
-                              fontFamily: 'Manrope',
                               fontWeight: FontWeight.w700,
                               height: 0.09,
                               letterSpacing: 0.25,
@@ -364,7 +357,6 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 12,
-                                fontFamily: 'Manrope',
                                 fontWeight: FontWeight.w700,
                                 letterSpacing: 0.25,
                               ))
@@ -381,7 +373,7 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10), // Adjust the top padding as needed
+                    padding: const EdgeInsets.only(top: 10),
                     child: ElevatedButton(
                       onPressed: () {
                         // Insert your logic here for when the button is pressed
@@ -394,14 +386,13 @@ class ChangeGradesPageState extends State<ChangeGradesPage>{
                         ),
                       ),
                       child: const Padding(
-                        padding: EdgeInsets.all(10), // Adjust the padding values as needed
+                        padding: EdgeInsets.all(10), 
                         child: Text(
                           'SUBMIT CHANGES',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
-                            fontFamily: 'Manrope',
                             fontWeight: FontWeight.w700,
                             height: 1,
                             letterSpacing: -0.90,

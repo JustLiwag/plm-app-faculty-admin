@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mysample/data/faculty/courses_data.dart';
 import 'package:mysample/models/faculty/classlist_model.dart';
 import 'package:mysample/utils/app_styles.dart';
-import '../change_grades/grades_login.dart';
 
 class Classlist extends StatelessWidget {
   const Classlist({super.key});
@@ -25,7 +24,6 @@ class Classlist extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF393939),
                     fontSize: 15,
-                    fontFamily: 'Manrope',
                     fontWeight: FontWeight.w700,
                     height: 1,
                     letterSpacing: 0.25,
@@ -39,7 +37,6 @@ class Classlist extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF006699),
                       fontSize: 15,
-                      fontFamily: 'Manrope',
                       fontWeight: FontWeight.w900,
                       height: 1,
                       letterSpacing: 0.25,
@@ -54,43 +51,6 @@ class Classlist extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return CourseContainer(course: courses[index]);
                   },
-                ),
-                const SizedBox(height: 30),
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const GradesLogin()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(150, 39),
-                        backgroundColor: const Color(0xFF006699),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          'REPORT OF GRADES',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Manrope',
-                            fontWeight: FontWeight.w700,
-                            height: 1,
-                            letterSpacing: -0.90,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -149,7 +109,6 @@ class CourseContainer extends StatelessWidget {
                         style: const TextStyle(
                           color: Color(0xFF006699),
                           fontSize: 12,
-                          fontFamily: 'Manrope',
                           fontWeight: FontWeight.w800,
                           height: 1.0,
                           letterSpacing: 0.10,
@@ -164,7 +123,6 @@ class CourseContainer extends StatelessWidget {
                         style: const TextStyle(
                           color: Colors.black,
                           fontSize: 9,
-                          fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
                           height: 2,
                           letterSpacing: 0.25,
@@ -179,7 +137,6 @@ class CourseContainer extends StatelessWidget {
                         style: const TextStyle(
                           color: Colors.black,
                           fontSize: 9,
-                          fontFamily: 'Manrope',
                           fontWeight: FontWeight.w500,
                           height: 1.4,
                           letterSpacing: 0.25,

@@ -50,7 +50,6 @@ class GradesLoginPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color(0xFF006699),
                       fontSize: 15,
-                      fontFamily: 'Manrope',
                       fontWeight: FontWeight.w700,
                       height: 0,
                     ),
@@ -76,7 +75,6 @@ class GradesLoginPage extends StatelessWidget {
                   obscureText: true, 
                   style: const TextStyle(
                       fontSize: 14,
-                      fontFamily: 'Manrope',
                       color: Colors.black
                   ),
                   decoration: InputDecoration(
@@ -85,7 +83,6 @@ class GradesLoginPage extends StatelessWidget {
                     hintStyle: const TextStyle(
                       color: Color(0xFFA5A5A5),
                       fontSize: 14,
-                      fontFamily: 'Manrope',
                       fontWeight: FontWeight.w400,
                     ),
                     suffixIcon: GestureDetector(
@@ -124,7 +121,6 @@ class GradesLoginPage extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,
-                        fontFamily: 'Manrope',
                         fontWeight: FontWeight.w700,
                       ),
                     ),

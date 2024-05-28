@@ -70,7 +70,6 @@ class StudentPage extends StatelessWidget {
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 15,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w700,
               height: 0.09,
               letterSpacing: 0.25,
@@ -82,7 +81,6 @@ class StudentPage extends StatelessWidget {
             style: const TextStyle(
               color: Color(0xFF393939),
               fontSize: 15,
-              fontFamily: 'Manrope',
               fontWeight: FontWeight.w700,
               height: 0.09,
               letterSpacing: 0.25,
