@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/utils/app_styles.dart';
 import 'classlist_report_of_grades.dart';
 import 'student.dart';
 class SubjectData {
@@ -91,7 +92,7 @@ class SubjectClassPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: const CustomAppBar(title: 'Subject Class'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),

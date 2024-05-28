@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
 
 void main() {
@@ -12,44 +13,6 @@ class ChangeGrades extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: ChangeGradesPage(),
-    );
-  }
-}
-
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
-
-  @override
-  Size get preferredSize => const Size.fromHeight(60);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text(
-        'Report of Grades',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontFamily: 'Lato',
-          fontWeight: FontWeight.w700,
-        ),
-      ),
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => StudentPage()),
-          );
-          // Handle arrow back button press
-        },
-      ),
-      backgroundColor: const Color(0xFF006699),
-      shape: const RoundedRectangleBorder(),
     );
   }
 }
@@ -125,7 +88,7 @@ class _ChangeGradesPageState extends State<ChangeGradesPage>{
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: const CustomAppBar(title: 'Change Grades'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),

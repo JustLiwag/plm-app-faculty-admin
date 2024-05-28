@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/utils/app_styles.dart';
 import 'input_grades.dart';
 import 'subject_class.dart';
 import 'change_grades.dart';
@@ -60,45 +61,6 @@ class Student extends StatelessWidget {
   }
 }
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
-
-  @override
-  Size get preferredSize => const Size.fromHeight(60);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text(
-        'Report of Grades',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 16,
-          fontFamily: 'Manrope',
-          fontWeight: FontWeight.w700,
-        ),
-      ),
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => SubjectClassPage(),
-            ),
-          ); // Handle arrow back button press
-        },
-      ),
-      backgroundColor: const Color(0xFF006699),
-      shape: const RoundedRectangleBorder(),
-    );
-  }
-}
-
 class StudentPage extends StatelessWidget {
   const StudentPage({Key? key}) : super(key: key);
 
@@ -139,7 +101,7 @@ class StudentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(),
+        appBar: const CustomAppBar(title: 'Student'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 0, left: 16, right: 16),
