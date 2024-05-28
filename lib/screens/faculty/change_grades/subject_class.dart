@@ -4,40 +4,8 @@ import 'package:mysample/data/faculty/subject_data.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
 
-
 class SubjectClassPage extends StatelessWidget {
   const SubjectClassPage({Key? key}) : super(key: key);
-
-  Widget buildRow(String title, String content) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 35),
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              height: 0.09,
-              letterSpacing: 0.25,
-            ),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              height: 0.09,
-              letterSpacing: 0.25,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,17 +38,23 @@ class SubjectClassPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: studentDataList.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 8, left: 16, right: 16), 
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Container(
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StudentPage())),
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: studentDataList.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 8, left: 16, right: 16),
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Container(
                               width: 350,
                               height: 70,
                               decoration: BoxDecoration(
@@ -106,10 +80,13 @@ class SubjectClassPage extends StatelessWidget {
                                   SizedBox(
                                     width: 270,
                                     child: Padding(
-                                      padding: const EdgeInsets.only(left: 16, right: 8),
+                                      padding: const EdgeInsets.only(
+                                          left: 16, right: 8),
                                       child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Text(
                                             subjectList[index].courseCode,
@@ -150,9 +127,10 @@ class SubjectClassPage extends StatelessWidget {
                                   GestureDetector(
                                     onTap: () {
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(builder: (context) => const StudentPage()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const StudentPage()));
                                     },
                                     child: Container(
                                       width: 28,
@@ -176,13 +154,45 @@ class SubjectClassPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Widget buildRow(String title, String content) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 35),
+      child: Row(
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              color: Color(0xFF393939),
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+              height: 0.09,
+              letterSpacing: 0.25,
+            ),
+          ),
+          const SizedBox(width: 8),
+          Text(
+            content,
+            style: const TextStyle(
+              color: Color(0xFF393939),
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              height: 0.09,
+              letterSpacing: 0.25,
+            ),
+          ),
+        ],
       ),
     );
   }

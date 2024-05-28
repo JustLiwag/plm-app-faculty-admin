@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/data/faculty/student_data.dart';
 import 'package:mysample/utils/app_styles.dart';
-
 import 'input_grades.dart';
-import 'change_grades.dart';
-
 
 class StudentPage extends StatelessWidget {
   const StudentPage({Key? key}) : super(key: key);
@@ -71,16 +68,16 @@ class StudentPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                // Use ListView.builder to generate containers for each student data
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: studentDataList.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          bottom: 20, left: 16, right: 16),
                       child: Stack(
-                        alignment: Alignment.center, // Center the children vertically and horizontally
+                        alignment: Alignment.center,
                         children: [
                           Container(
                             width: 350,
@@ -111,7 +108,8 @@ class StudentPage extends StatelessWidget {
                                   right: 44,
                                   bottom: 4,
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       SizedBox(
                                         width: double.infinity,
@@ -165,11 +163,10 @@ class StudentPage extends StatelessWidget {
                                   child: GestureDetector(
                                     onTap: () {
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => const InputGradesPage(),
-                                        ),
-                                      );
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const InputGradesPage()));
                                     },
                                     child: Container(
                                       width: 28,
@@ -191,30 +188,32 @@ class StudentPage extends StatelessWidget {
                             ),
                           ),
                           Positioned(
-                            right: 80, // Adjust the horizontal position as needed
-                            bottom: 27, // Adjust the vertical position as needed
+                            right: 80,
+                            bottom: 27,
                             child: Container(
                               width: 50,
                               height: 15,
                               decoration: ShapeDecoration(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  side: const BorderSide(width: 1, color: Color(0xFF006699)),
+                                  side: const BorderSide(
+                                      width: 1, color: Color(0xFF006699)),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
                             ),
                           ),
                           Positioned(
-                            right: 80, // Adjust the horizontal position as needed
-                            bottom: 10, // Adjust the vertical position as needed
+                            right: 80,
+                            bottom: 10,
                             child: Container(
                               width: 50,
                               height: 15,
                               decoration: ShapeDecoration(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  side: const BorderSide(width: 1, color: Color(0xFF006699)),
+                                  side: const BorderSide(
+                                      width: 1, color: Color(0xFF006699)),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
@@ -224,50 +223,6 @@ class StudentPage extends StatelessWidget {
                       ),
                     );
                   },
-                ),
-
-
-                const SizedBox(height: 20),
-                // Add space between the list and the button
-                Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Align(
-                    alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const ChangeGradesPage(),
-                          ),
-                        );
-                        // Insert your logic here for when the button is pressed
-                      },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(150, 39),
-                        backgroundColor: const Color(0xFF006699),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(10),
-                        // Adjust the padding values as needed
-                        child: Text(
-                          'CHANGE GRADES',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w700,
-                            height: 1,
-                            letterSpacing: -0.90,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ],
             ),
