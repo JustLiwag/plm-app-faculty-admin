@@ -37,43 +37,43 @@ class GalleryScreen extends StatelessWidget {
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: gallery.length,
+            itemCount: announcements.length,
             itemBuilder: (context, index) {
+              final article = announcements[index];
               return GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          ShowArticleScreen(article: announcements[index]),
+                      builder: (context) => ShowArticleScreen(article: article),
                     ),
                   );
                 },
                 child: Column(
                   children: [
-                    index == 0
+                    article.imagePath != null
                         ? BoxWithHeaderImage(
-                            title: announcements[index].title,
-                            description: announcements[index].description,
+                            title: article.title,
+                            description: article.description,
                             onReadMore: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ShowArticleScreen(
-                                      article: announcements[index]),
+                                  builder: (context) =>
+                                      ShowArticleScreen(article: article),
                                 ),
                               );
                             },
                           )
                         : BoxWithoutHeaderImage(
-                            title: announcements[index].title,
-                            description: announcements[index].description,
+                            title: article.title,
+                            description: article.description,
                             onReadMore: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ShowArticleScreen(
-                                      article: announcements[index]),
+                                  builder: (context) =>
+                                      ShowArticleScreen(article: article),
                                 ),
                               );
                             },

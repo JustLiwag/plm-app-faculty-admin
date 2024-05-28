@@ -32,47 +32,55 @@ class NewsLetterScreen extends StatelessWidget {
                 .labelMedium
                 ?.copyWith(color: AppTheme.baseBlack),
           ),
+          const SizedBox(height: 10),
+          Text(
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nEget nunc scelerisque viverra mauris in aliquam sem fringilla. Nunc id cursus metus aliquam. ',
+            style: Theme.of(context)
+                .textTheme
+                .labelMedium
+                ?.copyWith(color: AppTheme.baseBlack),
+          ),
           const SizedBox(height: 20),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: newsletter.length,
+            itemCount: announcements.length,
             itemBuilder: (context, index) {
+              final article = announcements[index];
               return GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>
-                          ShowArticleScreen(article: announcements[index]),
+                      builder: (context) => ShowArticleScreen(article: article),
                     ),
                   );
                 },
                 child: Column(
                   children: [
-                    index == 0
+                    article.imagePath != null
                         ? BoxWithHeaderImage(
-                            title: announcements[index].title,
-                            description: announcements[index].description,
+                            title: article.title,
+                            description: article.description,
                             onReadMore: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ShowArticleScreen(
-                                      article: announcements[index]),
+                                  builder: (context) =>
+                                      ShowArticleScreen(article: article),
                                 ),
                               );
                             },
                           )
                         : BoxWithoutHeaderImage(
-                            title: announcements[index].title,
-                            description: announcements[index].description,
+                            title: article.title,
+                            description: article.description,
                             onReadMore: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ShowArticleScreen(
-                                      article: announcements[index]),
+                                  builder: (context) =>
+                                      ShowArticleScreen(article: article),
                                 ),
                               );
                             },

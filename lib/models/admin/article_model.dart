@@ -9,7 +9,7 @@ class Article {
 
   Article({
     required this.title,
-    required this.imagePath,
+    this.imagePath,
     required this.statement,
     required this.description,
     required this.presidentName,
