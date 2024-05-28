@@ -7,14 +7,14 @@ import 'enrollment_two_screen.dart';
 class EnrollmentOneScreen extends StatefulWidget {
   final String selectedCollege;
 
-  EnrollmentOneScreen({Key? key, required this.selectedCollege})
+  const EnrollmentOneScreen({Key? key, required this.selectedCollege})
       : super(key: key);
 
   @override
-  _EnrollmentOneScreenState createState() => _EnrollmentOneScreenState();
+  EnrollmentOneScreenState createState() => EnrollmentOneScreenState();
 }
 
-class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
+class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
   String? dropdownValue;
 
   @override
@@ -37,7 +37,7 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                 width: 165.h,
               ),
               SizedBox(height: 27.v),
-              Container(
+              SizedBox(
                 width: 305.h,
                 child: Text(
                   widget.selectedCollege,
@@ -57,7 +57,7 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                 margin: EdgeInsets.symmetric(horizontal: 37.h),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer.copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFF006699),
+                  backgroundColor: const Color(0XFF006699),
                 ),
                 onPressed: () {
                   if (dropdownValue == null) {
@@ -97,13 +97,13 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
             width: double.infinity,
             height: 60.0,
             decoration: BoxDecoration(
-              border: Border.all(color: Color.fromRGBO(0, 102, 153, 100), width: 3.0),
+              border: Border.all(color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
               borderRadius: BorderRadius.circular(10),
             ),
             child: DropdownButton<String>(
               isExpanded: true,
               value: dropdownValue,
-              hint: Text("    Select Year Level"),
+              hint: const Text("    Select Year Level"),
               onChanged: (String? newValue) {
                 setState(() {
                   dropdownValue = newValue;
@@ -124,7 +124,7 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Text(
                       value,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         height: 1.2,
                       ),
@@ -134,7 +134,7 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
               }).toList(),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
         ],
       ),
     );
@@ -145,11 +145,11 @@ class _EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Warning"),
-          content: Text("Please select a year level before submitting."),
+          title: const Text("Warning"),
+          content: const Text("Please select a year level before submitting."),
           actions: <Widget>[
             TextButton(
-              child: Text("OK"),
+              child: const Text("OK"),
               onPressed: () {
                 Navigator.of(context).pop();
               },

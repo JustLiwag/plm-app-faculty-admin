@@ -1,17 +1,19 @@
+// ignore_for_file: duplicate_ignore
+
 import 'package:flutter/material.dart';
 // These are the Viewport values of your Figma Design.
 
 // These are used in the code as a reference to create your UI Responsively.
-const num FIGMA_DESIGN_WIDTH = 360;
-const num FIGMA_DESIGN_HEIGHT = 800;
-const num FIGMA_DESIGN_STATUS_BAR = 0;
+const num figmDesignWidth = 360;
+const num figmDesignHeight = 800;
+const num figmDesignStatusBar = 0;
 
 extension ResponsiveExtension on num {
   double get _width => SizeUtils.width;
   double get _height => SizeUtils.height;
-  double get h => ((this * _width) / FIGMA_DESIGN_WIDTH);
+  double get h => ((this * _width) / figmDesignWidth);
   double get v =>
-      (this * _height) / (FIGMA_DESIGN_HEIGHT - FIGMA_DESIGN_STATUS_BAR);
+      (this * _height) / (figmDesignHeight - figmDesignStatusBar);
   double get adaptSize {
     var height = v;
     var width = h;
@@ -23,7 +25,7 @@ extension ResponsiveExtension on num {
 
 extension FormatExtension on double {
   double toDoubleValue({int fractionDigits = 2}) {
-    return double.parse(this.toStringAsFixed(fractionDigits));
+    return double.parse(toStringAsFixed(fractionDigits));
   }
 
   double isNonZero({num defaultValue = 0.0}) {
@@ -81,11 +83,11 @@ class SizeUtils {
     orientation = currentOrientation;
     if (orientation == Orientation.portrait) {
       width =
-          boxConstraints.maxWidth.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
+          boxConstraints.maxWidth.isNonZero(defaultValue: figmDesignWidth);
       height = boxConstraints.maxHeight.isNonZero();
     } else {
       width =
-          boxConstraints.maxHeight.isNonZero(defaultValue: FIGMA_DESIGN_WIDTH);
+          boxConstraints.maxHeight.isNonZero(defaultValue: figmDesignWidth);
       height = boxConstraints.maxWidth.isNonZero();
     }
     deviceType = DeviceType.mobile;

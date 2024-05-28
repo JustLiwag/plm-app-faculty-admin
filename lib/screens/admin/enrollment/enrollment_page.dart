@@ -5,11 +5,13 @@ import '../../../widgets/admin/enrollment/custom_elevated_button.dart';
 import 'enrollment_one_screen.dart'; // ignore_for_file: must_be_immutable
 
 class EnrollmentPage extends StatefulWidget {
+  const EnrollmentPage({super.key});
+
   @override
-  _EnrollmentPageState createState() => _EnrollmentPageState();
+  EnrollmentPageState createState() => EnrollmentPageState();
 }
 
-class _EnrollmentPageState extends State<EnrollmentPage> {
+class EnrollmentPageState extends State<EnrollmentPage> {
   String? dropdownValue;
   bool isCollegeSelected = false;
 
@@ -40,7 +42,7 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
                 margin: EdgeInsets.symmetric(horizontal: 20.h),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer.copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFF006699),
+                  backgroundColor: const Color(0XFF006699),
                 ),
                 onPressed: () {
                   if (isCollegeSelected) {
@@ -74,18 +76,18 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
           "SELECT COLLEGE",
           style: Theme.of(context).textTheme.titleSmall,
         ),
-        SizedBox(height: 12),
+        const SizedBox(height: 12),
         Container(
           width: double.infinity,
           height: 60.0,
           decoration: BoxDecoration(
-            border: Border.all(color: Color.fromRGBO(0, 102, 153, 100), width: 3.0),
+            border: Border.all(color: const Color.fromRGBO(0, 102, 153, 100), width: 3.0),
             borderRadius: BorderRadius.circular(10),
           ),
           child: DropdownButton<String>(
             isExpanded: true,
             value: dropdownValue,
-            hint: Text("    Select College"),
+            hint: const Text("    Select College"),
             onChanged: (String? newValue) {
               setState(() {
                 dropdownValue = newValue;
@@ -111,7 +113,7 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   child: Text(
                     value,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
                       height: 1.2,
                     ),
@@ -121,7 +123,7 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
             }).toList(),
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
       ],
     );
   }
@@ -132,13 +134,13 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             "Warning",
             style: TextStyle(
               color: Color(0xFF006699),
             ),
           ),
-          content: Text(
+          content: const Text(
             "Please select a college before submitting.",
             style: TextStyle(
               color: Colors.black,
@@ -146,7 +148,7 @@ class _EnrollmentPageState extends State<EnrollmentPage> {
           ),
           actions: <Widget>[
             TextButton(
-              child: Text(
+              child: const Text(
                 "OK",
                 style: TextStyle(
                   color: Color(0xFF006699),

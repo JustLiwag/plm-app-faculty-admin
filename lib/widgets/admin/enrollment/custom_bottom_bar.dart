@@ -5,18 +5,14 @@ import '../../../screens/admin/enrollment/enrollment_page.dart';
 enum BottomBarEnum { Home, Sfe, Enrollment, Admission, Announcement }
 // ignore_for_file: must_be_immutable
 
-// ignore_for_file: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({this.onChanged});
+  CustomBottomBar({super.key, this.onChanged});
 
   Function(BottomBarEnum)? onChanged;
 
   @override
   CustomBottomBarState createState() => CustomBottomBarState();
 }
-// ignore_for_file: must_be_immutable
-
-// ignore_for_file: must_be_immutable
 class CustomBottomBarState extends State<CustomBottomBar> {
   int selectedIndex = 0;
 
@@ -67,7 +63,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
             color: appTheme.black900.withOpacity(0.2),
             spreadRadius: 2.h,
             blurRadius: 2.h,
-            offset: Offset(
+            offset: const Offset(
               0,
               0,
             ),
@@ -138,9 +134,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
     );
   }
 }
-// ignore_for_file: must_be_immutable
 
-// ignore_for_file: must_be_immutable
 class BottomMenuModel {
   BottomMenuModel(
       {required this.icon,
@@ -179,19 +173,21 @@ String getCurrentRoute(BottomBarEnum type) {
 Widget getCurrentPage(String currentRoute) {
   switch (currentRoute) {
     case AppRoutes.enrollmentPage:
-      return EnrollmentPage();
+      return const EnrollmentPage();
     default:
-      return DefaultWidget();
+      return const DefaultWidget();
   }
 }
 
 class DefaultWidget extends StatelessWidget {
+  const DefaultWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffffffff),
-      padding: EdgeInsets.all(10),
-      child: Center(
+      color: const Color(0xffffffff),
+      padding: const EdgeInsets.all(10),
+      child: const Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,

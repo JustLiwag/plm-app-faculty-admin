@@ -30,7 +30,6 @@ environment:
 dependencies: 
   flutter: 
     sdk: flutter
-  sizer: ^2.0.15
   pdf: ^3.3.0
   printing: ^5.5.0
   flutter_speed_dial: ^7.0.0

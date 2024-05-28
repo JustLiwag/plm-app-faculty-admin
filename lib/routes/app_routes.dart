@@ -17,8 +17,8 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     enrollmentContainerScreen: (context) => EnrollmentContainerScreen(),
-    enrollmentOneScreen: (context) => EnrollmentOneScreen(selectedCollege: '',),
-    enrollmentTwoScreen: (context) => EnrollmentTwoScreen(selectedYearLevel: '', selectedCollege: ''),
+    enrollmentOneScreen: (context) => const EnrollmentOneScreen(selectedCollege: '',),
+    enrollmentTwoScreen: (context) => const EnrollmentTwoScreen(selectedYearLevel: '', selectedCollege: ''),
     initialRoute: (context) => EnrollmentContainerScreen()
   };
 }

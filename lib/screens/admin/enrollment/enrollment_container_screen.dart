@@ -3,7 +3,6 @@ import '../../../core/app_export.dart';
 import '../../../widgets/admin/enrollment/custom_bottom_bar.dart';
 import 'enrollment_page.dart'; // ignore_for_file: must_be_immutable
 
-// ignore_for_file: must_be_immutable
 class EnrollmentContainerScreen extends StatelessWidget {
   EnrollmentContainerScreen({Key? key})
       : super(
@@ -21,7 +20,7 @@ class EnrollmentContainerScreen extends StatelessWidget {
           initialRoute: AppRoutes.enrollmentPage,
           onGenerateRoute: (routeSetting) => PageRouteBuilder(
             pageBuilder: (ctx, ani, ani1) => getCurrentPage(routeSetting.name!),
-            transitionDuration: Duration(seconds: 0),
+            transitionDuration: const Duration(seconds: 0),
           ),
         ),
         bottomNavigationBar: _buildBottombar(context),
@@ -61,9 +60,9 @@ class EnrollmentContainerScreen extends StatelessWidget {
   Widget getCurrentPage(String currentRoute) {
     switch (currentRoute) {
       case AppRoutes.enrollmentPage:
-        return EnrollmentPage();
+        return const EnrollmentPage();
       default:
-        return EnrollmentPage();
+        return const EnrollmentPage();
     }
   }
 }

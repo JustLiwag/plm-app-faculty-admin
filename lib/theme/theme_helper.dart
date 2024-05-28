@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../core/app_export.dart';
 
@@ -11,18 +10,18 @@ ThemeData get theme => ThemeHelper().themeData();
 
 class ThemeHelper {
   // A map of custom color themes supported by the app
-  Map<String, PrimaryColors> _supportedCustomColor = {
+  final Map<String, PrimaryColors> _supportedCustomColor = {
     'primary': PrimaryColors()
   };
 
   // A map of color schemes supported by the app
-  Map<String, ColorScheme> _supportedColorScheme = {
+  final Map<String, ColorScheme> _supportedColorScheme = {
     'primary': ColorSchemes.primaryColorScheme
   };
 
-  /// Changes the app theme to [_newTheme].
-  void changeTheme(String _newTheme) {
-    _appTheme = _newTheme;
+  /// Changes the app theme to [newTheme].
+  void changeTheme(String newTheme) {
+    _appTheme = newTheme;
   }
 
   /// Returns the primary colors for the current theme.
@@ -111,7 +110,7 @@ class TextThemes {
 
 /// Class containing the supported color schemes.
 class ColorSchemes {
-  static final primaryColorScheme = ColorScheme.light(
+  static const primaryColorScheme = ColorScheme.light(
     primary: Color(0xFF006699), // Updated to the desired color
     primaryContainer: Color(0XFFA31920),
     secondaryContainer: Color(0XFF62DF6E),
@@ -124,14 +123,14 @@ class ColorSchemes {
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   // Amber
-  Color get amber500 => Color(0XFFFFC909);
+  Color get amber500 => const Color(0XFFFFC909);
 // Black
-  Color get black900 => Color(0XFF000000);
+  Color get black900 => const Color(0XFF000000);
 // BlueGray
-  Color get blueGray400 => Color(0XFF888888);
+  Color get blueGray400 => const Color(0XFF888888);
 // Gray
-  Color get gray400 => Color(0XFFC8C8C8);
-  Color get gray800 => Color(0XFF3F3F3F);
+  Color get gray400 => const Color(0XFFC8C8C8);
+  Color get gray800 => const Color(0XFF3F3F3F);
 // LightBlue
-  Color get lightBlue900 => Color(0XFF006699);
+  Color get lightBlue900 => const Color(0XFF006699);
 }

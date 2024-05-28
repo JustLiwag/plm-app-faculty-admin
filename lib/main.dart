@@ -5,7 +5,7 @@ import 'package:mysample/screens/admin/onboarding/onboarding_admin.dart';
 import 'package:mysample/utils/app_styles.dart';
 // import 'package:mysample/widgets/base_layout.dart';
 import 'package:flutter/services.dart';
-import 'package:sizer/sizer.dart';
+import 'core/app_export.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {

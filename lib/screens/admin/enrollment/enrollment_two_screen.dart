@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -22,11 +24,11 @@ class StudentDataSource extends DataTableSource {
       DataCell(
         InkWell(
           onTap: () => onSelect(student),
-          child: Container(
+          child: SizedBox(
             width: 150.0,
             child: Text(
               student.name,
-              style: TextStyle(fontSize: 14, height: 1.2),
+              style: const TextStyle(fontSize: 14, height: 1.2),
               softWrap: true,
               overflow: TextOverflow.visible,
               maxLines: 3,
@@ -75,13 +77,13 @@ class EnrollmentTwoScreen extends StatefulWidget {
   final String selectedYearLevel;
   final String selectedCollege;
 
-  EnrollmentTwoScreen({Key? key, required this.selectedYearLevel, required this.selectedCollege}) : super(key: key);
+  const EnrollmentTwoScreen({Key? key, required this.selectedYearLevel, required this.selectedCollege}) : super(key: key);
 
   @override
-  _EnrollmentTwoScreenState createState() => _EnrollmentTwoScreenState();
+  EnrollmentTwoScreenState createState() => EnrollmentTwoScreenState();
 }
 
-class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
+class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
   String searchQuery = "";
   String selectedFilter = "All";
   List<Student> students = [];
@@ -203,21 +205,21 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Student Details"),
+          title: const Text("Student Details"),
           content: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("STUDENT ID: ${student.number}", style: TextStyle(fontWeight: FontWeight.bold)),
-              Text("STUDENT NAME: ${student.name}", style: TextStyle(fontWeight: FontWeight.bold)),
-              Divider(color: Colors.black),
+              Text("STUDENT ID: ${student.number}", style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text("STUDENT NAME: ${student.name}", style: const TextStyle(fontWeight: FontWeight.bold)),
+              const Divider(color: Colors.black),
               ...student.steps.map((step) => _buildStepDetail(step.step, step.description, step.status)).toList(),
               _buildStepDetail("Status", "Enrolled?", student.status == "Enrolled" ? "ENROLLED" : "NOT ENROLLED"),
             ],
           ),
           actions: [
             TextButton(
-              child: Text("Close"),
+              child: const Text("Close"),
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -234,8 +236,8 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(step, style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
-          Text(description, style: TextStyle(color: Colors.black)),
+          Text(step, style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+          Text(description, style: const TextStyle(color: Colors.black)),
           Text(status, style: TextStyle(color: status == "DONE" ? Colors.green : Colors.redAccent)),
         ],
       ),
@@ -261,9 +263,9 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
       rows.add(
         pw.TableRow(
           children: [
-            pw.Text( " " + student.number),
-            pw.Text(" " + student.name),
-            pw.Text(" " + student.status),
+            pw.Text( " ${student.number}"),
+            pw.Text(" ${student.name}"),
+            pw.Text(" ${student.status}"),
           ],
         ),
       );
@@ -293,10 +295,6 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final studentDataSource = StudentDataSource(
-      students: filteredStudents,
-      onSelect: (student) => _showStudentDetails(student),
-    );
 
     return SafeArea(
       child: Scaffold(
@@ -311,24 +309,24 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
             crossAxisAlignment: CrossAxisAlignment.center, // Center the Column horizontally
             children: [
               Container(
-                padding: EdgeInsets.only(top: 10), // Add padding on top and bottom
+                padding: const EdgeInsets.only(top: 10), // Add padding on top and bottom
                 alignment: Alignment.center, // This centers the Text widget within the Container
                 child: Text(
                   "LIST OF ${widget.selectedYearLevel} STUDENTS".toUpperCase(),
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: Color(0XFF006699),
+                    color: const Color(0XFF006699),
                   ),
                 ),
               ),
               SizedBox(height: 20.v), // Add some space between the title and the search bar
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30.0), // Add padding on the sides
+                padding: const EdgeInsets.symmetric(horizontal: 30.0), // Add padding on the sides
                 child: Row(
                   children: [
                     Text(
                       "STUDENT ID:",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     SizedBox(width: 10.h),
                     Expanded(
@@ -337,7 +335,7 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+                          contentPadding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
                           isDense: true,
                         ),
                         keyboardType: TextInputType.number,
@@ -357,27 +355,27 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                     child: DataTable(
                       columnSpacing: 12,
                       columns: [
-                        DataColumn(label: Text('Number')),
+                        const DataColumn(label: Text('Number')),
                         DataColumn(
                           label: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('Name'),
+                              const Text('Name'),
                               PopupMenuButton<bool>(
                                 onSelected: _sortStudents,
                                 itemBuilder: (BuildContext context) {
                                   return [
-                                    PopupMenuItem<bool>(
+                                    const PopupMenuItem<bool>(
                                       value: true,
                                       child: Text("A to Z"),
                                     ),
-                                    PopupMenuItem<bool>(
+                                    const PopupMenuItem<bool>(
                                       value: false,
                                       child: Text("Z to A"),
                                     ),
                                   ];
                                 },
-                                icon: Icon(Icons.arrow_drop_down),
+                                icon: const Icon(Icons.arrow_drop_down),
                               ),
                             ],
                           ),
@@ -386,7 +384,7 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                           label: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('Status'),
+                              const Text('Status'),
                               PopupMenuButton<String>(
                                 onSelected: _filterByEnrollmentStatus,
                                 itemBuilder: (BuildContext context) {
@@ -398,7 +396,7 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                                     );
                                   }).toList();
                                 },
-                                icon: Icon(Icons.arrow_drop_down),
+                                icon: const Icon(Icons.arrow_drop_down),
                               ),
                             ],
                           ),
@@ -410,11 +408,11 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                           DataCell(
                             InkWell(
                               onTap: () => _showStudentDetails(student),
-                              child: Container(
+                              child: SizedBox(
                                 width: 150.0,
                                 child: Text(
                                   student.name,
-                                  style: TextStyle(fontSize: 14, height: 1.2),
+                                  style: const TextStyle(fontSize: 14, height: 1.2),
                                   softWrap: true,
                                   overflow: TextOverflow.visible,
                                   maxLines: 3,
@@ -444,27 +442,27 @@ class _EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
         ),
         floatingActionButton: SpeedDial(
           animatedIcon: AnimatedIcons.menu_close,
-          backgroundColor: Color(0XFF006699),
+          backgroundColor: const Color(0XFF006699),
           overlayOpacity: 0,
           children: [
             SpeedDialChild(
-              child: Icon(Icons.arrow_upward),
+              child: const Icon(Icons.arrow_upward),
               //label: 'Go Up',
-              labelBackgroundColor: Color(0XFF006699),
-              labelStyle: TextStyle(color: Colors.white),
+              labelBackgroundColor: const Color(0XFF006699),
+              labelStyle: const TextStyle(color: Colors.white),
               onTap: () {
                 _scrollController.animateTo(
                   0.0,
-                  duration: Duration(seconds: 1),
+                  duration: const Duration(seconds: 1),
                   curve: Curves.easeInOut,
                 );
               },
             ),
             SpeedDialChild(
-              child: Icon(Icons.picture_as_pdf),
+              child: const Icon(Icons.picture_as_pdf),
               label: 'Print PDF',
-              labelBackgroundColor: Color(0XFF006699),
-              labelStyle: TextStyle(color: Colors.white),
+              labelBackgroundColor: const Color(0XFF006699),
+              labelStyle: const TextStyle(color: Colors.white),
               onTap: _generatePdf,
             ),
           ],
