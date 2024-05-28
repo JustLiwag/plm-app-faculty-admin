@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/faculty/student_data.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
 class SubjectData {

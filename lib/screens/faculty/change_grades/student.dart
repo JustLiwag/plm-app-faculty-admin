@@ -1,49 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/faculty/student_data.dart';
 import 'package:mysample/utils/app_styles.dart';
+
 import 'input_grades.dart';
 import 'change_grades.dart';
 
-class StudentData {
-  final String studentNumber;
-  final String grade;
-  final String studentName;
-  final String college;
-
-  StudentData({
-    required this.studentNumber,
-    required this.grade,
-    required this.studentName,
-    required this.college,
-  });
-}
-
-// Create a list of StudentData
-List<StudentData> studentDataList = [
-  StudentData(
-    studentNumber: '2021XXXXX',
-    grade: '                                            GRADE',
-    studentName: 'DELA CRUZ, JUAN BATUMBAL',
-    college: 'Bachelor of Science in Computer Science',
-  ),
-  StudentData(
-    studentNumber: '2021XXXXX',
-    grade: '                                            GRADE',
-    studentName: 'DELA CRUZ, JUAN BATUMBAL',
-    college: 'Bachelor of Science in Computer Science',
-  ),
-  StudentData(
-    studentNumber: '2021XXXXX',
-    grade: '                                            GRADE',
-    studentName: 'DELA CRUZ, JUAN BATUMBAL',
-    college: 'Bachelor of Science in Computer Science',
-  ),
-  StudentData(
-    studentNumber: '2021XXXXX',
-    grade: '                                            GRADE',
-    studentName: 'DELA CRUZ, JUAN BATUMBAL',
-    college: 'Bachelor of Science in Computer Science',
-  ),
-];
 
 class StudentPage extends StatelessWidget {
   const StudentPage({Key? key}) : super(key: key);
