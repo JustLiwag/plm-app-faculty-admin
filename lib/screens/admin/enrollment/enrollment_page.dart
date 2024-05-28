@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mysample/utils/app_styles.dart';
 import '../../../core/app_export.dart';
 import '../../../widgets/admin/enrollment/custom_elevated_button.dart';
-import 'enrollment_one_screen.dart'; // ignore_for_file: must_be_immutable
+import 'enrollment_one_screen.dart';
 
 class EnrollmentPage extends StatefulWidget {
   const EnrollmentPage({super.key});

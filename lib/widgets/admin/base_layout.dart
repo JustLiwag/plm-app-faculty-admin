@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/screens/admin/enrollment/enrollment_container_screen.dart';
+import 'package:mysample/screens/admin/enrollment/enrollment_page.dart';
 import '../../screens/admin/admission/admission.dart';
-// import '../../screens/admin/enrollment/enrollment.dart';
 import '../../screens/admin/announcement/announcement.dart';
 import '../../screens/admin/sfe/sfe.dart';
 import 'bottom_navigation.dart';
@@ -19,7 +18,7 @@ class _BaseLayoutPageState extends State<BaseLayoutPage> {
   final List<Widget> _pages = [
     const Admission(),
     const Announcemnent(),
-    EnrollmentContainerScreen(),
+    const EnrollmentPage(),
     const SFE(),
   ];
 
