@@ -7,6 +7,7 @@ final List<Assignment> assignments = [
     courseTitle: 'Elective 1 (LEC)',
     classSchedule: 'M 9:30a-12:30p F2F GC 201',
     credits: '2',
+    semester: '2nd SEMESTER SY 2023-2024',
   ),
   Assignment(
     classCode: '10002',
@@ -14,6 +15,8 @@ final List<Assignment> assignments = [
     courseTitle: 'Elective 2 (LEC)',
     classSchedule: 'T 1:30p-4:30p F2F GC 202',
     credits: '3',
+    semester: '2nd SEMESTER SY 2023-2024',
+
   ),
   Assignment(
     classCode: '10003',
@@ -21,6 +24,8 @@ final List<Assignment> assignments = [
     courseTitle: 'Elective 3 (LEC)',
     classSchedule: 'W 8:00a-11:00a F2F GC 203',
     credits: '4',
+    semester: '2nd SEMESTER SY 2023-2024',
+
   ),
   Assignment(
     classCode: '10004',
@@ -28,6 +33,8 @@ final List<Assignment> assignments = [
     courseTitle: 'Elective 4 (LEC)',
     classSchedule: 'Th 10:00a-1:00p F2F GC 204',
     credits: '3',
+    semester: '2nd SEMESTER SY 2023-2024',
+
   ),
   Assignment(
     classCode: '10005',
@@ -35,5 +42,6 @@ final List<Assignment> assignments = [
     courseTitle: 'Elective 5 (LEC)',
     classSchedule: 'F 2:00p-5:00p F2F GC 205',
     credits: '2',
+    semester: '2nd SEMESTER SY 2023-2024',
   ),
 ];

@@ -4,6 +4,7 @@ class Assignment {
   final String courseTitle;
   final String classSchedule;
   final String credits;
+  final String semester;
 
   Assignment({
     required this.classCode,
@@ -11,5 +12,6 @@ class Assignment {
     required this.courseTitle,
     required this.classSchedule,
     required this.credits,
+    required this.semester,
   });
 }
