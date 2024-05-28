@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/faculty/faculty_data.dart';
 import 'package:mysample/data/faculty/student_data.dart';
 import 'package:mysample/data/faculty/subject_data.dart';
 import 'package:mysample/utils/app_styles.dart';
@@ -19,11 +20,11 @@ class SubjectClassPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Employee Number:', 'XXX XXX'),
+                buildRow('Employee Number:', faculty.facultyNumber),
                 const SizedBox(height: 15),
-                buildRow('Full Name:', 'De Leon, Jose'),
+                buildRow('Full Name:', faculty.facultyName),
                 const SizedBox(height: 15),
-                buildRow('College:', 'CITSM'),
+                buildRow('College:', faculty.college),
                 const SizedBox(height: 15),
                 Container(
                   width: 320,

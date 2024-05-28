@@ -1,13 +1,11 @@
 class Faculty {
-  final String studentNumber;
-  final String grade;
-  final String studentName;
+  final String facultyNumber;
+  final String facultyName;
   final String college;
 
   Faculty({
-    required this.studentNumber,
-    required this.grade,
-    required this.studentName,
+    required this.facultyNumber,
+    required this.facultyName,
     required this.college,
   });
 }
