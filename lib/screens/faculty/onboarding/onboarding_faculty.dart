@@ -21,16 +21,18 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 15), // SizedBox(height: 20
-              Text(
-                'Welcome!',
-                style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: AppTheme.baseGold,
-                    ),
+              const SizedBox(height: 15), // SizedBox(height: 20),
+              Center(
+                child: Text(
+                  'Welcome to the PLM Faculty Mobile App!',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                    color: AppTheme.baseGold,
+                  ),
+                ),
               ),
               const SizedBox(height: 15),
               Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nEget nunc scelerisque viverra mauris in aliquam sem fringilla. Nunc id cursus metus aliquam. ',
+                'We are delighted to welcome you to the Pamantasan ng Lungsod ng Maynila Faculty Mobile App.',
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: AppTheme.baseBlack,
                     ),
