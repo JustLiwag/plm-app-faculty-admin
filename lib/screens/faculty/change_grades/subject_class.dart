@@ -20,9 +20,7 @@ class SubjectClassPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 50),
                 buildRow('Employee Number:', faculty.facultyNumber),
-                const SizedBox(height: 15),
                 buildRow('Full Name:', faculty.facultyName),
-                const SizedBox(height: 15),
                 buildRow('College:', faculty.college),
                 const SizedBox(height: 15),
                 Container(
@@ -44,8 +42,8 @@ class SubjectClassPage extends StatelessWidget {
                   itemCount: subjectList.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.only(
-                          bottom: 8, left: 16, right: 16),
+                      padding:
+                          const EdgeInsets.only(bottom: 8, left: 16, right: 16),
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
@@ -56,6 +54,7 @@ class SubjectClassPage extends StatelessWidget {
                                 MaterialPageRoute(
                                   builder: (context) => StudentPage(
                                     subject: subjectList[index],
+                                    employee: faculty,
                                   ),
                                 ),
                               );
@@ -159,8 +158,9 @@ class SubjectClassPage extends StatelessWidget {
 
   Widget buildRow(String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(left: 35),
+      padding: const EdgeInsets.only(left: 35, right: 35),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
@@ -168,19 +168,20 @@ class SubjectClassPage extends StatelessWidget {
               color: Color(0xFF393939),
               fontSize: 14,
               fontWeight: FontWeight.w600,
-              height: 0.09,
               letterSpacing: 0.25,
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-              height: 0.09,
-              letterSpacing: 0.25,
+          Expanded(
+            child: Text(
+              content,
+              style: const TextStyle(
+                color: Color(0xFF393939),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 0.25,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/models/faculty/subject_model.dart';
+import 'package:mysample/models/faculty/student_model.dart';
+import 'package:mysample/models/faculty/faculty_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'input_grades.dart';
 
 class StudentPage extends StatelessWidget {
   final Subject subject;
+  final Faculty employee;
 
-  const StudentPage({Key? key, required this.subject}) : super(key: key);
+  const StudentPage({Key? key, required this.subject, required this.employee})
+      : super(key: key);
 
   Widget buildRow(String title, String content) {
     return Padding(
@@ -162,10 +166,15 @@ class StudentPage extends StatelessWidget {
                                   child: GestureDetector(
                                     onTap: () {
                                       Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const InputGradesPage()));
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => InputGradesPage(
+                                            student: student,
+                                            subject: subject,
+                                            employee: employee,
+                                          ),
+                                        ),
+                                      );
                                     },
                                     child: Container(
                                       width: 28,

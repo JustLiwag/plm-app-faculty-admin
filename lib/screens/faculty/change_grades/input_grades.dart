@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/models/faculty/subject_model.dart';
+import 'package:mysample/models/faculty/student_model.dart';
+import 'package:mysample/models/faculty/faculty_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 
-
 class InputGradesPage extends StatefulWidget {
-  const InputGradesPage({Key? key}) : super(key: key);
+  final Student student;
+  final Subject subject;
+  final Faculty employee;
+
+  const InputGradesPage({Key? key, required this.student, required this.subject, required this.employee}) : super(key: key);
 
   @override
   InputGradesPageState createState() => InputGradesPageState();
@@ -12,6 +18,13 @@ class InputGradesPage extends StatefulWidget {
 class InputGradesPageState extends State<InputGradesPage> {
   double? _selectedGrade = 1.00;
   String _remark = 'PASSED';
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedGrade = double.tryParse(widget.student.grade) ?? 1.00;
+    _updateRemark();
+  }
 
   void _updateRemark() {
     if (_selectedGrade == null) {
@@ -79,30 +92,11 @@ class InputGradesPageState extends State<InputGradesPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Employee Number:', 'XXX XXX'),
+                buildRow('Employee Number:', widget.employee.facultyNumber),
                 const SizedBox(height: 15),
-                buildRow('Full Name:', 'De Leon, Jose'),
+                buildRow('Full Name:', widget.employee.facultyName),
                 const SizedBox(height: 15),
-                buildRow('College:', 'CITSM'),
-                const SizedBox(height: 15),
-                Container(
-                  width: 309,
-                  decoration: const ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      side: BorderSide(
-                        width: 2,
-                        strokeAlign: BorderSide.strokeAlignCenter,
-                        color: Color(0xFF006699),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40),
-                buildRow('Subject Number:', 'ICC 0106-1'),
-                const SizedBox(height: 15),
-                buildRow('Subject Name:', 'Application Development'),
-                const SizedBox(height: 15),
-                buildRow('Schedule:', 'M 9:30a-12:30p F2F GC 201'),
+                buildRow('College:', widget.employee.college),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
@@ -117,11 +111,11 @@ class InputGradesPageState extends State<InputGradesPage> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                buildRow('Student Number:', '202101387'),
+                buildRow('Subject Number:', widget.subject.courseCode),
                 const SizedBox(height: 15),
-                buildRow('Student Name:', 'Dela Cruz B.'),
+                buildRow('Subject Name:', widget.subject.courseTitle),
                 const SizedBox(height: 15),
-                buildRow('College:', 'BSCS'),
+                buildRow('Schedule:', widget.subject.schedule),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
@@ -135,186 +129,199 @@ class InputGradesPageState extends State<InputGradesPage> {
                     ),
                   ),
                 ),
-              const SizedBox(height: 20),
-              Container(
-                width: 320,
-                height: 90,
-                decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  shadows: const [
-                    BoxShadow(
-                      color: Color(0x3F000000),
-                      blurRadius: 4,
-                      offset: Offset(0, 4),
-                      spreadRadius: 0,
+                const SizedBox(height: 40),
+                buildRow('Student Number:', widget.student.studentNumber),
+                const SizedBox(height: 15),
+                buildRow('Student Name:', widget.student.studentName),
+                const SizedBox(height: 15),
+                buildRow('College:', widget.student.college),
+                const SizedBox(height: 15),
+                Container(
+                  width: 309,
+                  decoration: const ShapeDecoration(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(
+                        width: 2,
+                        strokeAlign: BorderSide.strokeAlignCenter,
+                        color: Color(0xFF006699),
+                      ),
                     ),
-                  ],
+                  ),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(left: 22, top: 25),
-                          child: Text(
-                            'CURRENT GRADE',
-                            style: TextStyle(
-                              color: Color(0xFF006699),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                              letterSpacing: 0.25,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 25),
-                          child: Container(
-                            width: 135,
-                            height: 30,
-                            decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                side: const BorderSide(width: 1, color: Color(0xFF006699)),
-                                borderRadius: BorderRadius.circular(10),
+                const SizedBox(height: 20),
+                Container(
+                  width: 320,
+                  height: 90,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    shadows: const [
+                      BoxShadow(
+                        color: Color(0x3F000000),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 22, top: 25),
+                            child: Text(
+                              'CURRENT GRADE',
+                              style: TextStyle(
+                                color: Color(0xFF006699),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                height: 0.09,
+                                letterSpacing: 0.25,
                               ),
+                              textAlign: TextAlign.center,
                             ),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton<double>(
-                                isExpanded: true,
-                                value: _selectedGrade,
-                                icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF006699),),
-                                iconSize: 24,
-                                elevation: 16,
-                                style: const TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.25,
+                          ),
+                          const SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 25),
+                            child: Container(
+                              width: 135,
+                              height: 30,
+                              decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  side: const BorderSide(width: 1, color: Color(0xFF006699)),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
-                                onChanged: (double? newValue) {
-                                  setState( () {
-                                    _selectedGrade = newValue;
-                                    _updateRemark();
-                                  });
-                                },
-                                items: <double?>[1.00, 1.25, 1.50, 1.75,
-                                        2.00, 2.25, 2.50, 2.75,
-                                        3.00, 5.00, null]
-                                      .map<DropdownMenuItem<double>>((double? value) {
-                                        return DropdownMenuItem<double>(
-                                          value: value,
-                                          child: Center(
-                                            child: Text(value == null ? '----' : value.toStringAsFixed(2)),
-                                          ),
-                                        );
-                                      }).toList(),
-                                      dropdownColor: Colors.white,
-                                      alignment: Alignment.center,
                               ),
-                            )
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(top: 25, right: 40),
-                          child: Text(
-                            'REMARKS',
-                            style: TextStyle(
-                              color: Color(0xFF006699),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              height: 0.09,
-                              letterSpacing: 0.25,
+                              child: DropdownButtonHideUnderline(
+                                child: DropdownButton<double>(
+                                  isExpanded: true,
+                                  value: _selectedGrade,
+                                  icon: const Icon(Icons.arrow_drop_down, color: Color(0xFF006699),),
+                                  iconSize: 24,
+                                  elevation: 16,
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    letterSpacing: 0.25,
+                                  ),
+                                  onChanged: (double? newValue) {
+                                    setState( () {
+                                      _selectedGrade = newValue;
+                                      _updateRemark();
+                                    });
+                                  },
+                                  items: <double?>[1.00, 1.25, 1.50, 1.75,
+                                          2.00, 2.25, 2.50, 2.75,
+                                          3.00, 5.00, null]
+                                        .map<DropdownMenuItem<double>>((double? value) {
+                                          return DropdownMenuItem<double>(
+                                            value: value,
+                                            child: Center(
+                                              child: Text(value == null ? '----' : value.toStringAsFixed(2)),
+                                            ),
+                                          );
+                                        }).toList(),
+                                        dropdownColor: Colors.white,
+                                        alignment: Alignment.center,
+                                ),
+                              )
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20),
-                          child: Container( // Remarks Text appear in this rounded rectangle
-                            width: 115,
-                            height: 30,
-                            alignment: Alignment.center,
-                            decoration: ShapeDecoration(
-                              color: _getRemarkColor(_remark),
-                              shape: RoundedRectangleBorder(
-                                side: const BorderSide(width: 1, color: Color(0xFF006699)),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                            child: Text(_remark,
-                            style: const TextStyle(
-                              color: Colors.white,
-                                  fontSize: 12,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 0.25,
-                            ))
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 90),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 10), // Adjust the top padding as needed
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const StudentPage(),
-                        //   ),
-                        // );
-                        // Insert your logic here for when the button is pressed
-                      },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(150, 39),
-                        backgroundColor: const Color(0xFF006699),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                        ],
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          'SUBMIT GRADE',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w700,
-                            height: 1,
-                            letterSpacing: -0.90,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(top: 25, right: 40),
+                            child: Text(
+                              'REMARKS',
+                              style: TextStyle(
+                                color: Color(0xFF006699),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                height: 0.09,
+                                letterSpacing: 0.25,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20),
+                            child: Container(
+                              width: 115,
+                              height: 30,
+                              alignment: Alignment.center,
+                              decoration: ShapeDecoration(
+                                color: _getRemarkColor(_remark),
+                                shape: RoundedRectangleBorder(
+                                  side: const BorderSide(width: 1, color: Color(0xFF006699)),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: Text(_remark,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                letterSpacing: 0.25,
+                              ))
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 90),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Insert your logic here for when the button is pressed
+                        },
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(150, 39),
+                          backgroundColor: const Color(0xFF006699),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Text(
+                            'SUBMIT GRADE',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              height: 1,
+                              letterSpacing: -0.90,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
-    ),
     );
   }
 }
