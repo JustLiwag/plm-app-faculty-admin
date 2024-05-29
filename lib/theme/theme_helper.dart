@@ -123,7 +123,7 @@ class ColorSchemes {
 /// Class containing custom colors for a primary theme.
 class PrimaryColors {
   // Amber
-  Color get amber500 => const Color(0XFFFFC909);
+  Color get amber500 => const Color(0XFF006699);
 // Black
   Color get black900 => const Color(0XFF000000);
 // BlueGray

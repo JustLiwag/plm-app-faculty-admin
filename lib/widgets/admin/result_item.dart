@@ -69,9 +69,9 @@ class _ResultItemState extends State<ResultItem> {
           Container(
             padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: const Color(0xFFFFC909),
+              color: const Color(0XFF006699),
               border: Border.all(
-                color: const Color(0xFFFFC909),
+                color: const Color(0XFF006699),
                 width: 2.0,
               ),
               borderRadius: BorderRadius.circular(10.0),

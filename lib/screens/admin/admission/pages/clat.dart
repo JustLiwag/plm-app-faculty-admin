@@ -27,7 +27,7 @@ class CLATScreen extends StatelessWidget {
               Text(
                 'CLAT Results!',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: AppTheme.baseGold,
+                      color: const Color(0XFF006699),
                     ),
               ),
               ResultItem(

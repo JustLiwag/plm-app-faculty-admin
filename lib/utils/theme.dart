@@ -9,7 +9,7 @@ class CommonMethod {
         primaryContainer: const Color.fromARGB(255, 202, 230, 245),
         onPrimary: const Color(0xFFFFFFFF),
         secondary: const Color(0xFFFFF5D1),
-        onSecondary: const Color(0xFFFFC909),
+        onSecondary: const Color(0XFF006699),
         error: const Color(0xFFA31920),
         onError: const Color(0xFFA31920),
         background: Colors.white,

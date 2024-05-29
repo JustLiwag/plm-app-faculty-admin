@@ -10,11 +10,12 @@ void showEditArticleDialog(BuildContext context, Article article) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
+        backgroundColor: Colors.white,
         title: const Center(
           child: Text(
             'Edit Article',
             style: TextStyle(
-              color: Color(0xFFFFC909),
+              color: Color(0XFF006699),
               fontWeight: FontWeight.bold,
               fontSize: 20,
             ),
@@ -183,7 +184,7 @@ void showEditArticleDialog(BuildContext context, Article article) {
                       Navigator.of(context).pop();
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(const Color(0xFFFFC909)),
+                      backgroundColor: MaterialStateProperty.all(const Color(0XFF006699)),
                       shape: MaterialStateProperty.all(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5.0),

@@ -58,7 +58,7 @@ class BoxWithoutHeaderImage extends StatelessWidget {
                     onPressed: onReadMore,
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFFFFC909)),
+                          const Color(0XFF006699)),
                       shape: MaterialStateProperty.all<OutlinedBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),

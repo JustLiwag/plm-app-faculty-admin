@@ -21,14 +21,13 @@ class _OnBoardingAdminState extends State<OnBoardingAdmin> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 15), // SizedBox(height: 20),
-              Center(
-                child: Text(
-                  'Welcome!',
-                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                    color: AppTheme.baseGold,
-                  ),
-                ),
+
+              const SizedBox(height: 15), // SizedBox(height: 20
+              Text(
+                'Welcome!',
+                style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                      color: const Color(0XFF006699),
+                    ),
               ),
               const SizedBox(height: 15),
               Text(
