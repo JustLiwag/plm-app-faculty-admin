@@ -4,8 +4,6 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:mysample/data/admin/student_data.dart';
 import 'package:mysample/models/admin/student_model.dart';
 import 'package:mysample/utils/admin_faculty/app_styles.dart';
-// ignore: unused_import
-import '../../../core/app_export.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
