@@ -30,6 +30,11 @@ class AdmissionMenuScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Container(
+              height: 5.0, // Adjust the thickness as needed
+              color: const Color(0XFF006699), // Adjust the color as needed
+              margin: const EdgeInsets.only(bottom: 20.0), // Space below the line
+            ),
             const SizedBox(height: 10.0),
             _buildMenuItem(
               'Course Assessment Result',
@@ -86,8 +91,7 @@ class AdmissionMenuScreen extends StatelessWidget {
         ),
         trailing: Icon(icon),
         onTap: onTap,
-        contentPadding:
-        const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       ),
     );
   }
