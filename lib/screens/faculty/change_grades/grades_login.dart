@@ -32,14 +32,16 @@ class GradesLoginPage extends StatelessWidget {
               Container(
                 alignment: Alignment.centerLeft,
                 child: const Padding(
-                  padding: EdgeInsets.only(top: 60, left: 70),
-                  child: Text(
-                    'PASSCODE',
-                    style: TextStyle(
-                      color: Color(0xFF006699),
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                      height: 0,
+                  padding: EdgeInsets.only(top: 60, left: 0),
+                  child: Center(
+                    child: Text(
+                      'PASSCODE',
+                      style: TextStyle(
+                        color: Color(0xFFA31920),
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
                     ),
                   ),
                 ),

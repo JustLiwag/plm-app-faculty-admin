@@ -21,7 +21,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 15), // SizedBox(height: 20
+              const SizedBox(height: 15),
               Text(
                 'Welcome!',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(

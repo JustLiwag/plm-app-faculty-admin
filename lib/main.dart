@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           canvasColor: AppTheme.baseBlue,
         ),
-        home: const SafeArea(child: OnBoardingAdmin()),
+        home: const SafeArea(child: OnBoardingFaculty()),
       );
     });
   }
