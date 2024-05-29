@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/models/faculty/subject_model.dart';
-import 'package:mysample/models/faculty/student_model.dart';
 import 'package:mysample/models/faculty/faculty_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'input_grades.dart';
+import 'package:mysample/widgets/faculty/build_row.dart';
 
 class StudentPage extends StatelessWidget {
   final Subject subject;
@@ -11,39 +11,6 @@ class StudentPage extends StatelessWidget {
 
   const StudentPage({Key? key, required this.subject, required this.employee})
       : super(key: key);
-
-  Widget buildRow(String title, String content) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 35, right: 35),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.25,
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              content,
-              style: const TextStyle(
-                color: Color(0xFF393939),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0.25,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +24,11 @@ class StudentPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Subject Number:', subject.courseCode),
+                BuildRow(title: 'Subject Number:', content: subject.courseCode),
                 const SizedBox(height: 5),
-                buildRow('Subject Name:', subject.courseTitle),
+                BuildRow(title: 'Subject Name:', content: subject.courseTitle),
                 const SizedBox(height: 5),
-                buildRow('Schedule:', subject.schedule),
+                BuildRow(title: 'Schedule:', content: subject.schedule),
                 const SizedBox(height: 5),
                 Container(
                   width: 309,

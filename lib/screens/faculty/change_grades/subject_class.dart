@@ -3,6 +3,7 @@ import 'package:mysample/data/faculty/faculty_data.dart';
 import 'package:mysample/data/faculty/subject_data.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
+import 'package:mysample/widgets/faculty/build_row.dart';
 
 class SubjectClassPage extends StatelessWidget {
   const SubjectClassPage({Key? key}) : super(key: key);
@@ -19,9 +20,9 @@ class SubjectClassPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Employee Number:', faculty.facultyNumber),
-                buildRow('Full Name:', faculty.facultyName),
-                buildRow('College:', faculty.college),
+                BuildRow(title: 'Employee Number:', content: faculty.facultyNumber),
+                BuildRow(title: 'Full Name:', content: faculty.facultyName),
+                BuildRow(title: 'College:', content: faculty.college),
                 const SizedBox(height: 15),
                 Container(
                   width: 320,
@@ -42,8 +43,8 @@ class SubjectClassPage extends StatelessWidget {
                   itemCount: subjectList.length,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding:
-                          const EdgeInsets.only(bottom: 8, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          bottom: 8, left: 16, right: 16),
                       child: Stack(
                         alignment: Alignment.center,
                         children: [
@@ -152,39 +153,6 @@ class SubjectClassPage extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget buildRow(String title, String content) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 35, right: 35),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.25,
-            ),
-          ),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              content,
-              style: const TextStyle(
-                color: Color(0xFF393939),
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-                letterSpacing: 0.25,
-              ),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ],
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:mysample/models/faculty/subject_model.dart';
 import 'package:mysample/models/faculty/student_model.dart';
 import 'package:mysample/models/faculty/faculty_model.dart';
 import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/faculty/build_row.dart';
 
 class InputGradesPage extends StatefulWidget {
   final Student student;
@@ -49,37 +50,6 @@ class InputGradesPageState extends State<InputGradesPage> {
     }
   }
 
-  Widget buildRow(String title, String content) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 35),
-      child: Row(
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              height: 0.09,
-              letterSpacing: 0.25,
-            ),
-          ),
-          const SizedBox(width: 8),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 14,
-              fontWeight: FontWeight.w700,
-              height: 0.09,
-              letterSpacing: 0.25,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -92,11 +62,9 @@ class InputGradesPageState extends State<InputGradesPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Employee Number:', widget.employee.facultyNumber),
-                const SizedBox(height: 15),
-                buildRow('Full Name:', widget.employee.facultyName),
-                const SizedBox(height: 15),
-                buildRow('College:', widget.employee.college),
+                BuildRow(title: 'Employee Number:', content: widget.employee.facultyNumber),
+                BuildRow(title: 'Full Name:', content: widget.employee.facultyName),
+                BuildRow(title: 'College:', content: widget.employee.college),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
@@ -110,12 +78,10 @@ class InputGradesPageState extends State<InputGradesPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
-                buildRow('Subject Number:', widget.subject.courseCode),
                 const SizedBox(height: 15),
-                buildRow('Subject Name:', widget.subject.courseTitle),
-                const SizedBox(height: 15),
-                buildRow('Schedule:', widget.subject.schedule),
+                BuildRow(title: 'Subject Number:', content: widget.subject.courseCode),
+                BuildRow(title: 'Subject Name:', content: widget.subject.courseTitle),
+                BuildRow(title: 'Schedule:', content: widget.subject.schedule),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
@@ -129,12 +95,10 @@ class InputGradesPageState extends State<InputGradesPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
-                buildRow('Student Number:', widget.student.studentNumber),
-                const SizedBox(height: 15),
-                buildRow('Student Name:', widget.student.studentName),
-                const SizedBox(height: 15),
-                buildRow('College:', widget.student.college),
+                const SizedBox(height:15),
+                BuildRow(title: 'Student Number:', content: widget.student.studentNumber),
+                BuildRow(title: 'Student Name:', content: widget.student.studentName),
+                BuildRow(title: 'College:', content: widget.student.college),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
