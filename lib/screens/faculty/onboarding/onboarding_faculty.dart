@@ -24,7 +24,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
               const SizedBox(height: 15), // SizedBox(height: 20),
               Center(
                 child: Text(
-                  'Welcome to the PLM Faculty Mobile App!',
+                  'Welcome!',
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
                     color: AppTheme.baseGold,
                   ),

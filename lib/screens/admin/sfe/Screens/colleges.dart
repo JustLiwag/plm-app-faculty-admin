@@ -61,7 +61,7 @@ class _CollegeOfArchitectureScreenState
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -101,7 +101,7 @@ class _CollegeOfArchitectureScreenState
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -139,7 +139,7 @@ class _CollegeOfArchitectureScreenState
               }
                   : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Match the yellow background color
+                backgroundColor: const Color(0XFF006699), // Match the yellow background color
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10), // Preserve the rounded corners
                 ),
@@ -214,7 +214,7 @@ class _CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -254,7 +254,7 @@ class _CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -290,7 +290,7 @@ class _CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -362,7 +362,7 @@ class _CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen>
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -402,7 +402,7 @@ class _CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen>
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -438,7 +438,7 @@ class _CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen>
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -510,7 +510,7 @@ class _CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformat
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -550,7 +550,7 @@ class _CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformat
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -586,7 +586,7 @@ class _CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformat
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -658,7 +658,7 @@ class _CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -698,7 +698,7 @@ class _CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -734,7 +734,7 @@ class _CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -806,7 +806,7 @@ class _CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -846,7 +846,7 @@ class _CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -882,7 +882,7 @@ class _CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -954,7 +954,7 @@ class _CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherap
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -994,7 +994,7 @@ class _CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherap
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1030,7 +1030,7 @@ class _CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherap
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -1102,7 +1102,7 @@ class _CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -1142,7 +1142,7 @@ class _CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1178,7 +1178,7 @@ class _CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -1248,7 +1248,7 @@ class _PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -1288,7 +1288,7 @@ class _PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1324,7 +1324,7 @@ class _PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',
@@ -1394,7 +1394,7 @@ class _SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.yellow, width: 3.0),
+                border: Border.all(color: const Color(0XFF006699), width: 3.0),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: DropdownButton<String>(
@@ -1434,7 +1434,7 @@ class _SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1470,7 +1470,7 @@ class _SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
                 );
               } : null, // Disable button if either dropdown is not selected
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.yellow, // Yellow background color
+                backgroundColor: const Color(0XFF006699), // Yellow background color
               ),
               child: const Text(
                 'Submit',

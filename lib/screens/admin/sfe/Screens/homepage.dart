@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 12),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.yellow, width: 3.0),
+                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: DropdownButton<String>(
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: _submitForm,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow, // Match the yellow background color
+                  backgroundColor: const Color(0XFF006699), // Match the yellow background color
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // Preserve the rounded corners
                   ),
