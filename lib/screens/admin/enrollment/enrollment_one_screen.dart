@@ -27,21 +27,21 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
         appBar: const CustomAppBar(title: 'Enrollment'),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.only(
-            left: 22.h,
-            top: 70.v,
-            right: 22.h,
+          padding: const EdgeInsets.only(
+            left: 22,
+            top: 70,
+            right: 22,
           ),
           child: Column(
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgPlmSealBorApproved2014,
-                height: 164.v,
-                width: 165.h,
+                height: 164,
+                width: 165,
               ),
-              SizedBox(height: 27.v),
+              const SizedBox(height: 27),
               SizedBox(
-                width: 305.h,
+                width: 305,
                 child: Text(
                   widget.selectedCollege,
                   maxLines: 2,
@@ -52,7 +52,7 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 50.v),
+              const SizedBox(height: 50),
               Dropdown(
                   onSelected: (String? college) {
                     isYearLevelSelected = college != null;
@@ -67,10 +67,10 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                     '6th Year'
                   ],
                   title: 'YEAR LEVEL'),
-              SizedBox(height: 52.v),
+              const SizedBox(height: 52),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 37.h),
+                margin: const EdgeInsets.symmetric(horizontal: 37),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
@@ -93,7 +93,7 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                   }
                 },
               ),
-              SizedBox(height: 5.v)
+              const SizedBox(height: 5)
             ],
           ),
         ),

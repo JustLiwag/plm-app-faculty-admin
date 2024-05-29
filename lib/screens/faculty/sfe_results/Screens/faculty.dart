@@ -81,7 +81,7 @@ class FacultyScreenState extends State<FacultyScreen> {
               const SizedBox(height: 15),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 20.h),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(

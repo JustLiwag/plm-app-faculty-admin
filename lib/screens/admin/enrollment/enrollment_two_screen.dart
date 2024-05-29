@@ -4,6 +4,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:mysample/data/admin/student_data.dart';
 import 'package:mysample/models/admin/student_model.dart';
 import 'package:mysample/utils/admin_faculty/app_styles.dart';
+// ignore: unused_import
 import '../../../core/app_export.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -231,9 +232,9 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
         appBar: const CustomAppBar(title: 'Enrollment'),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.h,
-            vertical: 10.v,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10,
+            vertical: 10,
           ),
           child: Column(
             crossAxisAlignment:
@@ -252,19 +253,18 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                       ),
                 ),
               ),
-              SizedBox(
-                  height: 20
-                      .v), // Add some space between the title and the search bar
+              const SizedBox(
+                  height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 30.0), // Add padding on the sides
+                    horizontal: 30.0),
                 child: Row(
                   children: [
                     Text(
                       "STUDENT ID:",
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
-                    SizedBox(width: 10.h),
+                    const SizedBox(width: 10),
                     Expanded(
                       child: TextField(
                         decoration: InputDecoration(
@@ -282,9 +282,8 @@ class EnrollmentTwoScreenState extends State<EnrollmentTwoScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                  height: 20
-                      .v), // Add some space between the search bar and the list
+              const SizedBox(
+                  height: 20),
               Expanded(
                 child: SingleChildScrollView(
                   controller: _scrollController,

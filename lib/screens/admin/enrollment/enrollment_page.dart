@@ -24,19 +24,19 @@ class EnrollmentPageState extends State<EnrollmentPage> {
         appBar: const CustomAppBar(title: 'Enrollment'),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.only(
-            left: 40.h,
-            top: 65.v,
-            right: 40.h,
+          padding: const EdgeInsets.only(
+            left: 40,
+            top: 65,
+            right: 40,
           ),
           child: Column(
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgPlmSealBorApproved2014,
-                height: 242.v,
-                width: 259.h,
+                height: 242,
+                width: 259,
               ),
-              SizedBox(height: 65.v),
+              const SizedBox(height: 65),
               Dropdown(
                 onSelected: (String? college) {
                   isCollegeSelected = college != null;
@@ -56,10 +56,10 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                 ],
                 title: 'SELECT A COLLEGE',
               ),
-              SizedBox(height: 5.v),
+              const SizedBox(height: 5),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 10.h),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
@@ -80,7 +80,7 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                   }
                 },
               ),
-              SizedBox(height: 5.v)
+              const SizedBox(height: 5)
             ],
           ),
         ),
