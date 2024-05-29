@@ -10,7 +10,8 @@ class StudentPage extends StatelessWidget {
 
   Widget buildRow(String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(left: 35, right: 35), // Adjust right padding for better alignment
+      padding: const EdgeInsets.only(
+          left: 35, right: 35), // Adjust right padding for better alignment
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -185,6 +186,18 @@ class StudentPage extends StatelessWidget {
                                   ),
                                 ),
                               ],
+                            ),
+                          ),
+                          const Positioned(
+                            right: 85,
+                            bottom: 45,
+                            child: Text(
+                              'GRADE',
+                              style: TextStyle(
+                                color: Color(0xFF006699),
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           Positioned(
