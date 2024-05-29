@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/screens/admin/sfe/Screens/admission_screen.dart';
+import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
 
 class CollegeOfArchitectureScreen extends StatefulWidget {
   const CollegeOfArchitectureScreen({super.key});
 
   @override
-  CollegeOfArchitectureScreenState createState() =>CollegeOfArchitectureScreenState();
+  CollegeOfArchitectureScreenState createState() =>
+      CollegeOfArchitectureScreenState();
 }
 
 class CollegeOfArchitectureScreenState
@@ -16,12 +19,13 @@ class CollegeOfArchitectureScreenState
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CAUP'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +105,8 @@ class CollegeOfArchitectureScreenState
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -128,26 +133,24 @@ class CollegeOfArchitectureScreenState
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
+              ),
+              width: 500.0,
               onPressed: canSubmit
                   ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              }
-                  : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Match the yellow background color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Preserve the rounded corners
-                ),
-              ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // Set the text color to white
-              ),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -160,7 +163,8 @@ class CollegeOfEducationScreen extends StatefulWidget {
   const CollegeOfEducationScreen({super.key});
 
   @override
-  CollegeOfEducationScreenState createState() => CollegeOfEducationScreenState();
+  CollegeOfEducationScreenState createState() =>
+      CollegeOfEducationScreenState();
 }
 
 class CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
@@ -169,12 +173,13 @@ class CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CED'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -254,7 +259,8 @@ class CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -281,21 +287,24 @@ class CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -308,21 +317,24 @@ class CollegeOfEngineeringScreen extends StatefulWidget {
   const CollegeOfEngineeringScreen({super.key});
 
   @override
-  CollegeOfEngineeringScreenState createState() => CollegeOfEngineeringScreenState();
+  CollegeOfEngineeringScreenState createState() =>
+      CollegeOfEngineeringScreenState();
 }
 
-class CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen> {
+class CollegeOfEngineeringScreenState
+    extends State<CollegeOfEngineeringScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CET'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -402,7 +414,8 @@ class CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen> 
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -429,21 +442,24 @@ class CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen> 
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -456,21 +472,24 @@ class CollegeOfInformationTechnologyScreen extends StatefulWidget {
   const CollegeOfInformationTechnologyScreen({super.key});
 
   @override
-  CollegeOfInformationTechnologyScreenState createState() => CollegeOfInformationTechnologyScreenState();
+  CollegeOfInformationTechnologyScreenState createState() =>
+      CollegeOfInformationTechnologyScreenState();
 }
 
-class CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformationTechnologyScreen> {
+class CollegeOfInformationTechnologyScreenState
+    extends State<CollegeOfInformationTechnologyScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CISTM'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -550,7 +569,8 @@ class CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformati
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -577,21 +597,24 @@ class CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformati
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -604,7 +627,8 @@ class CollegeOfHumanitiesScreen extends StatefulWidget {
   const CollegeOfHumanitiesScreen({super.key});
 
   @override
-  CollegeOfHumanitiesScreenState createState() => CollegeOfHumanitiesScreenState();
+  CollegeOfHumanitiesScreenState createState() =>
+      CollegeOfHumanitiesScreenState();
 }
 
 class CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
@@ -613,12 +637,13 @@ class CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CHASS'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -698,7 +723,8 @@ class CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -725,21 +751,24 @@ class CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -761,12 +790,13 @@ class CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CN'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -846,7 +876,8 @@ class CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -873,21 +904,24 @@ class CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -900,21 +934,24 @@ class CollegeOfPhysicalTherapyScreen extends StatefulWidget {
   const CollegeOfPhysicalTherapyScreen({super.key});
 
   @override
-  CollegeOfPhysicalTherapyScreenState createState() => CollegeOfPhysicalTherapyScreenState();
+  CollegeOfPhysicalTherapyScreenState createState() =>
+      CollegeOfPhysicalTherapyScreenState();
 }
 
-class CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherapyScreen> {
+class CollegeOfPhysicalTherapyScreenState
+    extends State<CollegeOfPhysicalTherapyScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CPT'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -994,7 +1031,8 @@ class CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherapy
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1021,21 +1059,24 @@ class CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherapy
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -1057,12 +1098,13 @@ class CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'CS'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1142,7 +1184,8 @@ class CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1169,21 +1212,24 @@ class CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -1205,12 +1251,13 @@ class PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'PLMBS'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1288,7 +1335,8 @@ class PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1315,21 +1363,24 @@ class PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),
@@ -1342,7 +1393,8 @@ class SchoolOfGovernmentScreen extends StatefulWidget {
   const SchoolOfGovernmentScreen({super.key});
 
   @override
-  SchoolOfGovernmentScreenState createState() => SchoolOfGovernmentScreenState();
+  SchoolOfGovernmentScreenState createState() =>
+      SchoolOfGovernmentScreenState();
 }
 
 class SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
@@ -1351,12 +1403,13 @@ class SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool canSubmit = selectedOption != null && selectedProfessor != null; // Check if both dropdowns are selected
+    bool canSubmit = selectedOption != null &&
+        selectedProfessor != null; // Check if both dropdowns are selected
     return Scaffold(
       appBar: const CustomAppBar(title: 'SOG'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            20.0, 1.0 * 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0,
+            20.0), // Adjust top padding to 1 inch below app bar
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1434,7 +1487,8 @@ class SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
             const SizedBox(height: 15),
             Container(
               decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10)),
               child: DropdownButton<String>(
                 dropdownColor: Colors.white,
@@ -1461,21 +1515,24 @@ class SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            ElevatedButton(
-              onPressed: canSubmit ? () {
-                // Navigate to the admission screen
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AdmissionMenuScreen()),
-                );
-              } : null, // Disable button if either dropdown is not selected
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0XFF006699), // Yellow background color
+            CustomElevatedButton(
+              text: "SUBMIT",
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                  .copyWith(fontSize: 16.0),
+              buttonStyle: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0XFF006699),
               ),
-              child: const Text(
-                'Submit',
-                style: TextStyle(color: Colors.white), // White font color
-              ),
+              width: 500.0,
+              onPressed: canSubmit
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AdmissionMenuScreen()),
+                      );
+                    }
+                  : null,
             ),
           ],
         ),

@@ -12,20 +12,19 @@ class AdmissionMenuScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Student Faculty Evaluation'),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20.0, 72.0, 20.0, 20.0), // Adjust top padding to 1 inch below app bar
+        padding: const EdgeInsets.fromLTRB(20.0, 72.0, 20.0, 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Image and description added here
             Container(
               margin: const EdgeInsets.only(bottom: 20.0),
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/plm_logo.png', // Your image path
-                    width: 200, // Adjust the width as needed
-                    height: 200, // Adjust the height as needed
+                    'assets/images/plm_logo.png',
+                    width: 200,
+                    height: 200,
                   ),
                 ],
               ),
@@ -34,7 +33,7 @@ class AdmissionMenuScreen extends StatelessWidget {
             _buildMenuItem(
               'Course Assessment Result',
               Icons.arrow_forward_ios,
-                  () => Navigator.push(
+              () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const CourseAssessmentScreen(),
@@ -45,7 +44,7 @@ class AdmissionMenuScreen extends StatelessWidget {
             _buildMenuItem(
               'Faculty Assessment Result',
               Icons.arrow_forward_ios,
-                  () => Navigator.push(
+              () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const FacultyAssessmentScreen(),
@@ -56,7 +55,7 @@ class AdmissionMenuScreen extends StatelessWidget {
             _buildMenuItem(
               'Overall Result',
               Icons.arrow_forward_ios,
-                  () => Navigator.push(
+              () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const OverallScreen(),
@@ -71,11 +70,11 @@ class AdmissionMenuScreen extends StatelessWidget {
 
   Widget _buildMenuItem(String title, IconData icon, VoidCallback onTap) {
     return Card(
-      margin: const EdgeInsets.all(5.0), // Adjust the margin as needed
+      margin: const EdgeInsets.all(5.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      elevation: 5, // Adjust the elevation for shadow depth
+      elevation: 5,
       child: ListTile(
         title: Text(
           title,
@@ -87,7 +86,7 @@ class AdmissionMenuScreen extends StatelessWidget {
         trailing: Icon(icon),
         onTap: onTap,
         contentPadding:
-        const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       ),
     );
   }

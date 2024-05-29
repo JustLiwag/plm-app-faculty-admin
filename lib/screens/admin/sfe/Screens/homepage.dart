@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:mysample/screens/admin/sfe/Screens/colleges.dart';
+import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,9 +15,7 @@ class HomePageState extends State<HomePage> {
   String? dropdownValue;
 
   void _submitForm() {
-    // Check if dropdownValue is not null
     if (dropdownValue != null) {
-      // Navigate to a new screen with the selected option's name
       Navigator.push(
         context,
         MaterialPageRoute(
@@ -23,7 +23,6 @@ class HomePageState extends State<HomePage> {
         ),
       );
     } else {
-      // Show an error message if no option is selected
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -54,8 +53,8 @@ class HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                height: 200, // Adjust the height as needed
-                child: Image.asset('assets/images/plm_logo.png'), // Change 'your_image.png' to your image asset
+                height: 200, 
+                child: Image.asset('assets/images/plm_logo.png'), 
               ),
               const SizedBox(height: 20),
               const Text(
@@ -112,18 +111,16 @@ class HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 15),
-              ElevatedButton(
+              CustomElevatedButton(
+                text: "SUBMIT",
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
+                    .copyWith(fontSize: 16.0),
+                buttonStyle: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0XFF006699),
+                ),
+                width: 500.0,
                 onPressed: _submitForm,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0XFF006699), // Match the yellow background color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10), // Preserve the rounded corners
-                  ),
-                ),
-                child: const Text(
-                  'Submit',
-                  style: TextStyle(color: Colors.white), // Set the text color to white
-                ),
               ),
             ],
           ),

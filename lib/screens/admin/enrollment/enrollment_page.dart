@@ -56,10 +56,10 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                 ],
                 title: 'SELECT A COLLEGE',
               ),
-              SizedBox(height: 57.v),
+              SizedBox(height: 5.v),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 20.h),
+                margin: EdgeInsets.symmetric(horizontal: 10.h),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
