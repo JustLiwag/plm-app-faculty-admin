@@ -10,28 +10,30 @@ class StudentPage extends StatelessWidget {
 
   Widget buildRow(String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(left: 35),
+      padding: const EdgeInsets.only(left: 35, right: 35), // Adjust right padding for better alignment
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: const TextStyle(
               color: Color(0xFF393939),
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-              height: 0.09,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
               letterSpacing: 0.25,
             ),
           ),
           const SizedBox(width: 8),
-          Text(
-            content,
-            style: const TextStyle(
-              color: Color(0xFF393939),
-              fontSize: 15,
-              fontWeight: FontWeight.w700,
-              height: 0.09,
-              letterSpacing: 0.25,
+          Expanded(
+            child: Text(
+              content,
+              style: const TextStyle(
+                color: Color(0xFF393939),
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                letterSpacing: 0.25,
+              ),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],
@@ -52,11 +54,11 @@ class StudentPage extends StatelessWidget {
               children: [
                 const SizedBox(height: 50),
                 buildRow('Subject Number:', subject.courseCode),
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 buildRow('Subject Name:', subject.courseTitle),
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 buildRow('Schedule:', subject.schedule),
-                const SizedBox(height: 15),
+                const SizedBox(height: 5),
                 Container(
                   width: 309,
                   decoration: const ShapeDecoration(
@@ -94,12 +96,6 @@ class StudentPage extends StatelessWidget {
                                   offset: Offset(0, 4),
                                   spreadRadius: 0,
                                 ),
-                                BoxShadow(
-                                  color: Color(0x4C000000),
-                                  blurRadius: 2,
-                                  offset: Offset(0, 1),
-                                  spreadRadius: 0,
-                                ),
                               ],
                             ),
                             child: Stack(
@@ -125,6 +121,7 @@ class StudentPage extends StatelessWidget {
                                             height: 1.0,
                                             letterSpacing: 0.10,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       const SizedBox(height: 4),
@@ -141,6 +138,7 @@ class StudentPage extends StatelessWidget {
                                             height: 2,
                                             letterSpacing: 0.25,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       SizedBox(
@@ -156,6 +154,7 @@ class StudentPage extends StatelessWidget {
                                             height: 2,
                                             letterSpacing: 0.25,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                     ],
