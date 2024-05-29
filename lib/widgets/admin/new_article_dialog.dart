@@ -11,7 +11,7 @@ void showNewArticleDialog(BuildContext context) {
             Text(
               'New Article',
               style: TextStyle(
-                color: Color(0xFFFFC909),
+                color: Color(0XFF006699),
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
@@ -144,7 +144,7 @@ void showNewArticleDialog(BuildContext context) {
                   },
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(const Color(0xFFFFC909)),
+                        MaterialStateProperty.all(const Color(0XFF006699)),
                     shape: MaterialStateProperty.all(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),

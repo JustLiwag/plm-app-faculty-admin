@@ -12,7 +12,7 @@ class ButtonFill extends StatelessWidget {
     Key? key,
     required this.buttonText,
     this.color = Colors.black,
-    this.bgColor = Colors.amber,
+    this.bgColor = const Color(0XFF006699),
     this.onPressed,
   });
 
@@ -59,7 +59,7 @@ class ButtonOutline extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0, 8.0, 0, 8.0),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.amber,
+            foregroundColor: const Color(0XFF006699),
             side: BorderSide(color: color),
             textStyle: const TextStyle(fontWeight: FontWeight.bold),
             elevation: 5,
@@ -97,7 +97,7 @@ class ButtonIcon extends StatelessWidget {
         padding: EdgeInsets.all(5),
         elevation: 0,
         // backgroundColor: Theme.of(context).colorScheme.secondary, // <-- Button color
-        foregroundColor: Color(0xFFEEBB05), // <-- Splash color
+        foregroundColor: const Color(0XFF006699), // <-- Splash color
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
         SizedBox(
@@ -105,7 +105,7 @@ class ButtonIcon extends StatelessWidget {
         SizedBox(height: 3.0),
         Text(buttonName,
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 10, color: AppTheme.baseGold)),
+            style: TextStyle(fontSize: 10, color: const Color(0XFF006699))),
       ]),
     );
   }
@@ -160,7 +160,7 @@ class ButtonText extends StatelessWidget {
                         text,
                         CircleAvatar(
                           radius: 16.0,
-                          backgroundColor: AppTheme.accentGold,
+                          backgroundColor: const Color(0XFF006699),
                           child: Icon(
                             icon,
                             size: 15,

@@ -33,7 +33,7 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
               style: Theme.of(context)
                   .textTheme
                   .displaySmall
-                  ?.copyWith(color: AppTheme.baseGold),
+                  ?.copyWith(color: const Color(0XFF006699)),
             ),
             const SizedBox(height: 10),
             Text(
@@ -99,9 +99,9 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
         Container(
           padding: const EdgeInsets.all(8.0),
           decoration: BoxDecoration(
-            color: const Color(0xFFEAB700),
+            color: const Color(0XFF006699),
             border: Border.all(
-              color: const Color(0xFFEAB700),
+              color: const Color(0XFF006699),
               width: 2.0,
             ),
             borderRadius: BorderRadius.circular(10.0),
@@ -210,7 +210,7 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
             return AlertDialog(
               title: Text('Edit $testName Schedule',
                   style: const TextStyle(
-                      color: Color(0xFFEAB700), fontWeight: FontWeight.bold)),
+                      color: Color(0XFF006699), fontWeight: FontWeight.bold)),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -312,11 +312,11 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
-                        side: const BorderSide(color: Color(0xFFEAB700)),
+                        side: const BorderSide(color: Color(0XFF006699)),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color(0xFFEAB700)),
+                        const Color(0XFF006699)),
                   ),
                   child:
                       const Text('Save', style: TextStyle(color: Colors.white)),

@@ -141,7 +141,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color(0xFFFFC909)),
+                          const Color(0XFF006699)),
                     ),
                     child: const Text('Print',
                         style: TextStyle(color: Colors.white)),

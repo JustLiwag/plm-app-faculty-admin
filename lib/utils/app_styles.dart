@@ -5,7 +5,7 @@ class AppTheme {
   static const Color baseGrey = Color(0xFF545454);
   static const Color baseBlue = Color(0xFF006699);
   static const Color basewhite = Color(0xFFFFFFFF);
-  static const Color baseGold = Color(0xFFEAB700);
+  static const Color baseGold = Color(0XFF006699);
   static const Color accentGold = Color(0xFFFFC909);
   static const Color baseRed = Color(0xFFA31920);
 }

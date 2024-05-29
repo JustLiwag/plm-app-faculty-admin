@@ -26,7 +26,7 @@ class MCATScreen extends StatelessWidget {
               Text(
                 'MCAT Results!',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: AppTheme.baseGold,
+                      color: const Color(0XFF006699),
                     ),
               ),
               ResultItem(

@@ -23,7 +23,7 @@ class GalleryScreen extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .displaySmall
-                ?.copyWith(color: AppTheme.baseGold),
+                ?.copyWith(color: const Color(0XFF006699)),
           ),
           const SizedBox(height: 10),
           Text(
@@ -106,7 +106,7 @@ class GalleryScreen extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: const Color(0xFFFFC909),
+        backgroundColor: const Color(0XFF006699),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

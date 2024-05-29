@@ -25,7 +25,7 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
               Text(
                 'Welcome!',
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: AppTheme.baseGold,
+                      color: const Color(0XFF006699),
                     ),
               ),
               const SizedBox(height: 15),

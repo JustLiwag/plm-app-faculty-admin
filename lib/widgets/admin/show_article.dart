@@ -97,7 +97,7 @@ class ShowArticleScreen extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: const Color(0xFFFFC909),
+        backgroundColor: const Color(0XFF006699),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
