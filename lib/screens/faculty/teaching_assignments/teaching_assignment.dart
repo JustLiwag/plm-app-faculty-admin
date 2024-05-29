@@ -89,40 +89,41 @@ class TeachingAssignmentsPage extends StatelessWidget {
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Table(
-                        defaultColumnWidth: const IntrinsicColumnWidth(),
-                        children: [
-                          TableRow(
-                            children: [
-                              buildHeaderTableCell('Subject Code & Section'),
-                              buildHeaderTableCell('Subject Title'),
-                              buildHeaderTableCell('Units'),
-                              buildHeaderTableCell('Schedule'),
-                              buildHeaderTableCell('No. of Students'),
-                              buildHeaderTableCell('Credited Units'),
-                              buildHeaderTableCell('College'),
-                              buildHeaderTableCell('Type of Load'),
-                            ],
-                          ),
-                          for (var assignment in recentAssignments)
+                    child: Align(
+                      alignment: Alignment.topLeft,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: Table(
+                          defaultColumnWidth: const IntrinsicColumnWidth(),
+                          children: [
                             TableRow(
-                              decoration:
-                                  const BoxDecoration(color: Colors.white),
                               children: [
-                                buildTableCell(
-                                    assignment.subjectCodeAndSection),
-                                buildTableCell(assignment.subjectTitle),
-                                buildTableCell(assignment.units),
-                                buildTableCell(assignment.schedule),
-                                buildTableCell(assignment.noStudents),
-                                buildTableCell(assignment.creditedUnits),
-                                buildTableCell(assignment.college),
-                                buildTableCell(assignment.typeOfLoad),
+                                buildHeaderTableCell('Subject Code & Section'),
+                                buildHeaderTableCell('Subject Title'),
+                                buildHeaderTableCell('Units'),
+                                buildHeaderTableCell('Schedule'),
+                                buildHeaderTableCell('No. of Students'),
+                                buildHeaderTableCell('Credited Units'),
+                                buildHeaderTableCell('College'),
+                                buildHeaderTableCell('Type of Load'),
                               ],
                             ),
-                        ],
+                            for (var assignment in recentAssignments)
+                              TableRow(
+                                decoration: const BoxDecoration(color: Colors.white),
+                                children: [
+                                  buildTableCell(assignment.subjectCodeAndSection),
+                                  buildTableCell(assignment.subjectTitle),
+                                  buildTableCell(assignment.units),
+                                  buildTableCell(assignment.schedule),
+                                  buildTableCell(assignment.noStudents),
+                                  buildTableCell(assignment.creditedUnits),
+                                  buildTableCell(assignment.college),
+                                  buildTableCell(assignment.typeOfLoad),
+                                ],
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
