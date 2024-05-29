@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/data/faculty/student_data.dart';
+import 'package:mysample/models/faculty/subject_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'input_grades.dart';
 
 class StudentPage extends StatelessWidget {
-  const StudentPage({Key? key}) : super(key: key);
+  final Subject subject;
+
+  const StudentPage({Key? key, required this.subject}) : super(key: key);
 
   Widget buildRow(String title, String content) {
     return Padding(
@@ -49,11 +51,11 @@ class StudentPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const SizedBox(height: 50),
-                buildRow('Subject Number:', 'ICC 0106-1'),
+                buildRow('Subject Number:', subject.courseCode),
                 const SizedBox(height: 15),
-                buildRow('Subject Name:', 'Application Development'),
+                buildRow('Subject Name:', subject.courseTitle),
                 const SizedBox(height: 15),
-                buildRow('Schedule:', 'M 9:30a-12:30p F2F GC 201'),
+                buildRow('Schedule:', subject.schedule),
                 const SizedBox(height: 15),
                 Container(
                   width: 309,
@@ -71,7 +73,7 @@ class StudentPage extends StatelessWidget {
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: studentList.length,
+                  itemCount: subject.enrolledStudents.length,
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(
@@ -114,7 +116,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          '${studentList[index].studentNumber} ${studentList[index].grade}',
+                                          '${subject.enrolledStudents[index].studentNumber} ${subject.enrolledStudents[index].grade}',
                                           style: const TextStyle(
                                             color: Color(0xFF006699),
                                             fontSize: 12,
@@ -129,7 +131,8 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          studentList[index].studentName,
+                                          subject.enrolledStudents[index]
+                                              .studentName,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 8,
@@ -143,7 +146,8 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          studentList[index].college,
+                                          subject
+                                              .enrolledStudents[index].college,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 7,

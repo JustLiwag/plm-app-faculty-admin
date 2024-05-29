@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/data/faculty/faculty_data.dart';
-import 'package:mysample/data/faculty/student_data.dart';
 import 'package:mysample/data/faculty/subject_data.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'student.dart';
@@ -39,23 +38,29 @@ class SubjectClassPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const StudentPage())),
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: studentList.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 8, left: 16, right: 16),
-                        child: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Container(
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: subjectList.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(
+                          bottom: 8, left: 16, right: 16),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StudentPage(
+                                    subject: subjectList[index],
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Container(
                               width: 350,
                               height: 70,
                               decoration: BoxDecoration(
@@ -66,12 +71,6 @@ class SubjectClassPage extends StatelessWidget {
                                     color: Color(0x3F000000),
                                     blurRadius: 4,
                                     offset: Offset(0, 4),
-                                    spreadRadius: 0,
-                                  ),
-                                  BoxShadow(
-                                    color: Color(0x4C000000),
-                                    blurRadius: 2,
-                                    offset: Offset(0, 1),
                                     spreadRadius: 0,
                                   ),
                                 ],
@@ -125,39 +124,30 @@ class SubjectClassPage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const StudentPage()));
-                                    },
-                                    child: Container(
-                                      width: 28,
-                                      height: 28,
-                                      margin: const EdgeInsets.only(right: 16),
-                                      decoration: const BoxDecoration(
-                                        color: Color(0xFF006699),
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: const Center(
-                                        child: Icon(
-                                          Icons.chevron_right,
-                                          size: 21,
-                                          color: Colors.white,
-                                        ),
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    margin: const EdgeInsets.only(right: 16),
+                                    decoration: const BoxDecoration(
+                                      color: Color(0xFF006699),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Center(
+                                      child: Icon(
+                                        Icons.chevron_right,
+                                        size: 21,
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

@@ -278,12 +278,12 @@ class InputGradesPageState extends State<InputGradesPage> {
                     padding: const EdgeInsets.only(top: 10), // Adjust the top padding as needed
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const StudentPage(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => const StudentPage(),
+                        //   ),
+                        // );
                         // Insert your logic here for when the button is pressed
                       },
                       style: ElevatedButton.styleFrom(
