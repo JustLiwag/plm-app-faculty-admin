@@ -29,7 +29,7 @@ class AdmissionScheduleScreenState extends State<AdmissionScheduleScreen> {
           children: [
             const SizedBox(height: 15),
             Text(
-              'Schedule!',
+              'Schedule',
               style: Theme.of(context)
                   .textTheme
                   .displaySmall

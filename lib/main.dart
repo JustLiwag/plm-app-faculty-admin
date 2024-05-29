@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:mysample/screens/admin/onboarding/onboarding_admin.dart';
-import 'package:mysample/screens/faculty/onboarding/onboarding_faculty.dart';
+import 'package:mysample/screens/admin/onboarding/onboarding_admin.dart';
+// import 'package:mysample/screens/faculty/onboarding/onboarding_faculty.dart';
 // import 'bottom_navigation.dart';
 import 'package:mysample/utils/app_styles.dart';
 // import 'package:mysample/widgets/base_layout.dart';
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           canvasColor: AppTheme.baseBlue,
         ),
-        home: const SafeArea(child: OnBoardingFaculty()),
+        home: const SafeArea(child: OnBoardingAdmin()),
       );
     });
   }
