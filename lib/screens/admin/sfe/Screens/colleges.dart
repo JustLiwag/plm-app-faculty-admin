@@ -6,10 +6,10 @@ class CollegeOfArchitectureScreen extends StatefulWidget {
   const CollegeOfArchitectureScreen({super.key});
 
   @override
-  _CollegeOfArchitectureScreenState createState() =>_CollegeOfArchitectureScreenState();
+  CollegeOfArchitectureScreenState createState() =>CollegeOfArchitectureScreenState();
 }
 
-class _CollegeOfArchitectureScreenState
+class CollegeOfArchitectureScreenState
     extends State<CollegeOfArchitectureScreen> {
   String? selectedOption;
   String? selectedProfessor;
@@ -160,10 +160,10 @@ class CollegeOfEducationScreen extends StatefulWidget {
   const CollegeOfEducationScreen({super.key});
 
   @override
-  _CollegeOfEducationScreenState createState() => _CollegeOfEducationScreenState();
+  CollegeOfEducationScreenState createState() => CollegeOfEducationScreenState();
 }
 
-class _CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
+class CollegeOfEducationScreenState extends State<CollegeOfEducationScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -308,10 +308,10 @@ class CollegeOfEngineeringScreen extends StatefulWidget {
   const CollegeOfEngineeringScreen({super.key});
 
   @override
-  _CollegeOfEngineeringScreenState createState() => _CollegeOfEngineeringScreenState();
+  CollegeOfEngineeringScreenState createState() => CollegeOfEngineeringScreenState();
 }
 
-class _CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen> {
+class CollegeOfEngineeringScreenState extends State<CollegeOfEngineeringScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -456,10 +456,10 @@ class CollegeOfInformationTechnologyScreen extends StatefulWidget {
   const CollegeOfInformationTechnologyScreen({super.key});
 
   @override
-  _CollegeOfInformationTechnologyScreenState createState() => _CollegeOfInformationTechnologyScreenState();
+  CollegeOfInformationTechnologyScreenState createState() => CollegeOfInformationTechnologyScreenState();
 }
 
-class _CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformationTechnologyScreen> {
+class CollegeOfInformationTechnologyScreenState extends State<CollegeOfInformationTechnologyScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -604,10 +604,10 @@ class CollegeOfHumanitiesScreen extends StatefulWidget {
   const CollegeOfHumanitiesScreen({super.key});
 
   @override
-  _CollegeOfHumanitiesScreenState createState() => _CollegeOfHumanitiesScreenState();
+  CollegeOfHumanitiesScreenState createState() => CollegeOfHumanitiesScreenState();
 }
 
-class _CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
+class CollegeOfHumanitiesScreenState extends State<CollegeOfHumanitiesScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -752,10 +752,10 @@ class CollegeOfNursingScreen extends StatefulWidget {
   const CollegeOfNursingScreen({super.key});
 
   @override
-  _CollegeOfNursingScreenState createState() => _CollegeOfNursingScreenState();
+  CollegeOfNursingScreenState createState() => CollegeOfNursingScreenState();
 }
 
-class _CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
+class CollegeOfNursingScreenState extends State<CollegeOfNursingScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -900,10 +900,10 @@ class CollegeOfPhysicalTherapyScreen extends StatefulWidget {
   const CollegeOfPhysicalTherapyScreen({super.key});
 
   @override
-  _CollegeOfPhysicalTherapyScreenState createState() => _CollegeOfPhysicalTherapyScreenState();
+  CollegeOfPhysicalTherapyScreenState createState() => CollegeOfPhysicalTherapyScreenState();
 }
 
-class _CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherapyScreen> {
+class CollegeOfPhysicalTherapyScreenState extends State<CollegeOfPhysicalTherapyScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -1048,10 +1048,10 @@ class CollegeOfScienceScreen extends StatefulWidget {
   const CollegeOfScienceScreen({super.key});
 
   @override
-  _CollegeOfScienceScreenState createState() => _CollegeOfScienceScreenState();
+  CollegeOfScienceScreenState createState() => CollegeOfScienceScreenState();
 }
 
-class _CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
+class CollegeOfScienceScreenState extends State<CollegeOfScienceScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -1196,10 +1196,10 @@ class PLMBusinessSchoolScreen extends StatefulWidget {
   const PLMBusinessSchoolScreen({super.key});
 
   @override
-  _PLMBusinessSchoolScreenState createState() => _PLMBusinessSchoolScreenState();
+  PLMBusinessSchoolScreenState createState() => PLMBusinessSchoolScreenState();
 }
 
-class _PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
+class PLMBusinessSchoolScreenState extends State<PLMBusinessSchoolScreen> {
   String? selectedOption;
   String? selectedProfessor;
 
@@ -1342,10 +1342,10 @@ class SchoolOfGovernmentScreen extends StatefulWidget {
   const SchoolOfGovernmentScreen({super.key});
 
   @override
-  _SchoolOfGovernmentScreenState createState() => _SchoolOfGovernmentScreenState();
+  SchoolOfGovernmentScreenState createState() => SchoolOfGovernmentScreenState();
 }
 
-class _SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
+class SchoolOfGovernmentScreenState extends State<SchoolOfGovernmentScreen> {
   String? selectedOption;
   String? selectedProfessor;
 

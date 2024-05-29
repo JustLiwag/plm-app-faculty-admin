@@ -6,10 +6,10 @@ class FacultyScreen extends StatefulWidget {
   const FacultyScreen({super.key});
 
   @override
-  _FacultyScreenState createState() =>_FacultyScreenState();
+  FacultyScreenState createState() =>FacultyScreenState();
 }
 
-class _FacultyScreenState
+class FacultyScreenState
     extends State<FacultyScreen> {
   String? selectedOption;
   String? selectedProfessor;

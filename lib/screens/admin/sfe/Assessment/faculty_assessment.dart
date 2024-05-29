@@ -22,7 +22,7 @@ class FacultyAssessmentScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Container(
+            SizedBox(
               height: screenHeight / 2,
               child: BarChart(
                 BarChartData(
