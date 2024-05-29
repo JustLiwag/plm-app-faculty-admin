@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/models/faculty/teaching_assignment_model.dart';
 import 'package:mysample/utils/app_styles.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
@@ -10,6 +11,9 @@ class TeachingAssignmentsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TeachingAssignment? mostRecent = getMostRecentAssignment(teachingAssignments);
+    List<TeachingAssignment> recentAssignments = getAssignmentsForMostRecentSemester(teachingAssignments);
+
     return SafeArea(
       child: Scaffold(
         appBar: const CustomAppBar(title: 'Teaching Assignments'),
@@ -65,9 +69,9 @@ class TeachingAssignmentsPage extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  const Text(
-                    '2ND SEMESTER SY 2010-2011',
-                    style: TextStyle(
+                  Text(
+                    '${mostRecent?.semester == 2 ? '2ND' : '1ST'} SEMESTER SY ${mostRecent?.year}-${mostRecent != null ? (mostRecent.year + 1) : ''}',
+                    style: const TextStyle(
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.bold,
                       fontSize: 9,
@@ -102,7 +106,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
                               buildHeaderTableCell('Type of Load'),
                             ],
                           ),
-                          for (var assignment in teachingAssignments)
+                          for (var assignment in recentAssignments)
                             TableRow(
                               decoration:
                                   const BoxDecoration(color: Colors.white),
@@ -134,7 +138,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
                   height: 40.0,
                   child: ElevatedButton(
                     onPressed: () async {
-                      final pdf = generateTablePdf();
+                      final pdf = generateTablePdf(recentAssignments);
                       await Printing.layoutPdf(
                         onLayout: (PdfPageFormat format) async => pdf.save(),
                       );
@@ -186,8 +190,10 @@ class TeachingAssignmentsPage extends StatelessWidget {
     );
   }
 
-  pw.Document generateTablePdf() {
+  pw.Document generateTablePdf(List<TeachingAssignment> assignments) {
     final pdf = pw.Document();
+
+    TeachingAssignment? mostRecent = getMostRecentAssignment(assignments);
 
     pdf.addPage(
       pw.MultiPage(
@@ -228,7 +234,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
                 textAlign: pw.TextAlign.center,
               ),
               pw.Text(
-                '2ND SEMESTER SY 2010-2011',
+                '${mostRecent?.semester == 2 ? '2ND' : '1ST'} SEMESTER SY ${mostRecent?.year}-${mostRecent != null ? (mostRecent.year + 1) : ''}',
                 style: pw.TextStyle(
                   fontWeight: pw.FontWeight.bold,
                   fontSize: 9,
@@ -257,7 +263,7 @@ class TeachingAssignmentsPage extends StatelessWidget {
                 'College',
                 'Type of Load'
               ],
-              for (var assignment in teachingAssignments)
+              for (var assignment in assignments)
                 [
                   assignment.subjectCodeAndSection,
                   assignment.subjectTitle,
@@ -275,5 +281,26 @@ class TeachingAssignmentsPage extends StatelessWidget {
     );
 
     return pdf;
+  }
+
+  TeachingAssignment? getMostRecentAssignment(List<TeachingAssignment> assignments) {
+    assignments.sort((a, b) {
+      if (a.year != b.year) {
+        return b.year.compareTo(a.year);
+      } else {
+        return b.semester.compareTo(a.semester);
+      }
+    });
+    return assignments.isNotEmpty ? assignments.first : null;
+  }
+
+  List<TeachingAssignment> getAssignmentsForMostRecentSemester(List<TeachingAssignment> assignments) {
+    TeachingAssignment? mostRecent = getMostRecentAssignment(assignments);
+    if (mostRecent == null) {
+      return [];
+    }
+    return assignments.where((assignment) => 
+      assignment.year == mostRecent.year && 
+      assignment.semester == mostRecent.semester).toList();
   }
 }
