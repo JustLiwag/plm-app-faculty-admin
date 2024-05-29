@@ -28,16 +28,16 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
         body: Container(
           width: double.maxFinite,
           padding: EdgeInsets.only(
-            left: 22.h,
-            top: 70.v,
-            right: 22.h,
+            left: 40.h,
+            top: 65.v,
+            right: 40.h,
           ),
           child: Column(
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgPlmSealBorApproved2014,
-                height: 164.v,
-                width: 165.h,
+                height: 242.v,
+                width: 259.h,
               ),
               SizedBox(height: 27.v),
               SizedBox(
@@ -52,7 +52,15 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 50.v),
+              SizedBox(height: 30.v),
+              Text(
+                'SELECT YEAR LEVEL',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Color(0xFFA31920),
+                  fontWeight: FontWeight.bold
+                ),
+              ),
               Dropdown(
                   onSelected: (String? college) {
                     isYearLevelSelected = college != null;
@@ -66,8 +74,8 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                     '5th Year',
                     '6th Year'
                   ],
-                  title: 'YEAR LEVEL'),
-              SizedBox(height: 52.v),
+                  title: ' '),
+              SizedBox(height: 5.v),
               CustomElevatedButton(
                 text: "SUBMIT",
                 margin: EdgeInsets.symmetric(horizontal: 37.h),
