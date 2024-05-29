@@ -124,7 +124,6 @@ class StudentPage extends StatelessWidget {
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                      const SizedBox(height: 4),
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
@@ -132,8 +131,7 @@ class StudentPage extends StatelessWidget {
                                               .studentName,
                                           style: const TextStyle(
                                             color: Colors.black,
-                                            fontSize: 8,
-                                            fontFamily: 'Inter',
+                                            fontSize: 11,
                                             fontWeight: FontWeight.w500,
                                             height: 2,
                                             letterSpacing: 0.25,
@@ -148,8 +146,7 @@ class StudentPage extends StatelessWidget {
                                               .enrolledStudents[index].college,
                                           style: const TextStyle(
                                             color: Colors.black,
-                                            fontSize: 7,
-                                            fontFamily: 'Inter',
+                                            fontSize: 8,
                                             fontWeight: FontWeight.w500,
                                             height: 2,
                                             letterSpacing: 0.25,
