@@ -7,12 +7,14 @@ List<Student> studentsForSubject1 = [
     grade: '1.00',
     studentName: 'John Doe',
     college: 'College of Engineering',
+    remarks: 'Passed',
   ),
   Student(
     studentNumber: '202101351',
     grade: '1.25',
     studentName: 'Jane Smith',
     college: 'College of Engineering',
+    remarks: 'Passed',
   ),
 ];
 
@@ -22,12 +24,14 @@ List<Student> studentsForSubject2 = [
     grade: '1.25',
     studentName: 'Alice Johnson',
     college: 'College of Engineering',
+    remarks: 'Passed',
   ),
   Student(
     studentNumber: '202101353',
     grade: '1.50',
     studentName: 'Bob Brown',
     college: 'College of Engineering',
+    remarks: 'Passed',
   ),
 ];
 
@@ -37,12 +41,14 @@ List<Student> studentsForSubject3 = [
     grade: '1.25',
     studentName: 'Charlie Green',
     college: 'College of Science',
+    remarks: 'Passed',
   ),
   Student(
     studentNumber: '202101355',
     grade: '1.75',
     studentName: 'Dana White',
     college: 'College of Science',
+    remarks: 'Passed',
   ),
 ];
 
@@ -52,12 +58,14 @@ List<Student> studentsForSubject4 = [
     grade: '1.25',
     studentName: 'Evan Blue',
     college: 'College of Arts',
+    remarks: 'Passed',
   ),
   Student(
     studentNumber: '202101357',
     grade: '1.25',
     studentName: 'Fiona Red',
     college: 'College of Arts',
+    remarks: 'Passed',
   ),
 ];
 

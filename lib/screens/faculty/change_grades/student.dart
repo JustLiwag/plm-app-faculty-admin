@@ -10,8 +10,7 @@ class StudentPage extends StatelessWidget {
 
   Widget buildRow(String title, String content) {
     return Padding(
-      padding: const EdgeInsets.only(
-          left: 35, right: 35), // Adjust right padding for better alignment
+      padding: const EdgeInsets.only(left: 35, right: 35),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -78,6 +77,7 @@ class StudentPage extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: subject.enrolledStudents.length,
                   itemBuilder: (context, index) {
+                    final student = subject.enrolledStudents[index];
                     return Padding(
                       padding: const EdgeInsets.only(
                           bottom: 20, left: 16, right: 16),
@@ -86,7 +86,7 @@ class StudentPage extends StatelessWidget {
                         children: [
                           Container(
                             width: 350,
-                            height: 70,
+                            height: 90,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
@@ -102,7 +102,7 @@ class StudentPage extends StatelessWidget {
                             child: Stack(
                               children: [
                                 Positioned(
-                                  top: 12,
+                                  top: 25,
                                   left: 16,
                                   right: 44,
                                   bottom: 4,
@@ -113,7 +113,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          '${subject.enrolledStudents[index].studentNumber} ${subject.enrolledStudents[index].grade}',
+                                          student.studentNumber,
                                           style: const TextStyle(
                                             color: Color(0xFF006699),
                                             fontSize: 12,
@@ -128,8 +128,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          subject.enrolledStudents[index]
-                                              .studentName,
+                                          student.studentName,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 11,
@@ -143,8 +142,7 @@ class StudentPage extends StatelessWidget {
                                       SizedBox(
                                         width: double.infinity,
                                         child: Text(
-                                          subject
-                                              .enrolledStudents[index].college,
+                                          student.college,
                                           style: const TextStyle(
                                             color: Colors.black,
                                             fontSize: 8,
@@ -189,8 +187,8 @@ class StudentPage extends StatelessWidget {
                             ),
                           ),
                           const Positioned(
-                            right: 85,
-                            bottom: 45,
+                            right: 90,
+                            bottom: 63,
                             child: Text(
                               'GRADE',
                               style: TextStyle(
@@ -202,10 +200,10 @@ class StudentPage extends StatelessWidget {
                           ),
                           Positioned(
                             right: 80,
-                            bottom: 27,
+                            bottom: 40,
                             child: Container(
-                              width: 50,
-                              height: 15,
+                              width: 60,
+                              height: 20,
                               decoration: ShapeDecoration(
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
@@ -214,20 +212,45 @@ class StudentPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
+                              child: Center(
+                                child: Text(
+                                  student.grade,
+                                  style: const TextStyle(
+                                    color: Color(0xFF006699),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                           Positioned(
                             right: 80,
-                            bottom: 10,
+                            bottom: 15,
                             child: Container(
-                              width: 50,
-                              height: 15,
+                              width: 60,
+                              height: 20,
                               decoration: ShapeDecoration(
-                                color: Colors.white,
+                                color: student.remarks == 'Passed'
+                                    ? Colors.green
+                                    : Colors.red,
                                 shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFF006699)),
+                                  side: BorderSide(
+                                      width: 1,
+                                      color: student.remarks == 'Passed'
+                                          ? Colors.green
+                                          : Colors.red),
                                   borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  student.remarks,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
