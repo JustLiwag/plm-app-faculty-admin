@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/data/faculty/faculty_data.dart';
 import 'package:mysample/data/faculty/subject_data.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'student.dart';
 import 'package:mysample/widgets/faculty/build_row.dart';
 

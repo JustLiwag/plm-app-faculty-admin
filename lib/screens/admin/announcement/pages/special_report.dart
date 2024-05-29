@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/admin/box_with_header_image.dart';
 import 'package:mysample/widgets/admin/box_without_header_image.dart';
 import 'package:mysample/widgets/admin/new_article_dialog.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mysample/models/faculty/subject_model.dart';
 import 'package:mysample/models/faculty/student_model.dart';
 import 'package:mysample/models/faculty/faculty_model.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/faculty/build_row.dart';
 
 class InputGradesPage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/models/admin/article_model.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/admin/edit_article_dialog.dart';
 
 class ShowArticleScreen extends StatelessWidget {

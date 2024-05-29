@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/theme/custom_text_style.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/screens/admin/sfe/Screens/admission_screen.dart';
 import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
 

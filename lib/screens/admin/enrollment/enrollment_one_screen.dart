@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/admin/enrollment/dropdown.dart';
 import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
 import '../../../core/app_export.dart';

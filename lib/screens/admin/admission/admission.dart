@@ -3,8 +3,8 @@ import 'package:mysample/screens/admin/admission/pages/admission_schedule.dart';
 import 'package:mysample/screens/admin/admission/pages/clat.dart';
 import 'package:mysample/screens/admin/admission/pages/mcat.dart';
 import 'package:mysample/screens/admin/admission/pages/plmat.dart';
-import 'package:mysample/widgets/button.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/widgets/admin_faculty_button.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 
 class Admission extends StatelessWidget {
   const Admission({super.key});
