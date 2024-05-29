@@ -27,10 +27,11 @@ class _OnBoardingFacultyState extends State<OnBoardingFaculty> {
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       color: const Color(0XFF006699),
                     ),
+
               ),
               const SizedBox(height: 15),
               Text(
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. \n\nEget nunc scelerisque viverra mauris in aliquam sem fringilla. Nunc id cursus metus aliquam. ',
+                'We are delighted to welcome you to the Pamantasan ng Lungsod ng Maynila Faculty Mobile App.',
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
                       color: AppTheme.baseBlack,
                     ),

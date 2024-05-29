@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/screens/faculty/sfe_results/Screens/faculty.dart';
 
 class SFEResults extends StatelessWidget {
   const SFEResults({super.key});
@@ -7,12 +7,11 @@ class SFEResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'SFE Results'),
-      body: Center(
-        child: Text(
-          'SFE Results',
-          style: TextStyle(fontSize: 24.0),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(child: FacultyScreen()),
+        ],
       ),
     );
   }

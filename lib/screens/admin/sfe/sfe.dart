@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/screens/admin/sfe/Screens/homepage.dart';
 
 class SFE extends StatelessWidget {
   const SFE({super.key});
@@ -7,12 +7,11 @@ class SFE extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Student Faculty Evaluation'),
-      body: Center(
-        child: Text(
-          'Student Faculty Evaluation',
-          style: TextStyle(fontSize: 24.0),
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(child: HomePage()),
+        ],
       ),
     );
   }
