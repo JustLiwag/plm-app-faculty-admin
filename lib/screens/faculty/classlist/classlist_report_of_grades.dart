@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/data/faculty/courses_data.dart';
-import 'package:mysample/models/faculty/classlist_model.dart';
 import 'package:mysample/utils/app_styles.dart';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
+import 'package:mysample/models/faculty/subject_model.dart';
 
 class Classlist extends StatelessWidget {
-  const Classlist({super.key});
+  final List<Subject> subjects;
+
+  const Classlist({super.key, required this.subjects});
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +51,9 @@ class Classlist extends StatelessWidget {
                 ListView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: courses.length,
+                  itemCount: subjects.length,
                   itemBuilder: (context, index) {
-                    return CourseContainer(course: courses[index]);
+                    return CourseContainer(subject: subjects[index]);
                   },
                 ),
               ],
@@ -62,9 +66,9 @@ class Classlist extends StatelessWidget {
 }
 
 class CourseContainer extends StatelessWidget {
-  final Course course;
+  final Subject subject;
 
-  const CourseContainer({Key? key, required this.course}) : super(key: key);
+  const CourseContainer({Key? key, required this.subject}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +77,7 @@ class CourseContainer extends StatelessWidget {
       child: Center(
         child: Container(
           width: 350,
-          height: 70,
+          height: 100,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
@@ -95,17 +99,17 @@ class CourseContainer extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                top: 12,
-                left: 16,
-                right: 44,
-                bottom: 4,
+                top: 20,
+                left: 15,
+                right: 45,
+                bottom: 5,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       width: double.infinity,
                       child: Text(
-                        course.code,
+                        subject.courseCode,
                         style: const TextStyle(
                           color: Color(0xFF006699),
                           fontSize: 12,
@@ -119,7 +123,7 @@ class CourseContainer extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: Text(
-                        course.title,
+                        subject.courseTitle,
                         style: const TextStyle(
                           color: Colors.black,
                           fontSize: 9,
@@ -133,7 +137,7 @@ class CourseContainer extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: Text(
-                        course.schedule,
+                        subject.schedule,
                         style: const TextStyle(
                           color: Colors.black,
                           fontSize: 9,
@@ -147,20 +151,28 @@ class CourseContainer extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: 14,
-                bottom: 13,
+                right: 15,
+                bottom: 35,
                 child: Container(
-                  width: 28,
-                  height: 28,
+                  width: 40,
+                  height: 33,
                   decoration: const BoxDecoration(
                     color: Color(0xFF006699),
                     shape: BoxShape.circle,
                   ),
-                  child: const Center(
-                    child: Icon(
-                      Icons.download,
-                      size: 21,
-                      color: Colors.white,
+                  child: Center(
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.download_rounded,
+                        size: 21,
+                        color: Colors.white,
+                      ),
+                      onPressed: () async {
+                        final pdf = generateStudentListPdf(subject);
+                        await Printing.layoutPdf(
+                          onLayout: (PdfPageFormat format) async => pdf.save(),
+                        );
+                      },
                     ),
                   ),
                 ),
@@ -170,5 +182,79 @@ class CourseContainer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  pw.Document generateStudentListPdf(Subject subject) {
+    final pdf = pw.Document();
+
+    pdf.addPage(
+      pw.MultiPage(
+        build: (context) => [
+          pw.Column(
+            crossAxisAlignment: pw.CrossAxisAlignment.stretch,
+            children: [
+              pw.Text(
+                'PAMANTASAN NG LUNGSOD NG MAYNILA',
+                style: pw.TextStyle(
+                  fontSize: 15,
+                  fontWeight: pw.FontWeight.bold,
+                ),
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.Text(
+                '(University of the City Manila)',
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.Text(
+                'Intramuros, Manila',
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.Text(
+                '\nCOLLEGE OF INFORMATION SYSTEM AND TECHNOLOGY MANAGEMENT\n',
+                style: pw.TextStyle(
+                  fontWeight: pw.FontWeight.bold,
+                  fontSize: 10,
+                ),
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.Text(
+                'Class List',
+                style: pw.TextStyle(
+                  fontWeight: pw.FontWeight.bold,
+                  fontSize: 15,
+                ),
+                textAlign: pw.TextAlign.center,
+              ),
+              pw.SizedBox(height: 10),
+              pw.Text(
+                'Course Code: ${subject.courseCode}',
+                style: const pw.TextStyle(fontSize: 12),
+              ),
+              pw.Text(
+                'Course Title: ${subject.courseTitle}',
+                style: const pw.TextStyle(fontSize: 12),
+              ),
+              pw.Text(
+                'Schedule: ${subject.schedule}',
+                style: const pw.TextStyle(fontSize: 12),
+              ),
+              pw.SizedBox(height: 10),
+            ],
+          ),
+          pw.TableHelper.fromTextArray(
+            context: context,
+            headers: ['Student Number', 'Student Name'],
+            data: subject.enrolledStudents.map((student) {
+              return [
+                student.studentNumber,
+                student.studentName,
+              ];
+            }).toList(),
+          ),
+        ],
+      ),
+    );
+
+    return pdf;
   }
 }

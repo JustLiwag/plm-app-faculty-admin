@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/screens/faculty/change_grades/grades_login.dart';
-import '../../screens/faculty/classlist/classlist_report_of_grades.dart';
-import '../../screens/faculty/sfe_results/sfe_results.dart';
-import '../../screens/faculty/schedule/schedule.dart';
-import '../../screens/faculty/teaching_assignments/teaching_assignment.dart';
-// import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/screens/faculty/classlist/classlist_report_of_grades.dart';
+import 'package:mysample/screens/faculty/sfe_results/sfe_results.dart';
+import 'package:mysample/screens/faculty/schedule/schedule.dart';
+import 'package:mysample/screens/faculty/teaching_assignments/teaching_assignment.dart';
+import 'package:mysample/models/faculty/subject_model.dart';
+import 'package:mysample/data/faculty/subject_data.dart';
 import 'bottom_navigation.dart';
 
 class BaseLayoutPage extends StatefulWidget {
@@ -17,18 +18,22 @@ class BaseLayoutPage extends StatefulWidget {
 
 class _BaseLayoutPageState extends State<BaseLayoutPage> {
   int _selectedIndex = 0;
-  final List<Widget> _pages = [
-    const Schedule(),
-    const TeachingAssignmentsPage(),
-    const Classlist(),
-    const GradesLoginPage(),
-    const SFEResults(),
-  ];
+
+  final List<Subject> _subjects = subjectList;
+
+  late final List<Widget> _pages;
 
   @override
   void initState() {
     super.initState();
     _selectedIndex = widget.initialIndex;
+    _pages = [
+      const Schedule(),
+      const TeachingAssignmentsPage(),
+      Classlist(subjects: _subjects), // Pass subjects to Classlist
+      const GradesLoginPage(),
+      const SFEResults(),
+    ];
   }
 
   void _onItemTapped(int index) {
