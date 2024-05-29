@@ -15,12 +15,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          canvasColor: AppTheme.baseBlue,
+      return SafeArea(
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            canvasColor: AppTheme.baseBlue,
+          ),
+          home: const SafeArea(child: OnBoardingFaculty()),
         ),
-        home: const SafeArea(child: OnBoardingAdmin()),
       );
     }
 }
