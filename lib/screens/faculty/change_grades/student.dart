@@ -233,13 +233,17 @@ class StudentPage extends StatelessWidget {
                               decoration: ShapeDecoration(
                                 color: student.remarks == 'Passed'
                                     ? Colors.green
-                                    : Colors.red,
+                                    : student.remarks == 'INC'
+                                        ? Colors.yellow
+                                        : Colors.red,
                                 shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       width: 1,
                                       color: student.remarks == 'Passed'
                                           ? Colors.green
-                                          : Colors.red),
+                                          : student.remarks == 'INC'
+                                              ? Colors.yellow
+                                              : Colors.red),
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                               ),
