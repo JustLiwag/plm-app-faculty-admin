@@ -39,8 +39,8 @@ class FacultyScreenState extends State<FacultyScreen> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 25.0, // Adjust the thickness as needed
+              const SizedBox(
+                height: 25.0,
               ),
               const Text(
                 'SELECT AY SEM',
@@ -78,8 +78,7 @@ class FacultyScreenState extends State<FacultyScreen> {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Padding(
-                        padding: EdgeInsets.all(
-                            8.0), // Customize this value as needed
+                        padding: const EdgeInsets.all(8.0),
                         child: Text(value),
                       ),
                     );
@@ -95,8 +94,7 @@ class FacultyScreenState extends State<FacultyScreen> {
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0XFF006699),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Customize this value as needed
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 width: 500.0,
