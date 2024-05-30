@@ -32,10 +32,9 @@ class AdmissionMenuScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 5.0, 
-                color: const Color(0XFF006699), 
-                margin:
-                    const EdgeInsets.only(bottom: 20.0), 
+                height: 5.0,
+                color: const Color(0XFF006699),
+                margin: const EdgeInsets.only(bottom: 20.0),
               ),
               const SizedBox(height: 10.0),
               ButtonText(
@@ -55,7 +54,7 @@ class AdmissionMenuScreen extends StatelessWidget {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const FacultyAssessmentScreen(),
+                    builder: (context) => const FacultyAssessmentScreen(professorName: 'Karl Anthony Carlos'),
                   ),
                 ),
               ),

@@ -1,5 +1,5 @@
 
-import 'package:mysample/models/admin/sfe_model.dart';
+import 'package:mysample/models/admin/sfe_details_model.dart';
 
 class CollegeData {
   static final List<AcademicYear> academicYears = [

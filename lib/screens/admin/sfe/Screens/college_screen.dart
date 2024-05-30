@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/models/admin/sfe_model.dart';
-import 'package:mysample/screens/admin/sfe/Screens/admission_screen.dart';
+import 'package:mysample/models/admin/sfe_details_model.dart';
 import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
+import 'package:mysample/screens/admin/sfe/Assessment/faculty_assessment.dart';
 
 class CollegeScreen extends StatefulWidget {
   final College college;
@@ -132,7 +132,10 @@ class _CollegeScreenState extends State<CollegeScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const AdmissionMenuScreen()),
+                          builder: (context) => FacultyAssessmentScreen(
+                            professorName: selectedProfessor!,
+                          ),
+                        ),
                       );
                     }
                   : null,

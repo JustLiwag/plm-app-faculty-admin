@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/data/admin/sfe_data.dart';
-import 'package:mysample/models/admin/sfe_model.dart';
+import 'package:mysample/models/admin/sfe_details_model.dart';
 import 'package:mysample/screens/admin/sfe/Screens/college_screen.dart';
 import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/utils/admin_faculty/app_styles.dart';
