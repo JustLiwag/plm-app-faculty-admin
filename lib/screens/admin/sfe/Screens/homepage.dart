@@ -19,7 +19,8 @@ class HomePageState extends State<HomePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => SelectedOptionScreen(selectedOption: dropdownValue!),
+          builder: (context) =>
+              SelectedOptionScreen(selectedOption: dropdownValue!),
         ),
       );
     } else {
@@ -45,28 +46,26 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Student Faculty Evaluation'),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.fromLTRB(20.0, 1.0 * 72.0, 20.0, 20.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 200, 
-                child: Image.asset('assets/images/plm_logo.png'), 
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'SFE Results',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red,
+              Container(
+                margin: const EdgeInsets.only(bottom: 20.0),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/plm_logo.png',
+                      width: 220,
+                      height: 220,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 25.0),
               const Text(
                 'SELECT COLLEGE',
                 textAlign: TextAlign.center,
@@ -75,10 +74,11 @@ class HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 15),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: DropdownButton<String>(
@@ -90,7 +90,7 @@ class HomePageState extends State<HomePage> {
                       dropdownValue = newValue!;
                     });
                   },
-                  underline: Container(), // Remove the underline
+                  underline: Container(),
                   items: <String>[
                     'College of Architecture and Urban Planning',
                     'College of Education',
@@ -105,7 +105,13 @@ class HomePageState extends State<HomePage> {
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          value,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     );
                   }).toList(),
                 ),
