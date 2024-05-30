@@ -28,16 +28,16 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
         body: Container(
           width: double.maxFinite,
           padding: const EdgeInsets.only(
-            left: 22,
-            top: 70,
-            right: 22,
+            left: 40,
+            top: 65,
+            right: 40,
           ),
           child: Column(
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgPlmSealBorApproved2014,
-                height: 164,
-                width: 165,
+                height: 242,
+                width: 259,
               ),
               const SizedBox(height: 27),
               SizedBox(
