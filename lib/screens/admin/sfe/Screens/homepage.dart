@@ -4,8 +4,9 @@ import 'package:mysample/models/admin/sfe_model.dart';
 import 'package:mysample/screens/admin/sfe/Screens/college_screen.dart';
 import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/utils/admin_faculty/app_styles.dart';
-import 'package:mysample/screens/admin/sfe/Screens/colleges.dart';
 import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
+import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -26,21 +27,8 @@ class HomePageState extends State<HomePage> {
         ),
       );
     } else {
-      showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('Error'),
-          content: const Text('Please select an option from the dropdown.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
+      showWarningDialog(
+          context, "Please select an option before submitting.");
     }
   }
 
@@ -93,7 +81,8 @@ class HomePageState extends State<HomePage> {
                     });
                   },
                   underline: Container(),
-                  items: CollegeData.colleges.keys.map<DropdownMenuItem<String>>((String value) {
+                  items: CollegeData.colleges.keys
+                      .map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Padding(

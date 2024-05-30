@@ -42,7 +42,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
                       widget.college.name,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,7 +54,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
               'SELECT AY SEM',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -88,7 +88,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
               'SELECT PROFESSOR',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
