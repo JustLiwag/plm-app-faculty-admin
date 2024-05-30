@@ -33,11 +33,14 @@ class FacultyScreenState extends State<FacultyScreen> {
                   children: [
                     Image.asset(
                       'assets/images/plm_logo.png',
-                      width: 200,
-                      height: 200,
+                      width: 220,
+                      height: 220,
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 25.0, // Adjust the thickness as needed
               ),
               const Text(
                 'SELECT AY SEM',
@@ -50,7 +53,8 @@ class FacultyScreenState extends State<FacultyScreen> {
               const SizedBox(height: 15),
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: const Color(0XFF006699), width: 3.0),
+                  border:
+                      Border.all(color: const Color(0XFF006699), width: 3.0),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: DropdownButton<String>(
@@ -73,7 +77,11 @@ class FacultyScreenState extends State<FacultyScreen> {
                   ].map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value),
+                      child: Padding(
+                        padding: EdgeInsets.all(
+                            8.0), // Customize this value as needed
+                        child: Text(value),
+                      ),
                     );
                   }).toList(),
                 ),
@@ -86,6 +94,10 @@ class FacultyScreenState extends State<FacultyScreen> {
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0XFF006699),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        10), // Customize this value as needed
+                  ),
                 ),
                 width: 500.0,
                 onPressed: canSubmit
@@ -93,7 +105,8 @@ class FacultyScreenState extends State<FacultyScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const AdmissionMenuScreen()),
+                              builder: (context) =>
+                                  const AdmissionMenuScreen()),
                         );
                       }
                     : null,
