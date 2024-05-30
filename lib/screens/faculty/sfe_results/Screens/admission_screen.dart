@@ -32,10 +32,10 @@ class AdmissionMenuScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 5.0, // Adjust the thickness as needed
-                color: const Color(0XFF006699), // Adjust the color as needed
+                height: 5.0, 
+                color: const Color(0XFF006699), 
                 margin:
-                    const EdgeInsets.only(bottom: 20.0), // Space below the line
+                    const EdgeInsets.only(bottom: 20.0), 
               ),
               const SizedBox(height: 10.0),
               ButtonText(
