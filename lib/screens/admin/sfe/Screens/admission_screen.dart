@@ -6,7 +6,9 @@ import 'package:mysample/screens/admin/sfe/Assessment/overall_screen.dart';
 import 'package:mysample/widgets/admin_faculty_button.dart';
 
 class AdmissionMenuScreen extends StatelessWidget {
-  const AdmissionMenuScreen({super.key});
+  final String professorName;
+
+  const AdmissionMenuScreen({super.key, required this.professorName});
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +53,16 @@ class AdmissionMenuScreen extends StatelessWidget {
               ButtonText(
                 text: const Text('Faculty Assessment Result'),
                 icon: Icons.arrow_forward_ios,
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const FacultyAssessmentScreen(professorName: 'Karl Anthony Carlos'),
-                  ),
-                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FacultyAssessmentScreen(
+                        professorName: professorName,
+                      ),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 10.0),
               ButtonText(
