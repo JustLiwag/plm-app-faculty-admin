@@ -37,10 +37,19 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                 width: 259,
               ),
               const SizedBox(height: 65),
+              const Text(
+                'SELECT A COLLEGE',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Color(0xFFA31920),
+                    fontWeight: FontWeight.bold),
+              ),
               Dropdown(
                 onSelected: (String? college) {
-                  isCollegeSelected = college != null;
-                  dropdownValue = college;
+                  setState(() {
+                    isCollegeSelected = college != null;
+                    dropdownValue = college;
+                  });
                 },
                 values: const [
                   'College of Architecture and Urban Planning',
@@ -54,7 +63,7 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                   'College of Humanities, Arts, and Social Sciences',
                   'School of Government',
                 ],
-                title: 'SELECT A COLLEGE',
+                title: '',
               ),
               const SizedBox(height: 5),
               CustomElevatedButton(

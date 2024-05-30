@@ -52,6 +52,14 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 30),
+              const Text(
+                'SELECT YEAR LEVEL',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Color(0xFFA31920),
+                    fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 50),
               Dropdown(
                   onSelected: (String? college) {
@@ -66,8 +74,8 @@ class EnrollmentOneScreenState extends State<EnrollmentOneScreen> {
                     '5th Year',
                     '6th Year'
                   ],
-                  title: 'YEAR LEVEL'),
-              const SizedBox(height: 52),
+                  title: ' '),
+              const SizedBox(height: 5),
               CustomElevatedButton(
                 text: "SUBMIT",
                 margin: const EdgeInsets.symmetric(horizontal: 37),
