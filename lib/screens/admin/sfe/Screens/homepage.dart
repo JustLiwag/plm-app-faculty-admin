@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mysample/data/admin/sfe_data.dart';
+import 'package:mysample/models/admin/sfe_model.dart';
+import 'package:mysample/screens/admin/sfe/Screens/college_screen.dart';
 import 'package:mysample/theme/custom_text_style.dart';
 import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/screens/admin/sfe/Screens/colleges.dart';
 import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -91,18 +93,7 @@ class HomePageState extends State<HomePage> {
                     });
                   },
                   underline: Container(),
-                  items: <String>[
-                    'College of Architecture and Urban Planning',
-                    'College of Education',
-                    'College of Engineering and Technology',
-                    'College of Information System & Technology Management',
-                    'College of Humanities, Arts, and Social Sciences',
-                    'College of Nursing',
-                    'College of Physical Therapy',
-                    'College of Science',
-                    'PLM Business School',
-                    'School of Government',
-                  ].map<DropdownMenuItem<String>>((String value) {
+                  items: CollegeData.colleges.keys.map<DropdownMenuItem<String>>((String value) {
                     return DropdownMenuItem<String>(
                       value: value,
                       child: Padding(
@@ -143,39 +134,22 @@ class SelectedOptionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    switch (selectedOption) {
-      case 'College of Architecture and Urban Planning':
-        return const CollegeOfArchitectureScreen();
-      case 'College of Education':
-        return const CollegeOfEducationScreen();
-      case 'College of Engineering and Technology':
-        return const CollegeOfEngineeringScreen();
-      case 'College of Information System & Technology Management':
-        return const CollegeOfInformationTechnologyScreen();
-      case 'College of Humanities, Arts, and Social Sciences':
-        return const CollegeOfHumanitiesScreen();
-      case 'College of Nursing':
-        return const CollegeOfNursingScreen();
-      case 'College of Physical Therapy':
-        return const CollegeOfPhysicalTherapyScreen();
-      case 'College of Science':
-        return const CollegeOfScienceScreen();
-      case 'PLM Business School':
-        return const PLMBusinessSchoolScreen();
-      case 'School of Government':
-        return const SchoolOfGovernmentScreen();
-      default:
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(selectedOption),
-          ),
-          body: Center(
-            child: Text(
-              'You selected $selectedOption',
-              style: const TextStyle(fontSize: 24),
-            ),
-          ),
-        );
+    final College? college = CollegeData.colleges[selectedOption];
+    if (college == null) {
+      return const Scaffold(
+        appBar: CustomAppBar(
+          title: 'Error',
+        ),
+        body: Center(
+          child: Text('Selected college not found.'),
+        ),
+      );
     }
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: college.appBarTitle,
+      ),
+      body: CollegeScreen(college: college),
+    );
   }
 }
