@@ -19,12 +19,10 @@ class _ResultItemState extends State<ResultItem> {
   @override
   void initState() {
     super.initState();
-    // Initialize filteredPassers with all passers
     filteredPassers = widget.passers;
   }
 
   void filterPassers(String query) {
-    // Update the filteredPassers based on the search query
     if (query.isEmpty) {
       setState(() {
         filteredPassers = widget.passers;
@@ -33,7 +31,7 @@ class _ResultItemState extends State<ResultItem> {
       setState(() {
         filteredPassers = widget.passers
             .where((passer) =>
-                passer['name']!.toLowerCase().contains(query.toLowerCase()))
+                passer['Name']!.toLowerCase().contains(query.toLowerCase()))
             .toList();
       });
     }

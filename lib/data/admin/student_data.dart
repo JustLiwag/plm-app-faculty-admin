@@ -12,7 +12,7 @@ class StudentData {
       "Dela Cruz, Juan Karlos M.",
       "Estepan, Estavia Jorge G.",
       "Erwan, Heussaf M.",
-      "Egg, Dog H.",
+      "Egg, Nog H.",
       "Smith, John A.",
       "Doe, Jane B.",
       "Johnson, Michael C.",
