@@ -79,7 +79,10 @@ class _CollegeScreenState extends State<CollegeScreen> {
                     .map<DropdownMenuItem<String>>((AcademicYear year) {
                   return DropdownMenuItem<String>(
                     value: year.year,
-                    child: Text(year.year),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(year.year),
+                    ),
                   );
                 }).toList(),
               ),
@@ -113,7 +116,10 @@ class _CollegeScreenState extends State<CollegeScreen> {
                     .map<DropdownMenuItem<String>>((Professor professor) {
                   return DropdownMenuItem<String>(
                     value: professor.name,
-                    child: Text(professor.name),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(professor.name),
+                    ),
                   );
                 }).toList(),
               ),

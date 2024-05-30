@@ -52,6 +52,5 @@ class FacultyEvaluationData {
       bestRating: 5,
       worstRating: 1,
     ),
-    // Add other faculty evaluations similarly
   };
 }
