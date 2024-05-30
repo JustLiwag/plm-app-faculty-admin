@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 
 class ButtonFill extends StatelessWidget {
   String buttonText;

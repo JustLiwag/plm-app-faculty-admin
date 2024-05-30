@@ -10,7 +10,7 @@ class AppDecoration {
   static BoxDecoration get outlineOnPrimary => BoxDecoration(
         border: Border.all(
           color: theme.colorScheme.onPrimary,
-          width: 1.h,
+          width: 1,
           strokeAlign: BorderSide.strokeAlignCenter,
         ),
       );
@@ -19,10 +19,10 @@ class AppDecoration {
 class BorderRadiusStyle {
   // Circle borders
   static BorderRadius get circleBorder17 => BorderRadius.circular(
-        17.h,
+        17,
       );
 // Rounded borders
   static BorderRadius get roundedBorder4 => BorderRadius.circular(
-        4.h,
+        4,
       );
 }

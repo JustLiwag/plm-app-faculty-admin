@@ -34,7 +34,7 @@ class CustomTextStyles {
       );
   static get labelMediumGray800 => theme.textTheme.labelMedium!.copyWith(
         color: appTheme.gray800,
-        fontSize: 11.fSize,
+        fontSize: 11,
       );
   static get labelMediumOnPrimaryContainer =>
       theme.textTheme.labelMedium!.copyWith(
@@ -43,17 +43,17 @@ class CustomTextStyles {
   static get labelMediumSecondaryContainer =>
       theme.textTheme.labelMedium!.copyWith(
         color: theme.colorScheme.secondaryContainer,
-        fontSize: 11.fSize,
+        fontSize: 11,
       );
 // Lato text style
   static get latoAmber500 => TextStyle(
         color: appTheme.amber500,
-        fontSize: 7.fSize,
+        fontSize: 7,
         fontWeight: FontWeight.w700,
       ).lato;
   static get latoOnPrimaryContainer => TextStyle(
         color: theme.colorScheme.onPrimaryContainer,
-        fontSize: 7.fSize,
+        fontSize: 7,
         fontWeight: FontWeight.w700,
       ).lato;
 }

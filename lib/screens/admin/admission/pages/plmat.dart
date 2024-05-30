@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/data/admin/plmat_applicant_data.dart';
 import '../../../../widgets/admin/result_item.dart';
 

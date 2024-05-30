@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mysample/core/app_export.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/screens/faculty/sfe_results/Screens/admission_screen.dart';
 import 'package:mysample/widgets/admin/enrollment/custom_elevated_button.dart';
 
@@ -89,7 +89,7 @@ class FacultyScreenState extends State<FacultyScreen> {
               const SizedBox(height: 15),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 20.h),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(

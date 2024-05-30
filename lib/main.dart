@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
 import 'package:mysample/screens/admin/onboarding/onboarding_admin.dart';
+// ignore: unused_import
 import 'package:mysample/screens/faculty/onboarding/onboarding_faculty.dart';
 // import 'bottom_navigation.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 // import 'package:mysample/widgets/base_layout.dart';
-import 'package:flutter/services.dart';
-import 'core/app_export.dart';
 
-var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 
@@ -20,14 +15,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          canvasColor: AppTheme.baseBlue,
+      return SafeArea(
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            canvasColor: AppTheme.baseBlue,
+          ),
+          home: const SafeArea(child: OnBoardingAdmin()),
         ),
-        home: const SafeArea(child: OnBoardingFaculty()),
       );
-    });
-  }
+    }
 }

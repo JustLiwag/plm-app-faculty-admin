@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../core/app_export.dart';
 
 String _appTheme = "primary";
 PrimaryColors get appTheme => ThemeHelper().themeColor();
@@ -71,37 +70,37 @@ class TextThemes {
   static TextTheme textTheme(ColorScheme colorScheme) => TextTheme(
     headlineSmall: TextStyle(
       color: colorScheme.primary,
-      fontSize: 24.fSize,
+      fontSize: 24,
       fontFamily: 'Roboto',
       fontWeight: FontWeight.w700,
     ),
     labelLarge: TextStyle(
       color: colorScheme.onPrimaryContainer,
-      fontSize: 12.fSize,
+      fontSize: 12,
       fontFamily: 'Lato',
       fontWeight: FontWeight.w700,
     ),
     labelMedium: TextStyle(
       color: colorScheme.errorContainer,
-      fontSize: 10.fSize,
+      fontSize: 10,
       fontFamily: 'Lato',
       fontWeight: FontWeight.w700,
     ),
     titleLarge: TextStyle(
       color: appTheme.black900,
-      fontSize: 20.fSize,
+      fontSize: 20,
       fontFamily: 'Lato',
       fontWeight: FontWeight.w700,
     ),
     titleMedium: TextStyle(
       color: colorScheme.onPrimaryContainer,
-      fontSize: 16.fSize,
+      fontSize: 16,
       fontFamily: 'Lato',
       fontWeight: FontWeight.w700,
     ),
     titleSmall: TextStyle(
       color: colorScheme.primaryContainer,
-      fontSize: 15.fSize,
+      fontSize: 15,
       fontFamily: 'Lato',
       fontWeight: FontWeight.w700,
     ),

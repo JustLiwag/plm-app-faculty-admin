@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/screens/faculty/schedule/previous_class_assignment.dart';
 import '../../../data/faculty/assignment_data.dart';
 import '../../../widgets/faculty/assignment_table.dart';

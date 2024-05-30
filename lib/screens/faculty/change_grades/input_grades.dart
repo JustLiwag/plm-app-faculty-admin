@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mysample/models/faculty/subject_model.dart';
 import 'package:mysample/models/faculty/student_model.dart';
 import 'package:mysample/models/faculty/faculty_model.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/faculty/build_row.dart';
 
 class InputGradesPage extends StatefulWidget {
@@ -31,23 +31,50 @@ class InputGradesPageState extends State<InputGradesPage> {
     if (_selectedGrade == null) {
       _remark = 'INC';
     } else if (_selectedGrade! <= 3.00) {
-      _remark = 'PASSED';
+      _remark = 'Passed';
     } else {
-      _remark = 'FAILED';
+      _remark = 'Failed';
     }
   }
 
   Color _getRemarkColor(String remark) {
     switch (remark) {
-      case 'PASSED':
+      case 'Passed':
         return const Color(0xFF28A745);
-      case 'FAILED':
+      case 'Failed':
         return const Color(0xFFA31920);
       case 'INC':
         return const Color(0xFFE9B700);
       default:
         return Colors.white;
     }
+  }
+
+  void _submitGrade() {
+    setState(() {
+      widget.student.grade = _selectedGrade?.toStringAsFixed(2) ?? 'INC';
+      widget.student.remarks = _remark;
+    });
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Success'),
+          content: const Text('Grade submitted successfully!'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pop(true);
+                Navigator.of(context).pop(true);
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -253,9 +280,7 @@ class InputGradesPageState extends State<InputGradesPage> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 10),
                       child: ElevatedButton(
-                        onPressed: () {
-                          // Insert your logic here for when the button is pressed
-                        },
+                        onPressed: _submitGrade,
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(150, 39),
                           backgroundColor: const Color(0xFF006699),

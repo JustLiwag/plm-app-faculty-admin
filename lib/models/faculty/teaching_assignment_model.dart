@@ -7,6 +7,8 @@ class TeachingAssignment {
   final String creditedUnits;
   final String college;
   final String typeOfLoad;
+  final int semester;
+  final int year;
 
   TeachingAssignment({
     required this.subjectCodeAndSection,
@@ -17,5 +19,7 @@ class TeachingAssignment {
     required this.creditedUnits,
     required this.college,
     required this.typeOfLoad,
+    required this.semester,
+    required this.year,
   });
 }

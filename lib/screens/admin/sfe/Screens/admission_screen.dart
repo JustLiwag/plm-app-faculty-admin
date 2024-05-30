@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/screens/admin/sfe/Assessment/course_assessment.dart';
 import 'package:mysample/screens/admin/sfe/Assessment/faculty_assessment.dart';
 import 'package:mysample/screens/admin/sfe/Assessment/overall_screen.dart';

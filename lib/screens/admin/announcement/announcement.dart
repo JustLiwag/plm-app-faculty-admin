@@ -5,8 +5,8 @@ import 'package:mysample/screens/admin/announcement/pages/newsletter.dart';
 import 'package:mysample/screens/admin/announcement/pages/press_release.dart';
 import 'package:mysample/screens/admin/announcement/pages/special_report.dart';
 import 'package:mysample/screens/admin/announcement/pages/university_message.dart';
-import 'package:mysample/utils/app_styles.dart';
-import 'package:mysample/widgets/button.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
+import 'package:mysample/widgets/admin_faculty_button.dart';
 
 class Announcemnent extends StatelessWidget {
   const Announcemnent({super.key});

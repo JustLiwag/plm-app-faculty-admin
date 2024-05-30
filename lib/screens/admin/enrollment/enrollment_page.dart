@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mysample/utils/app_styles.dart';
+import 'package:mysample/utils/admin_faculty/app_styles.dart';
 import 'package:mysample/widgets/admin/enrollment/dropdown.dart';
 import 'package:mysample/widgets/admin/enrollment/show_warning.dart';
 import '../../../core/app_export.dart';
@@ -24,23 +24,32 @@ class EnrollmentPageState extends State<EnrollmentPage> {
         appBar: const CustomAppBar(title: 'Enrollment'),
         body: Container(
           width: double.maxFinite,
-          padding: EdgeInsets.only(
-            left: 40.h,
-            top: 65.v,
-            right: 40.h,
+          padding: const EdgeInsets.only(
+            left: 40,
+            top: 65,
+            right: 40,
           ),
           child: Column(
             children: [
               CustomImageView(
                 imagePath: ImageConstant.imgPlmSealBorApproved2014,
-                height: 242.v,
-                width: 259.h,
+                height: 242,
+                width: 259,
               ),
-              SizedBox(height: 65.v),
+              const SizedBox(height: 65),
+              const Text(
+                'SELECT A COLLEGE',
+                style: TextStyle(
+                    fontSize: 20.0,
+                    color: Color(0xFFA31920),
+                    fontWeight: FontWeight.bold),
+              ),
               Dropdown(
                 onSelected: (String? college) {
-                  isCollegeSelected = college != null;
-                  dropdownValue = college;
+                  setState(() {
+                    isCollegeSelected = college != null;
+                    dropdownValue = college;
+                  });
                 },
                 values: const [
                   'College of Architecture and Urban Planning',
@@ -54,12 +63,12 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                   'College of Humanities, Arts, and Social Sciences',
                   'School of Government',
                 ],
-                title: 'SELECT A COLLEGE',
+                title: '',
               ),
-              SizedBox(height: 5.v),
+              const SizedBox(height: 5),
               CustomElevatedButton(
                 text: "SUBMIT",
-                margin: EdgeInsets.symmetric(horizontal: 10.h),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 buttonTextStyle: CustomTextStyles.labelMediumOnPrimaryContainer
                     .copyWith(fontSize: 16.0),
                 buttonStyle: ElevatedButton.styleFrom(
@@ -80,7 +89,7 @@ class EnrollmentPageState extends State<EnrollmentPage> {
                   }
                 },
               ),
-              SizedBox(height: 5.v)
+              const SizedBox(height: 5)
             ],
           ),
         ),

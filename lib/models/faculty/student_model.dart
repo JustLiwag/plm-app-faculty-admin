@@ -1,9 +1,9 @@
 class Student {
   final String studentNumber;
-  final String grade;
+  String grade;
   final String studentName;
   final String college;
-  final String remarks;
+  String remarks;
 
   Student({
     required this.studentNumber,
